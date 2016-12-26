@@ -1,0 +1,62 @@
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\bin\Debug\ProjectFilm.exe.config
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\bin\Debug\ProjectFilm.exe
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\bin\Debug\ProjectFilm.pdb
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm.csprojResolveAssemblyReference.cache
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Bancontactscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\BetalingenOKscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Betalingenscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Cashscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Huurscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Informatiescherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Klantenkaartscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\MainWindow.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Winkelmandscherm.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\App.g.cs
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm_MarkupCompile.cache
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm_MarkupCompile.lref
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Bancontactscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\BetalingenOKscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Betalingenscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Cashscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Huurscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Informatiescherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Klantenkaartscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\MainWindow.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\Winkelmandscherm.baml
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm.g.resources
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm.Properties.Resources.resources
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm.exe
+C:\Users\Mathieu\Desktop\Informatica 1ste jaar\A5 Programmeren\Opdrachten\A5-Opdracht5\A5-Opdracht5\ProjectFilm\obj\Debug\ProjectFilm.pdb
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\ProjectFilm.exe.config
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.exe
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.pdb
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\ProjectFilm.exe
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\ProjectFilm.pdb
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csprojResolveAssemblyReference.cache
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Bancontactscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BetalingenOKscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Betalingenscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Cashscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Huurscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\InformatieGegevensscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Informatiescherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantenkaartscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\MainWindow.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\App.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm_MarkupCompile.cache
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm_MarkupCompile.lref
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Bancontactscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BetalingenOKscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Betalingenscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Cashscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Huurscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\InformatieGegevensscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Informatiescherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantenkaartscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\MainWindow.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.g.resources
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.Properties.Resources.resources
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache

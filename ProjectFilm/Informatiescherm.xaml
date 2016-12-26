@@ -1,0 +1,27 @@
+﻿<Window x:Class="ProjectFilm.Informatiescherm"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectFilm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="864" Width="1024" 
+        WindowStyle="None" ResizeMode="NoResize"  
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <Label x:Name="label" Content="Over welke film wenst u meer info?" HorizontalContentAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
+        <Label x:Name="label1" Content="Titel:" HorizontalAlignment="Left" Height="42" Margin="111,385,0,0" VerticalAlignment="Top" Width="120" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy" Content="Acteur:" HorizontalAlignment="Left" Height="42" Margin="111,432,0,0" VerticalAlignment="Top" Width="120" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy1" Content="Regisseur:" HorizontalAlignment="Left" Height="42" Margin="111,479,0,0" VerticalAlignment="Top" Width="120" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy2" Content="Release datum:" HorizontalAlignment="Left" Height="42" Margin="111,526,0,0" VerticalAlignment="Top" Width="170" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy3" Content="Scan de code:" HorizontalAlignment="Left" Height="42" Margin="111,244,0,0" VerticalAlignment="Top" Width="167" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="42" Margin="281,389,0,0" TextWrapping="Wrap" Text="Wat is de naam van de film?" VerticalAlignment="Top" Width="610" FontSize="22"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="42" Margin="283,436,0,0" TextWrapping="Wrap" Text="Welke acteur speelt er een rol?" VerticalAlignment="Top" Width="610" FontSize="22"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="42" Margin="281,479,0,0" TextWrapping="Wrap" Text="Wie is de regisseur?" VerticalAlignment="Top" Width="610" FontSize="22"/>
+        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="42" Margin="281,526,0,0" TextWrapping="Wrap" Text="Welk jaar is de film uitgekomen?" VerticalAlignment="Top" Width="332" FontSize="22"/>
+        <TextBox x:Name="txtScanCode" HorizontalAlignment="Left" Height="42" Margin="283,249,0,0" TextWrapping="Wrap" Text="Scan de barcode" VerticalAlignment="Top" Width="610" FontSize="22"/>
+        <Label x:Name="label_Copy" Content="Over welke film wenst u meer info?" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
+        <Button x:Name="btnKoop" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnKoop_Click"/>
+        <Button x:Name="btnKoop_Copy" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="ZOEK" Margin="790,296,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="100" BorderThickness="0" FontWeight="Bold" Click="btnKoop_Click"/>
+    </Grid>
+</Window>
