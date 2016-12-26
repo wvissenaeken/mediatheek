@@ -24,9 +24,10 @@ namespace ProjectFilm
             InitializeComponent();
         }
 
-        private void btnKoop_Click(object sender, RoutedEventArgs e)
+        private void btnZoek_Click(object sender, RoutedEventArgs e)
         {
-          Close();
+            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            verwijzingInformatieGegevens.ShowDialog();
         }
     }
 }
