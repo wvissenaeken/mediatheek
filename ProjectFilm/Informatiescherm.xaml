@@ -21,7 +21,8 @@
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="42" Margin="281,526,0,0" TextWrapping="Wrap" Text="Welk jaar is de film uitgekomen?" VerticalAlignment="Top" Width="332" FontSize="22"/>
         <TextBox x:Name="txtScanCode" HorizontalAlignment="Left" Height="42" Margin="283,249,0,0" TextWrapping="Wrap" Text="Scan de barcode" VerticalAlignment="Top" Width="610" FontSize="22"/>
         <Label x:Name="label_Copy" Content="Over welke film wenst u meer info?" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
-        <Button x:Name="btnKoop" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnKoop_Click"/>
-        <Button x:Name="btnZoek" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="ZOEK" Margin="790,296,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="100" BorderThickness="0" FontWeight="Bold" Click="btnKoop_Click"/>
+        <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
+        <Button x:Name="btnZoek" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="ZOEK" Margin="790,296,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="100" BorderThickness="0" FontWeight="Bold" Click="btnZoek_Click"/>
+        <Button x:Name="btnZoek_Copy" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="ZOEK" Margin="790,526,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="100" BorderThickness="0" FontWeight="Bold" Click="btnZoek_Copy_Click"/>
     </Grid>
 </Window>

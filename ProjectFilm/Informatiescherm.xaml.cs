@@ -29,5 +29,18 @@ namespace ProjectFilm
             InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
             verwijzingInformatieGegevens.ShowDialog();
         }
+
+        private void btnZoek_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            verwijzingInformatieGegevens.ShowDialog();
+        }
+
+        private void btnTerug_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+       
     }
 }
