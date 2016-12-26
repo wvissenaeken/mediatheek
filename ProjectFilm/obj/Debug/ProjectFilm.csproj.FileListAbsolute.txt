@@ -60,3 +60,6 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandscherm.
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.g.resources
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.Properties.Resources.resources
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\ProjectFilm.exe.config
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.exe
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.pdb
