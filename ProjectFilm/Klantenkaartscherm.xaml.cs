@@ -23,5 +23,10 @@ namespace ProjectFilm
         {
             InitializeComponent();
         }
+
+        private void btnTerug_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

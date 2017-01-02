@@ -33,7 +33,6 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.exe
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.pdb
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\ProjectFilm.exe
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\ProjectFilm.pdb
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csprojResolveAssemblyReference.cache
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Bancontactscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BetalingenOKscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Betalingenscherm.g.cs
