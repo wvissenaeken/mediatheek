@@ -1,0 +1,4 @@
+C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
