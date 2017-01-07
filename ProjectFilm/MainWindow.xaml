@@ -8,21 +8,21 @@
         Title="MainWindow" Height="864" Width="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-        <Grid x:Name="DropDownBar" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="0" >
-            <Rectangle Fill="Orange" />
-        </Grid>
-        <Label x:Name="label" Content="WELKOM" HorizontalContentAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="72" FontWeight="Bold" Width="1011"/>
-        <StackPanel Orientation="Horizontal" Height="81" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="298,509,308,0" Width="410">
-            <Button x:Name="btnKoop" Background="Orange" Foreground="White" Content="KOOP" Margin="0,0,5,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnKoop_Click"/>
-            <Button x:Name="btnHuur" Background="Orange" Foreground="White" Content="HUUR" Margin="5,0,0,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnHuur_Click"/>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Margin="10,80,10,10">
+            <Label x:Name="label" Content="WELKOM" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="Orange" FontSize="72" FontWeight="Bold"/>
+            <Label x:Name="label_Copy" Content="MAAK EEN KEUZE" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="Orange" FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="84" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="298,642,308,0" Width="410">
-            <Button x:Name="btnMeerInfo" Background="Orange" Foreground="White" Content="Informatie over uw film?" VerticalAlignment="Top" FontSize="24" Height="61" Width="416" BorderThickness="0" Click="btnMeerInfo_Click"/>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnKoop" Background="Orange" Foreground="White" Content="KOOP" Margin="0,0,5,0" VerticalAlignment="Top" Height="150" FontSize="24" Width="300" BorderThickness="0" FontWeight="Bold" Click="btnKoop_Click"/>
+                <Button x:Name="btnHuur" Background="Orange" Foreground="White" Content="HUUR" Margin="5,0,0,0" VerticalAlignment="Top" Height="150" FontSize="24" Width="300" BorderThickness="0" FontWeight="Bold" Click="btnHuur_Click"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnMeerInfo" Background="Orange" Foreground="White" Content="Informatie over uw film?" VerticalAlignment="Top" FontSize="24" Margin="0,20,0,0" BorderThickness="0" Click="btnMeerInfo_Click"/>
+            </StackPanel>
         </StackPanel>
-        <Label x:Name="label_Copy" Content="MAAK EEN KEUZE" HorizontalContentAlignment="Center" Margin="0,212,5,0" VerticalAlignment="Top"  Height="31" Foreground="Orange" FontSize="20" FontWeight="Bold" Width="1011" FontFamily="Arial"/>
-
-    </Grid>
+    </DockPanel>
     <Window.Resources>
         <Storyboard x:Key="LoadAnimation" Duration="0:0:3">
             <DoubleAnimation Storyboard.TargetName="DropDownBar" Storyboard.TargetProperty="Height" From="0" To="30" />
