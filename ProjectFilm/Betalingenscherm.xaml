@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectFilm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="352" Width="850" 
+        Title="MainWindow" MinHeight="864" MinWidth="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">

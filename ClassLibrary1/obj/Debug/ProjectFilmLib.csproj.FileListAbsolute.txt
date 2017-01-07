@@ -8,3 +8,4 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFil
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLibrary.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLibrary.pdb
 C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLib.csprojResolveAssemblyReference.cache
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ClassLibrary1\bin\Debug\EID.Wrapper.dll

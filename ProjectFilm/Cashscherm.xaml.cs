@@ -2,6 +2,8 @@
 using ProjectFilmLibrary;
 using System;
 using System.Windows.Controls;
+using System.Drawing;
+using System.Collections.Generic;
 
 namespace ProjectFilm
 {
@@ -10,10 +12,12 @@ namespace ProjectFilm
     /// </summary>
     public partial class Cashscherm : Window
     {
+       
         public Cashscherm()
         {
             InitializeComponent();
             automaat = new Automaat();
+            //foreach (Control c in Controls) { if (c is Button) { ((Button)c).Foreground = null; } }
         }
 
         Automaat automaat;
@@ -21,6 +25,8 @@ namespace ProjectFilm
         //Declareer nodige variabelen
         public decimal TotaalInworp;
         public decimal Wisselgeld;
+
+        public IEnumerable<Control> Controls { get; private set; }
 
         //Methode voor click events mbt Geld
         public void GeldClick(decimal Inworp)

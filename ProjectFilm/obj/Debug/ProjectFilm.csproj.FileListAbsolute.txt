@@ -92,3 +92,17 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandsc
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.g.resources
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.Properties.Resources.resources
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartData.g.cs
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartData.baml
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\2euro-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\5euroSchein-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\10cent-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\10EuroSchein-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\20cent-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\20EuroSchein-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\50cent-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\50EuroSchein-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\100EuroSchein-800px.png
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\5-euro-cent-800px.png

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectFilm"
         mc:Ignorable="d"
-        Title="LeesKaartData" Height="300" Width="300">
+        Title="MainWindow" MinHeight="864" MinWidth="1024" 
+        WindowStyle="None" ResizeMode="NoResize"  
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         
     </Grid>

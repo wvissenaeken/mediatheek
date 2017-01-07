@@ -5,25 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectFilm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="864" Width="1024" 
+        Title="MainWindow" MinHeight="864" MinWidth="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <GroupBox x:Name="GroupBoxInworp" IsEnabled="True" Header="Inworp" HorizontalAlignment="Center" Margin="10,120,10,0" VerticalAlignment="Top" VerticalContentAlignment="Stretch">
         <StackPanel x:Name="StackPanelInworp">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
-                <Button x:Name="btn100Euro" Margin="10" MinWidth="125" Content="100" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn50Euro" Margin="10" MinWidth="125" Content="50" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn20Euro" Margin="10" MinWidth="125" Content="20" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn10Euro" Margin="10" MinWidth="125" Content="10" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn5Euro" Margin="10" MinWidth="125" Content="5" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn100Euro" Margin="10" MinWidth="125" Content="100" Click="btnGeld_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" MinHeight="70">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/100EuroSchein-800px.png"  Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn50Euro" Margin="10" MinWidth="125" Content="50" Click="btnGeld_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/50EuroSchein-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
-                <Button x:Name="btn2Euro" Margin="10" MinWidth="100" Content="2" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn1Euro" Margin="10" MinWidth="100" Content="1" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn50Eurocent" Margin="10" MinWidth="100" Content="0,50" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn20Eurocent" Margin="10" MinWidth="100" Content="0,20" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn10Eurocent" Margin="10" MinWidth="100" Content="0,10" Click="btnGeld_Click"></Button>
-                <Button x:Name="btn5Eurocent" Margin="10" MinWidth="100" Content="0,05" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn20Euro" Margin="10" MinWidth="125" Content="20" Click="btnGeld_Click" BorderBrush="{x:Null}"  MinHeight="70">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/20EuroSchein-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn10Euro" Margin="10" MinWidth="125" Content="10" Click="btnGeld_Click" BorderBrush="{x:Null}">
+                        <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/10EuroSchein-800px.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+             </StackPanel>
+             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+                <Button x:Name="btn5Euro" Margin="10" MinWidth="125" Content="5" Click="btnGeld_Click" BorderBrush="{x:Null}"  MinHeight="70">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/5euroSchein-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+                <Button x:Name="btn2Euro" Margin="10" MinWidth="100" Content="2" Click="btnGeld_Click" BorderBrush="{x:Null}"  MinHeight="60">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/2euro-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn1Euro" Margin="10" MinWidth="100" Content="1" Click="btnGeld_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/1euro-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn50Eurocent" Margin="10" MinWidth="100" Content="0,50" Click="btnGeld_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/50cent-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+                <Button x:Name="btn20Eurocent" Margin="10" MinWidth="100" Content="0,20" Click="btnGeld_Click" BorderBrush="{x:Null}" MinHeight="60">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/20cent-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn10Eurocent" Margin="10" MinWidth="100" Content="0,10" Click="btnGeld_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/10cent-800px.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn5Eurocent" Margin="10" MinWidth="100" Content="0,05" Click="btnGeld_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/5-euro-cent-800px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
                 <Label Content="Huidige inworp:" MinWidth="160"></Label>
