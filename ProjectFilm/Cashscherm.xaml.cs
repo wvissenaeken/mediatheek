@@ -38,22 +38,37 @@ namespace ProjectFilm
             Button btn = sender as Button;
             switch (btn.Content.ToString())
             {
+                case "100":
+                    GeldClick(100.00M);
+                    break;
+                case "50":
+                    GeldClick(50.00M);
+                    break;
+                case "20":
+                    GeldClick(20.00M);
+                    break;
+                case "10":
+                    GeldClick(10.00M);
+                    break;
+                case "5":
+                    GeldClick(5.00M);
+                    break;
                 case "2":
                     GeldClick(2.00M);
                     break;
                 case "1":
                     GeldClick(1.00M);
                     break;
-                case "50":
+                case "0,50":
                     GeldClick(0.50M);
                     break;
-                case "20":
+                case "0,20":
                     GeldClick(0.20M);
                     break;
-                case "10":
+                case "0,10":
                     GeldClick(0.10M);
                     break;
-                case "5":
+                case "0,05":
                     GeldClick(0.05M);
                     break;
             }

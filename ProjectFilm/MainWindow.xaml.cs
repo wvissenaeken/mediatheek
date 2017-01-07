@@ -44,5 +44,11 @@ namespace ProjectFilm
             Informatiescherm informatieverwijzing = new Informatiescherm();
             informatieverwijzing.ShowDialog();
         }
+
+        private void btnCashtest_Click(object sender, RoutedEventArgs e)
+        {
+            Cashscherm cash = new Cashscherm();
+            cash.ShowDialog();
+        }
     }
 }

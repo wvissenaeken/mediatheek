@@ -8,76 +8,42 @@ namespace ProjectFilmLibrary
 {
     public class Automaat
     {
-        public double _HuidigeInworp;
-        public List<Munt> Muntstukken = new List<Munt>()
+        //Berekent het wisselgeld en retourneert resultaat als een string
+        public string WisselGeldBerekenen(decimal wisselgeld)
         {
-            new Munt { _MuntNaam = "twee euro", _MuntWaarde = 2.00},
-            new Munt { _MuntNaam = "een euro", _MuntWaarde = 1.00},
-            new Munt { _MuntNaam = "vijftig eurocent", _MuntWaarde = 0.50},
-            new Munt { _MuntNaam = "twintig eurocent", _MuntWaarde = 0.20 },
-            new Munt { _MuntNaam = "tien eurocent", _MuntWaarde = 0.10},
-            new Munt { _MuntNaam = "vijf eurocent", _MuntWaarde = 0.05}
-        };
+            //Maak een nieuwe array geld met de betrokken waarden
+            var geld = new[]
+            {
+                new { waarde = 100.00m },
+                new { waarde = 50.00m },
+                new { waarde = 20.00m },
+                new { waarde = 10.00m },
+                new { waarde = 5.00m },
+                new { waarde = 2.00m },
+                new { waarde = 1.00m },
+                new { waarde = 0.50m },
+                new { waarde = 0.20m },
+                new { waarde = 0.10m },
+                new { waarde = 0.05m }
+            };
 
-        public List<Munt> oproepenMunt()
-        {
-            return Muntstukken;
-        }
+            //Initialiseer het resultaat met lege string 
+            string resultaat = "";
 
-        public List<string> OverzichtWisselgeld = new List<string>();
-
-        public List<string> oproepenWisselgeld()
-        {
-            return OverzichtWisselgeld;
-        }
-
-        //Methode berekenen teruggave wisselgeld + weergeven in lijst
-        public void teruggaveWisselgeld()
-        {
-            double wisselgeld = _HuidigeInworp;
-            int tweeEuroMunt = 0;
-            int eenEuroMunt = 0;
-            int vijftigEurocentMunt = 0;
-            int twintigEurocentMunt = 0;
-            int tienEurocentMunt = 0;
-            int vijfEurocentMunt = 0;
-
-            while (wisselgeld >= 2)
+            //Bereken het wisselgeld op basis van elke betrokken waarde in het array geld
+            foreach (var type in geld)
             {
-                tweeEuroMunt++;
-                wisselgeld -= 2;
-                OverzichtWisselgeld.Add(tweeEuroMunt + " x € " + Muntstukken[0]._MuntWaarde);
+                int teller = (int)(wisselgeld / type.waarde);
+                wisselgeld -= teller * type.waarde;
+                //Toon enkel de waarden die van toepassing zijn
+                if (teller > 0)
+                {
+                    //Definieer resultaat als string
+                    resultaat += String.Format("{0} x € {1}\n", teller, type.waarde);
+                }
             }
-            while (wisselgeld >= 1)
-            {
-                eenEuroMunt++;
-                wisselgeld -= 1;
-                OverzichtWisselgeld.Add(eenEuroMunt + " x € " + Muntstukken[1]._MuntWaarde);
-            }
-            while (wisselgeld >= 0.5)
-            {
-                vijftigEurocentMunt++;
-                wisselgeld -= 0.5;
-                OverzichtWisselgeld.Add(vijftigEurocentMunt + " x € " + Muntstukken[2]._MuntWaarde);
-            }
-            while (wisselgeld >= 0.2)
-            {
-                twintigEurocentMunt++;
-                wisselgeld -= 0.2;
-                OverzichtWisselgeld.Add(twintigEurocentMunt + " x € " + Muntstukken[3]._MuntWaarde);
-            }
-            while (wisselgeld >= 0.1)
-            {
-                tienEurocentMunt++;
-                wisselgeld -= 0.1;
-                OverzichtWisselgeld.Add(tienEurocentMunt + " x € " + Muntstukken[4]._MuntWaarde);
-            }
-            while (wisselgeld > 0.04)
-            {
-                vijfEurocentMunt++;
-                wisselgeld -= 0.05;
-                OverzichtWisselgeld.Add(vijfEurocentMunt + " x € " + Muntstukken[5]._MuntWaarde);
-            }
+            //Retourneer resultaat (als string)
+            return resultaat;
         }
     }
 }

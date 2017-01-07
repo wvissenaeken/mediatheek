@@ -8,17 +8,22 @@
         Title="MainWindow" Height="864" Width="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <GroupBox x:Name="GroupBoxInworp" IsEnabled="False" Header="Inworp" HorizontalAlignment="Center" Margin="10,120,10,0" VerticalAlignment="Top" VerticalContentAlignment="Stretch">
+    <GroupBox x:Name="GroupBoxInworp" IsEnabled="True" Header="Inworp" HorizontalAlignment="Center" Margin="10,120,10,0" VerticalAlignment="Top" VerticalContentAlignment="Stretch">
         <StackPanel x:Name="StackPanelInworp">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
-                <Button x:Name="btnTweeEuro" Margin="10" MinWidth="220" Content="2" Click="btnGeld_Click"></Button>
-                <Button x:Name="btnEenEuro" Margin="10" MinWidth="220" Content="1" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn100Euro" Margin="10" MinWidth="125" Content="100" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn50Euro" Margin="10" MinWidth="125" Content="50" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn20Euro" Margin="10" MinWidth="125" Content="20" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn10Euro" Margin="10" MinWidth="125" Content="10" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn5Euro" Margin="10" MinWidth="125" Content="5" Click="btnGeld_Click"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
-                <Button x:Name="btnVijftigEurocent" Margin="10" MinWidth="100" Content="50" Click="btnGeld_Click"></Button>
-                <Button x:Name="btnTwintigEurocent" Margin="10" MinWidth="100" Content="20" Click="btnGeld_Click"></Button>
-                <Button x:Name="btnTienEurocent" Margin="10" MinWidth="100" Content="10" Click="btnGeld_Click"></Button>
-                <Button x:Name="btnVijfEurocent" Margin="10" MinWidth="100" Content="5" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn2Euro" Margin="10" MinWidth="100" Content="2" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn1Euro" Margin="10" MinWidth="100" Content="1" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn50Eurocent" Margin="10" MinWidth="100" Content="0,50" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn20Eurocent" Margin="10" MinWidth="100" Content="0,20" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn10Eurocent" Margin="10" MinWidth="100" Content="0,10" Click="btnGeld_Click"></Button>
+                <Button x:Name="btn5Eurocent" Margin="10" MinWidth="100" Content="0,05" Click="btnGeld_Click"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
                 <Label Content="Huidige inworp:" MinWidth="160"></Label>
