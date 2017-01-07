@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProjectFilmLibrary
 {
-    class Database
+    public class Database
     {
-        private readonly string connectionString = "Server=.;Database=ProjectFilm;Integrated Security=True";
+        private readonly string connectionString = @"Data Source=.\SQLEXPRESS;Database=ProjectFilm; Integrated security=true";
         private SqlConnection conn;
 
         public Database()
@@ -59,13 +59,13 @@ namespace ProjectFilmLibrary
                 conn.Open();
                 command.Connection = conn;
                 command.CommandText = @"
-SELECT	film_id, Titel, 	
+SELECT	film_id, Titel
 FROM Film
 ORDER BY titel
 ";
 
                 SqlDataReader dataReader = command.ExecuteReader();
-
+                Debug.WriteLine("Connection geopend!");
                 while (dataReader.Read()) //zolang we nog records te lezen hebben...
                 {
                     Film film = new Film
