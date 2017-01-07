@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="864" Width="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
-        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded_1">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
         <Label x:Name="lbl00" Content="Selecteer uw film" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
         <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>

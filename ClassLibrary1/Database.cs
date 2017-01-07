@@ -10,7 +10,7 @@ namespace ProjectFilmLibrary
 {
     public class Database
     {
-        private readonly string connectionString = @"Data Source=.;Initial Catalog=master; Integrated security=true";
+        private readonly string connectionString = @"Data Source=.\SQLEXPRESS;Database=ProjectFilm; Integrated security=true";
         private SqlConnection conn;
 
         public Database()
@@ -59,7 +59,7 @@ namespace ProjectFilmLibrary
                 conn.Open();
                 command.Connection = conn;
                 command.CommandText = @"
-SELECT	film_id, Titel, 	
+SELECT	film_id, Titel
 FROM Film
 ORDER BY titel
 ";

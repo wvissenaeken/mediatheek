@@ -8,7 +8,7 @@ namespace ProjectFilmLibrary
 {
     public class Film
     {
-        public int Id { get; set; }
+        public decimal Id { get; set; }
         public string Titel { get; set; }
         public short Jaar { get; set; }
         public string CategorieNaam { get; set; }
