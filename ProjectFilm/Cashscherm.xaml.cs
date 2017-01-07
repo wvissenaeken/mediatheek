@@ -10,14 +10,13 @@ namespace ProjectFilm
     /// </summary>
     public partial class Cashscherm : Window
     {
-        Automaat Huurautomaat = new Automaat();
-
         public Cashscherm()
         {
             InitializeComponent();
-            //List<Munt> Munten = Automaat.oproepenMunt();
-            //List<string> OverzichtWisselgeld = Automaat.oproepenWisselgeld();
+            automaat = new Automaat();
         }
+
+        Automaat automaat;
 
         //Declareer nodige variabelen
         public decimal TotaalInworp;
