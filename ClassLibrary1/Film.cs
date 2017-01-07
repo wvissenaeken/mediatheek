@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectFilmLibrary
 {
-    class Film
+    public class Film
     {
         public int Id { get; set; }
         public string Titel { get; set; }
