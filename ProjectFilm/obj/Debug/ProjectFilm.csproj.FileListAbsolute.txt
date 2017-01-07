@@ -40,7 +40,6 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Cashscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Huurscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\InformatieGegevensscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Informatiescherm.g.cs
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantenkaartscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\MainWindow.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\App.g.cs
@@ -53,7 +52,6 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Cashscherm.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Huurscherm.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\InformatieGegevensscherm.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Informatiescherm.baml
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantenkaartscherm.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\MainWindow.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandscherm.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.g.resources

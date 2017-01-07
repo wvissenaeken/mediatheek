@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Automaat.cs" />
-    <Compile Include="Klanten.cs" />
+    <Compile Include="Klant.cs" />
     <Compile Include="Munt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

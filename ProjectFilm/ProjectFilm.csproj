@@ -101,10 +101,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Klantenkaartscherm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,9 +114,6 @@
     </Compile>
     <Compile Include="Informatiescherm.xaml.cs">
       <DependentUpon>Informatiescherm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Klantenkaartscherm.xaml.cs">
-      <DependentUpon>Klantenkaartscherm.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
