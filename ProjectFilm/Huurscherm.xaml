@@ -9,21 +9,7 @@
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-        <Label x:Name="lbl00" Content="Huurscherm" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
+        <Label x:Name="lbl00" Content="Selecteer uw film" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
         <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
-        <StackPanel Orientation="Horizontal" Height="81" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="430,212,391,0" Width="203">
-            <Button x:Name="btn___" Background="Orange" Foreground="White" Content="***" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" />
-        </StackPanel>
-        <Label x:Name="label1_Copy5" Content="**" HorizontalAlignment="Left" Height="42" Margin="111,316,0,0" VerticalAlignment="Top" Width="120" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy6" Content="**" HorizontalAlignment="Left" Height="42" Margin="111,416,0,0" VerticalAlignment="Top" Width="120" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy7" Content="**" HorizontalAlignment="Left" Height="42" Margin="111,462,0,0" VerticalAlignment="Top" Width="120" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
-        <Label x:Name="label1_Copy8" Content="**" HorizontalAlignment="Left" Height="42" Margin="111,510,0,0" VerticalAlignment="Top" Width="170" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
-        <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="88" Margin="278,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610" FontSize="22"/>
-        <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="42" Margin="278,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610" FontSize="22"/>
-        <TextBox x:Name="textBox_Copy8" HorizontalAlignment="Left" Height="42" Margin="278,462,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="22"/>
-        <TextBox x:Name="textBox_Copy9" HorizontalAlignment="Left" Height="42" Margin="278,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="22"/>
-        <Label x:Name="label1_Copy10" Content="**" HorizontalAlignment="Left" Height="42" Margin="111,556,0,0" VerticalAlignment="Top" Width="170" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
-        <TextBox x:Name="textBox_Copy10" HorizontalAlignment="Left" Height="148" Margin="278,556,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610" FontSize="22"/>
-        <Label x:Name="label" Content="***" HorizontalAlignment="Left" Height="76" Margin="704,217,0,0" VerticalAlignment="Top" Width="237"/>
     </Grid>
 </Window>

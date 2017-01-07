@@ -80,14 +80,6 @@ namespace ProjectFilm {
         #line default
         #line hidden
         
-        
-        #line 23 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnCashtest;
-        
-        #line default
-        #line hidden
-        
         private bool _contentLoaded;
         
         /// <summary>
@@ -147,15 +139,6 @@ namespace ProjectFilm {
             
             #line 22 "..\..\MainWindow.xaml"
             this.btnMeerInfo.Click += new System.Windows.RoutedEventHandler(this.btnMeerInfo_Click);
-            
-            #line default
-            #line hidden
-            return;
-            case 6:
-            this.btnCashtest = ((System.Windows.Controls.Button)(target));
-            
-            #line 23 "..\..\MainWindow.xaml"
-            this.btnCashtest.Click += new System.Windows.RoutedEventHandler(this.btnCashtest_Click);
             
             #line default
             #line hidden
