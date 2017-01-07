@@ -8,17 +8,22 @@
         Title="MainWindow" Height="864" Width="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-        <Label x:Name="lbl00" Content="Gelieve geld in te geven" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
-        <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
-        <Button x:Name="btnTweeEuro" Background="Orange" Foreground="White" Content="2" HorizontalAlignment="Left" Height="30" Margin="263,240,0,0" VerticalAlignment="Top" Width="225" IsEnabled="False" Click="btnTweeEuro_Click"/>
-        <Button x:Name="btnEenEuro" Background="Orange" Foreground="White" Content="1" HorizontalAlignment="Left" Height="30" Margin="518,240,0,0" VerticalAlignment="Top" Width="225                 " IsEnabled="False" Click="btnEenEuro_Click"/>
-        <Button x:Name="btn50Cent" Background="Orange" Foreground="White" Content="50" HorizontalAlignment="Left" Height="30" Margin="263,286,0,0" VerticalAlignment="Top" Width="100                 " IsEnabled="False" Click="btn50Cent_Click"/>
-        <Button x:Name="btn20Cent" Background="Orange" Foreground="White" Content="20" HorizontalAlignment="Left" Height="30" Margin="388,286,0,0" VerticalAlignment="Top" Width="100                 " IsEnabled="False" Click="btn20Cent_Click"/>
-        <Button x:Name="btn10Cent" Background="Orange" Foreground="White" Content="10" HorizontalAlignment="Left" Height="30" Margin="518,286,0,0" VerticalAlignment="Top" Width="100                 " IsEnabled="False" Click="btn10Cent_Click"/>
-        <Button x:Name="btn5Cent" Background="Orange" Foreground="White" Content="5" HorizontalAlignment="Left" Height="30" Margin="643,286,0,0" VerticalAlignment="Top" Width="100                 " IsEnabled="False" Click="btn5Cent_Click"/>
-        <Label x:Name="lblHuidigeInworp" Content="Huidige inworp:" HorizontalAlignment="Left" Height="26" Margin="318,340,0,0" VerticalAlignment="Top" Width="93"/>
-        <Label x:Name="lblHuidigeInworpResultaat" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="26" Margin="542,340,0,0" VerticalAlignment="Top" Width="201"/>
-         
-    </Grid>
+    <GroupBox x:Name="GroupBoxInworp" IsEnabled="False" Header="Inworp" HorizontalAlignment="Center" Margin="10,120,10,0" VerticalAlignment="Top" VerticalContentAlignment="Stretch">
+        <StackPanel x:Name="StackPanelInworp">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+                <Button x:Name="btnTweeEuro" Margin="10" MinWidth="220" Content="2" Click="btnGeld_Click"></Button>
+                <Button x:Name="btnEenEuro" Margin="10" MinWidth="220" Content="1" Click="btnGeld_Click"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+                <Button x:Name="btnVijftigEurocent" Margin="10" MinWidth="100" Content="50" Click="btnGeld_Click"></Button>
+                <Button x:Name="btnTwintigEurocent" Margin="10" MinWidth="100" Content="20" Click="btnGeld_Click"></Button>
+                <Button x:Name="btnTienEurocent" Margin="10" MinWidth="100" Content="10" Click="btnGeld_Click"></Button>
+                <Button x:Name="btnVijfEurocent" Margin="10" MinWidth="100" Content="5" Click="btnGeld_Click"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+                <Label Content="Huidige inworp:" MinWidth="160"></Label>
+                <Label x:Name="lblHuidigeInworp" Content="" MinWidth="300" HorizontalContentAlignment="Right"></Label>
+            </StackPanel>
+        </StackPanel>
+    </GroupBox>
 </Window>

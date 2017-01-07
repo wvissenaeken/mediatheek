@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using ProjectFilmLibrary;
+using System;
+using System.Windows.Controls;
 
 namespace ProjectFilm
 {
@@ -17,48 +19,44 @@ namespace ProjectFilm
             //List<string> OverzichtWisselgeld = Automaat.oproepenWisselgeld();
         }
 
-        //Methode huidige inworp tonen, controle, knop annuleren activeren.
-        private void huidigeInworp()
+        //Declareer nodige variabelen
+        public decimal TotaalInworp;
+        public decimal Wisselgeld;
+
+        //Methode voor click events mbt Geld
+        public void GeldClick(decimal Inworp)
         {
-            //lblHuidigeInworpResultaat.Content = "€ " + string.Format("{0:0.00}", Automaat._HuidigeInworp);
+            TotaalInworp += Inworp;
+            lblHuidigeInworp.Content = String.Format("€ {0}", TotaalInworp);
+            //Zie methode lager
+            //VerifieerTotaalInworp();
         }
 
-        //Knoppen voor de keuze van de muntstukken + toewijzing naar de huidigeInworp.
-        //Melding veranderd naar "Koop" wanneer er genoeg muntstukken ingeworpen zijn.
-        private void btnTweeEuro_Click(object sender, RoutedEventArgs e)
+        //Enkel click event voor alle knoppen mbt Geld
+        private void btnGeld_Click(object sender, EventArgs e)
         {
-            //Automaat._HuidigeInworp = Automaat._HuidigeInworp + 2;
-            huidigeInworp();
-        }
-
-        private void btnEenEuro_Click(object sender, RoutedEventArgs e)
-        {
-            //Automaat._HuidigeInworp += 1;
-            huidigeInworp();
-        }
-
-        private void btn50Cent_Click(object sender, RoutedEventArgs e)
-        {
-            //Automaat._HuidigeInworp += 0.5;
-            huidigeInworp();
-        }
-
-        private void btn20Cent_Click(object sender, RoutedEventArgs e)
-        {
-            //Automaat._HuidigeInworp += 0.2;
-            huidigeInworp();
-        }
-
-        private void btn10Cent_Click(object sender, RoutedEventArgs e)
-        {
-            //Automaat._HuidigeInworp += 0.1;
-            huidigeInworp();
-        }
-
-        private void btn5Cent_Click(object sender, RoutedEventArgs e)
-        {
-            //Automaat._HuidigeInworp += 0.05;
-            huidigeInworp();
+            Button btn = sender as Button;
+            switch (btn.Content.ToString())
+            {
+                case "2":
+                    GeldClick(2.00M);
+                    break;
+                case "1":
+                    GeldClick(1.00M);
+                    break;
+                case "50":
+                    GeldClick(0.50M);
+                    break;
+                case "20":
+                    GeldClick(0.20M);
+                    break;
+                case "10":
+                    GeldClick(0.10M);
+                    break;
+                case "5":
+                    GeldClick(0.05M);
+                    break;
+            }
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)
