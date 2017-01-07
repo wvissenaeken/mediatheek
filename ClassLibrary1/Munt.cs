@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace ProjectFilmLibrary
 {
-    class Munt
+    public class Munt
     {
         public string _MuntNaam { get; set; }
         public double _MuntWaarde { get; set; }

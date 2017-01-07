@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace ProjectFilmLibrary
 {
-    class Automaat
+    public class Automaat
     {
         public double _HuidigeInworp;
         public List<Munt> Muntstukken = new List<Munt>()
