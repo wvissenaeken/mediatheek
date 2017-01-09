@@ -27,8 +27,9 @@ namespace ProjectFilm
         public Informatiescherm()
         {
             InitializeComponent();
+            Film = new Film();
         }
-
+        Film Film;
         private Automaat filmService = new Automaat(); 
 
 
@@ -67,7 +68,7 @@ namespace ProjectFilm
             //Is er een film geselecteerd?
             if (lbOverzichtGezochteFilms.SelectedItem != null)
             {
-                filmService.InformatieFilm = (Film)lbOverzichtGezochteFilms.SelectedItem;
+                Film.Titel = lbOverzichtGezochteFilms.SelectedItem.ToString();
                 btnMeerInfo.IsEnabled = true;
                 
             }
