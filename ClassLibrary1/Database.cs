@@ -59,8 +59,9 @@ namespace ProjectFilmLibrary
                 conn.Open();
                 command.Connection = conn;
                 command.CommandText = @"
-SELECT	film_id, Titel
+SELECT	film_id, Titel, Stock
 FROM Film
+WHERE Stock != 0
 ORDER BY titel
 ";
 
@@ -72,12 +73,11 @@ ORDER BY titel
                     {
                         Id = SafeReadValue<int>(dataReader, "film_id"),
                         Titel = SafeReadValue<string>(dataReader, "Titel"),
-                        Jaar = SafeReadValue<short>(dataReader, "Release_jaar")
+                        Jaar = SafeReadValue<short>(dataReader, "Release_jaar"),
+                        Stock = SafeReadValue<int>(dataReader, "Stock")
                     };
 
                     films.Add(film);
-
-                    Debug.WriteLine($"Record Id: {film.Id}, titel: {film.Titel}");
                 }
 
                 return films;

@@ -12,6 +12,7 @@ namespace ProjectFilmLibrary
         public string Titel { get; set; }
         public short Jaar { get; set; }
         public string CategorieNaam { get; set; }
+        public int Stock { get; set; }
 
         public string GebruiksvriendelijkeNaam
         {
@@ -23,7 +24,7 @@ namespace ProjectFilmLibrary
 
         public override string ToString()
         { 
-            return $"{Id} - {Titel}";
+            return $"{Titel} - Beschikbaar: {Stock}";
         }
     }
 }

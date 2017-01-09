@@ -54,10 +54,6 @@ namespace ProjectFilm
             Close();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshFilms();
-        }
 
         
     }

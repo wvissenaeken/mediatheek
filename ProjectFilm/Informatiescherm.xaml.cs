@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TMDbLib.Client;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 
 namespace ProjectFilm
 {
@@ -19,6 +23,8 @@ namespace ProjectFilm
     /// </summary>
     public partial class Informatiescherm : Window
     {
+        //TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+
         public Informatiescherm()
         {
             InitializeComponent();
@@ -30,10 +36,26 @@ namespace ProjectFilm
             verwijzingInformatieGegevens.ShowDialog();
         }
 
+       
+
         private void btnZoek_Copy_Click(object sender, RoutedEventArgs e)
         {
-            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
-            verwijzingInformatieGegevens.ShowDialog();
+            //InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            //verwijzingInformatieGegevens.ShowDialog();
+
+
+            //SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
+
+            //Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
+            //foreach (SearchMovie result in results.Results)
+            //    Console.WriteLine(result.Title);
+
+            TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+    
+            SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
+
+            foreach (SearchMovie result in results.Results)
+                lbOverzichtGezochteFilms.Items.Add(result.Title);
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)
