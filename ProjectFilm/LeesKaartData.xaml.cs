@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectFilmLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,15 @@ namespace ProjectFilm
         public LeesKaartData()
         {
             InitializeComponent();
+            leeskaart = new LeesKaart();
         }
 
+        LeesKaart leeskaart;
 
+        private void btn_LeesKaart_Click(object sender, RoutedEventArgs e)
+        {
+            lblNaam.Content = leeskaart.GetSurname();
+            lblVoornaam.Content = leeskaart.GetFirstName();
+        }
     }
 }

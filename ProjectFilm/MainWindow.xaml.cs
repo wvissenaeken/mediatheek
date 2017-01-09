@@ -50,5 +50,11 @@ namespace ProjectFilm
             Cashscherm cash = new Cashscherm();
             cash.ShowDialog();
         }
+
+        private void btnEidtest_Click(object sender, RoutedEventArgs e)
+        {
+            LeesKaartData leeskaartdata = new LeesKaartData();
+            leeskaartdata.ShowDialog();
+        }
     }
 }

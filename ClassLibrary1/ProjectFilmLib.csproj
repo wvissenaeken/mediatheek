@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EID.Wrapper">
-      <HintPath>..\..\..\..\Downloads\EID.Wrapper-master\Release\x64\EID.Wrapper.dll</HintPath>
+    <Reference Include="Net.Pkcs11">
+      <HintPath>..\..\..\..\Desktop\x64\Net.Pkcs11.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,9 +45,9 @@
   <ItemGroup>
     <Compile Include="Automaat.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="LeesKaart.cs" />
     <Compile Include="Film.cs" />
     <Compile Include="Klant.cs" />
-    <Compile Include="Munt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
