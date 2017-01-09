@@ -29,8 +29,7 @@ namespace ProjectFilm
             InitializeComponent();
             Film = new Film();
         }
-        Film Film;
-        private Automaat filmService = new Automaat(); 
+        Film Film; 
 
 
         //KNOPPEN
@@ -42,7 +41,7 @@ namespace ProjectFilm
 
         private void btnZoek_Copy_Click(object sender, RoutedEventArgs e)
         {
-            
+            //Definieer API key van TMDbClient
             TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
     
             SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
@@ -75,7 +74,6 @@ namespace ProjectFilm
             else
             {
                 MessageBox.Show("Selecteer een film");
-                btnMeerInfo.IsEnabled = false;
             }
          }
     }
