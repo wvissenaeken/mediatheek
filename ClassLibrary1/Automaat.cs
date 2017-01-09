@@ -8,6 +8,9 @@ namespace ProjectFilmLibrary
 {
     public class Automaat
     {
+        public Film InformatieFilm;
+
+        //WISSELGELD BEREKENAAR
         //Berekent het wisselgeld en retourneert resultaat als een string
         public string WisselGeldBerekenen(decimal wisselgeld)
         {

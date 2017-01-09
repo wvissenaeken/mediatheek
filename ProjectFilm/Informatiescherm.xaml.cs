@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectFilmLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,33 +24,24 @@ namespace ProjectFilm
     /// </summary>
     public partial class Informatiescherm : Window
     {
-        //TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-
         public Informatiescherm()
         {
             InitializeComponent();
         }
 
+        private Automaat filmService = new Automaat(); 
+
+
+        //KNOPPEN
         private void btnZoek_Click(object sender, RoutedEventArgs e)
         {
             InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
             verwijzingInformatieGegevens.ShowDialog();
         }
 
-       
-
         private void btnZoek_Copy_Click(object sender, RoutedEventArgs e)
         {
-            //InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
-            //verwijzingInformatieGegevens.ShowDialog();
-
-
-            //SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
-
-            //Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
-            //foreach (SearchMovie result in results.Results)
-            //    Console.WriteLine(result.Title);
-
+            
             TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
     
             SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
@@ -63,6 +55,27 @@ namespace ProjectFilm
             Close();
         }
 
-       
+        private void btnMeerInfo_Click(object sender, RoutedEventArgs e)
+        {
+            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            verwijzingInformatieGegevens.ShowDialog();
+        }
+
+        //KEUZE UIT OVERZICHT MAKEN
+        private void lbOverzichtGezochteFilms_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //Is er een film geselecteerd?
+            if (lbOverzichtGezochteFilms.SelectedItem != null)
+            {
+                filmService.InformatieFilm = (Film)lbOverzichtGezochteFilms.SelectedItem;
+                btnMeerInfo.IsEnabled = true;
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een film");
+                btnMeerInfo.IsEnabled = false;
+            }
+         }
     }
 }
