@@ -1,17 +1,6 @@
 ﻿using ProjectFilmLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System;
 
 namespace ProjectFilm
 {
@@ -30,8 +19,16 @@ namespace ProjectFilm
 
         private void btn_LeesKaart_Click(object sender, RoutedEventArgs e)
         {
+        
+            imgphoto.Source = leeskaart.GetPhotoFile();
             lblNaam.Content = leeskaart.GetSurname();
-            lblVoornaam.Content = leeskaart.GetFirstName();
+            lblVoornaam.Content = leeskaart.GetFirstNames();
+            lblStraat.Content = leeskaart.GetStreetAndNumber();
+            lblZipCode.Content = leeskaart.GetZipCode();
+            lblStad.Content = leeskaart.GetMunicipality();
+            lblGeboorteDatum.Content = DateTime.Parse(leeskaart.GetDateOfBirth());
+            lblRR.Content = leeskaart.GetNationalNumber();
+            lblKaartNummer.Content = leeskaart.GetCardNumber();
         }
     }
 }
