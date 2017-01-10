@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectFilmLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace ProjectFilm
     /// </summary>
     public partial class MainWindow : Window
     {
-  
+        Automaat HuurAutomaat = new Automaat();
 
         public MainWindow()
         {

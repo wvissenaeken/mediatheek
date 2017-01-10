@@ -1,13 +1,24 @@
-﻿using System;
+﻿using ProjectFilmLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProjectFilmLibrary
 {
     public class Automaat
     {
+        public List<Film> Filmlijst = new List<Film>()
+        {
+            new Film { _Titel = "", _Barcode="",_Beschrijving="",_Stock=0}
+        };
+
+        public List<Film> oproepenFilms()
+        {
+            return Filmlijst;
+        }
 
         //WISSELGELD BEREKENAAR
         //Berekent het wisselgeld en retourneert resultaat als een string
