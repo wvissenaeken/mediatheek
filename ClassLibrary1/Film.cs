@@ -8,11 +8,15 @@ namespace ProjectFilmLibrary
 {
     public class Film
     {
-        public decimal Id { get; set; }
+        public int Id { get; set; }
+        public string Barcode { get; set; }
         public string Titel { get; set; }
-        public int Jaar { get; set; }
+        public string Beschrijving { get; set; }
+        public DateTime Release { get; set; }
+        public string Lengte { get; set; }
+        public double Score { get; set; }
         public int Stock { get; set; }
-
+            
         public string GebruiksvriendelijkeNaam
         {
             get
@@ -23,7 +27,7 @@ namespace ProjectFilmLibrary
 
         public override string ToString()
         { 
-            return $"{Titel} ({Jaar}) - Beschikbaar: {Stock}";
+            return $"{Titel} ({Release}) - Beschikbaar: {Stock}";
         }
     }
 }

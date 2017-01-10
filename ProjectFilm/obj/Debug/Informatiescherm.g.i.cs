@@ -107,7 +107,7 @@ namespace ProjectFilm {
         
         #line 20 "..\..\Informatiescherm.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnZoek_Copy;
+        internal System.Windows.Controls.Button btnZoekOnline;
         
         #line default
         #line hidden
@@ -195,10 +195,10 @@ namespace ProjectFilm {
             #line hidden
             return;
             case 9:
-            this.btnZoek_Copy = ((System.Windows.Controls.Button)(target));
+            this.btnZoekOnline = ((System.Windows.Controls.Button)(target));
             
             #line 20 "..\..\Informatiescherm.xaml"
-            this.btnZoek_Copy.Click += new System.Windows.RoutedEventHandler(this.btnZoek_Copy_Click);
+            this.btnZoekOnline.Click += new System.Windows.RoutedEventHandler(this.btnZoekOnline_Click);
             
             #line default
             #line hidden
