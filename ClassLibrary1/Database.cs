@@ -11,7 +11,9 @@ namespace ProjectFilmLibrary
     public class Database
     {
         private readonly string connectionString = @"Data Source=.\SQLEXPRESS;Database=ProjectFilm; Integrated security=true";
-        private SqlConnection conn;
+        public SqlConnection conn;
+
+        public Film opgezochtefilm = new Film();
 
         public Database()
         {
@@ -38,7 +40,7 @@ namespace ProjectFilmLibrary
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -73,7 +75,7 @@ ORDER BY titel
                     {
                         Id = SafeReadValue<int>(dataReader, "film_id"),
                         Titel = SafeReadValue<string>(dataReader, "Titel"),
-                        Jaar = SafeReadValue<short>(dataReader, "Release_jaar"),
+                        Release = SafeReadValue<DateTime>(dataReader, "Release_datum"),
                         Stock = SafeReadValue<int>(dataReader, "Stock")
                     };
 
@@ -96,6 +98,40 @@ ORDER BY titel
             }
         }
 
+        //update gegevens van gezochte film
+        public void updateGegevensFilm()
+        {
+            //maak een db connectie
+            conn = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                conn.Open();
+                command.Connection = conn;
+                command.CommandText = @" UPDATE dbo.Film
+                                         SET Titel= @Titel, Beschrijving= @Beschrijving, Release_datum= @Release, Score= @Score
+                                         WHERE Film_ID = 2";
+                    command.Parameters.AddWithValue("@Titel", opgezochtefilm.Titel);
+                    command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm.Beschrijving);
+                    command.Parameters.AddWithValue("@Release", opgezochtefilm.Release);
+                    command.Parameters.AddWithValue("@Score", opgezochtefilm.Score); 
+
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //sluit de verbinding
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
+
         private T SafeReadValue<T>(SqlDataReader reader, string fieldName)
         {
             try
@@ -107,6 +143,7 @@ ORDER BY titel
                 return default(T);
             }
         }
-        }
+
+    }
 }
     

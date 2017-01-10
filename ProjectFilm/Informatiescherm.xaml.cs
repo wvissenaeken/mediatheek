@@ -24,12 +24,14 @@ namespace ProjectFilm
     /// </summary>
     public partial class Informatiescherm : Window
     {
+        private Database filmService = new Database();
+
         public Informatiescherm()
         {
             InitializeComponent();
             Film = new Film();
         }
-        Film Film; 
+        Film Film;
 
 
         //KNOPPEN
@@ -39,15 +41,21 @@ namespace ProjectFilm
             verwijzingInformatieGegevens.ShowDialog();
         }
 
-        private void btnZoek_Copy_Click(object sender, RoutedEventArgs e)
+        private void btnZoekOnline_Click(object sender, RoutedEventArgs e)
         {
+            lbOverzichtGezochteFilms.Items.Clear();
             //Definieer API key van TMDbClient
             TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-    
+
             SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
 
             foreach (SearchMovie result in results.Results)
+            {
+                //DateTime datum = (DateTime)result.ReleaseDate;
+                //string jaar = datum.ToString("yyyy");
                 lbOverzichtGezochteFilms.Items.Add(result.Title);
+                
+            }
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)
@@ -55,10 +63,33 @@ namespace ProjectFilm
             Close();
         }
 
+        //Knop die meer info over een film toont, en gegevens wegschrijft naar Database zodat personeel bij ingeven
+        //nieuwe stock minder werk zal hebben.
         private void btnMeerInfo_Click(object sender, RoutedEventArgs e)
         {
-            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
-            verwijzingInformatieGegevens.ShowDialog();
+            //RESET
+            filmService.opgezochtefilm.Titel = "";
+            filmService.opgezochtefilm.Beschrijving = "";
+            filmService.opgezochtefilm.Release = DateTime.Now;
+            filmService.opgezochtefilm.Score = 0;
+
+            //ZOEK op de selectie gemaakt in het "lbOverzichtGezochteFilms"
+            TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+            SearchContainer<SearchMovie> results = client.SearchMovieAsync(Film.Titel).Result;
+
+            //UPDATE gegevens in database
+            foreach (SearchMovie result in results.Results)
+            {
+                filmService.opgezochtefilm.Titel = result.Title;
+                filmService.opgezochtefilm.Beschrijving = result.Overview;
+                filmService.opgezochtefilm.Release = (DateTime)result.ReleaseDate;
+                filmService.opgezochtefilm.Score = result.VoteAverage;
+                
+                //Update
+                filmService.updateGegevensFilm();
+            }
+            //InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            //verwijzingInformatieGegevens.ShowDialog(); 
         }
 
         //KEUZE UIT OVERZICHT MAKEN
@@ -76,5 +107,7 @@ namespace ProjectFilm
                 MessageBox.Show("Selecteer een film");
             }
          }
+
+        
     }
 }
