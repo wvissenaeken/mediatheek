@@ -21,7 +21,7 @@ namespace ProjectFilmLibrary
         {
             mFileName = moduleFileName;
         }
-        
+
         public string GetSlotDescription()
         {
             String slotID;
