@@ -66,24 +66,20 @@ FROM Film
 WHERE Stock != 0
 ORDER BY titel
 ";
-
                 SqlDataReader dataReader = command.ExecuteReader();
                 Debug.WriteLine("Connection geopend!");
                 while (dataReader.Read()) //zolang we nog records te lezen hebben...
                 {
                     Film film = new Film
                     {
-                        Id = SafeReadValue<int>(dataReader, "film_id"),
-                        Titel = SafeReadValue<string>(dataReader, "Titel"),
-                        Release = SafeReadValue<DateTime>(dataReader, "Release_datum"),
-                        Stock = SafeReadValue<int>(dataReader, "Stock")
+                        _Id = SafeReadValue<int>(dataReader, "film_id"),
+                        _Titel = SafeReadValue<string>(dataReader, "Titel"),
+                        _Release = SafeReadValue<DateTime>(dataReader, "Release_datum"),
+                        _Stock = SafeReadValue<int>(dataReader, "Stock")
                     };
-
                     films.Add(film);
                 }
-
                 return films;
-
             }
             catch
             {
@@ -94,7 +90,6 @@ ORDER BY titel
                 conn.Close();
                 conn.Dispose();
                 command.Dispose();
-
             }
         }
 
@@ -112,10 +107,10 @@ ORDER BY titel
                 command.CommandText = @" UPDATE dbo.Film
                                          SET Titel= @Titel, Beschrijving= @Beschrijving, Release_datum= @Release, Score= @Score
                                          WHERE Film_ID = 2";
-                    command.Parameters.AddWithValue("@Titel", opgezochtefilm.Titel);
-                    command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm.Beschrijving);
-                    command.Parameters.AddWithValue("@Release", opgezochtefilm.Release);
-                    command.Parameters.AddWithValue("@Score", opgezochtefilm.Score); 
+                    command.Parameters.AddWithValue("@Titel", opgezochtefilm._Titel);
+                    command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm._Beschrijving);
+                    command.Parameters.AddWithValue("@Release", opgezochtefilm._Release);
+                    command.Parameters.AddWithValue("@Score", opgezochtefilm._Score); 
 
                 command.ExecuteNonQuery();
             }
@@ -130,7 +125,6 @@ ORDER BY titel
                 conn.Dispose();
             }
         }
-
 
         private T SafeReadValue<T>(SqlDataReader reader, string fieldName)
         {

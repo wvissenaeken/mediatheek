@@ -24,90 +24,103 @@ namespace ProjectFilm
     /// </summary>
     public partial class Informatiescherm : Window
     {
-        private Database filmService = new Database();
+        Database _FilmService;
+        Automaat HuurAutomaat = new Automaat();
 
         public Informatiescherm()
         {
             InitializeComponent();
-            Film = new Film();
+            List<Film> Filmlijst = HuurAutomaat.oproepenFilms();
+            _FilmService = new Database();
         }
-        Film Film;
 
+        //-----------------------------//    
+        //DEFINEER API KEY VAN TMdbClient
+        //-----------------------------//
+        TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+        SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
 
+        //-----------------------------//
+        //KEUZE UIT OVERZICHT MAKEN
+        //-----------------------------//
+        private void lbOverzichtGezochteFilms_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //Is er een film geselecteerd?
+            if (lbOverzichtGezochteFilms.SelectedItem != null)
+            {
+                //Datum uit string halen.
+                string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem;
+                HuurAutomaat.Filmlijst._Titel = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
+
+                btnMeerInfo.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een film");
+            }
+        }
+
+        //-----------------------------//
         //KNOPPEN
+        //-----------------------------//
+        //KNOP ZOEK IN DATABASE ProjectFilm
         private void btnZoek_Click(object sender, RoutedEventArgs e)
         {
             InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
             verwijzingInformatieGegevens.ShowDialog();
         }
 
+        //KNOP ZOEK ONLINE VOOR GEGEVENS
         private void btnZoekOnline_Click(object sender, RoutedEventArgs e)
         {
             lbOverzichtGezochteFilms.Items.Clear();
-            //Definieer API key van TMDbClient
-            TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-
-            SearchContainer<SearchMovie> results = client.SearchMovieAsync(txtTitel.Text).Result;
-
-            foreach (SearchMovie result in results.Results)
+            //ZOEK op basis van tekstbox input
+            SearchMovie result = new SearchMovie();
+            results = client.SearchMovieAsync(txtTitel.Text).Result;
+            //UPDATE overzichtslijst
+            for (int i = 0; i < results.Results.Count; i++)
             {
-                //DateTime datum = (DateTime)result.ReleaseDate;
-                //string jaar = datum.ToString("yyyy");
-                lbOverzichtGezochteFilms.Items.Add(result.Title);
-                
+                HuurAutomaat.Filmlijst[i]._Titel = result.Title;
+                HuurAutomaat.Filmlijst[i]._Id = result.Id;
+                HuurAutomaat.Filmlijst[i]._Beschrijving = result.Overview;
+                HuurAutomaat.Filmlijst[i]._Release = (DateTime)result.ReleaseDate;
+                HuurAutomaat.Filmlijst[i]._Score = result.VoteAverage;
+
+                DateTime datum = (DateTime)HuurAutomaat.Filmlijst[i]._Release;
+                int jaar = datum.Year;
+                lbOverzichtGezochteFilms.Items.Add(HuurAutomaat.Filmlijst[i]._Titel + " ("+jaar+")");
             }
         }
 
-        private void btnTerug_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        //Knop die meer info over een film toont, en gegevens wegschrijft naar Database zodat personeel bij ingeven
-        //nieuwe stock minder werk zal hebben.
+        //KNOP NIEUW SCHERM MET GEGEVENS + DATABASE UPDATEN
         private void btnMeerInfo_Click(object sender, RoutedEventArgs e)
         {
             //RESET
-            filmService.opgezochtefilm.Titel = "";
-            filmService.opgezochtefilm.Beschrijving = "";
-            filmService.opgezochtefilm.Release = DateTime.Now;
-            filmService.opgezochtefilm.Score = 0;
-
+            _FilmService.opgezochtefilm._Titel = "";
+            _FilmService.opgezochtefilm._Beschrijving = "";
+            _FilmService.opgezochtefilm._Release = DateTime.Now;
+            _FilmService.opgezochtefilm._Score = 0;
             //ZOEK op de selectie gemaakt in het "lbOverzichtGezochteFilms"
-            TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-            SearchContainer<SearchMovie> results = client.SearchMovieAsync(Film.Titel).Result;
-
+            Movie movie = new Movie();
+            movie = client.GetMovieAsync(lbOverzichtGezochteFilms.SelectedItem.).Result;
             //UPDATE gegevens in database
             foreach (SearchMovie result in results.Results)
             {
-                filmService.opgezochtefilm.Titel = result.Title;
-                filmService.opgezochtefilm.Beschrijving = result.Overview;
-                filmService.opgezochtefilm.Release = (DateTime)result.ReleaseDate;
-                filmService.opgezochtefilm.Score = result.VoteAverage;
-                
+                _FilmService.opgezochtefilm._Titel = result.Title;
+                _FilmService.opgezochtefilm._Beschrijving = result.Overview;
+                _FilmService.opgezochtefilm._Release = (DateTime)result.ReleaseDate;
+                _FilmService.opgezochtefilm._Score = result.VoteAverage;
                 //Update
-                filmService.updateGegevensFilm();
+                _FilmService.updateGegevensFilm();
             }
             //InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
             //verwijzingInformatieGegevens.ShowDialog(); 
         }
 
-        //KEUZE UIT OVERZICHT MAKEN
-        private void lbOverzichtGezochteFilms_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        //KNOP TERUGKEREN NAAR VORIG SCHERM (SLUIT)
+        private void btnTerug_Click(object sender, RoutedEventArgs e)
         {
-            //Is er een film geselecteerd?
-            if (lbOverzichtGezochteFilms.SelectedItem != null)
-            {
-                Film.Titel = lbOverzichtGezochteFilms.SelectedItem.ToString();
-                btnMeerInfo.IsEnabled = true;
-                
-            }
-            else
-            {
-                MessageBox.Show("Selecteer een film");
-            }
-         }
-
-        
+            Close();
+        }
     }
 }
