@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Net.Pkcs11, Version=1.1.5913.21635, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Net.Pkcs11, Version=1.1.5913.21612, Culture=neutral, processorArchitecture=x86">
       <HintPath>Net.Pkcs11\x86\Net.Pkcs11.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />

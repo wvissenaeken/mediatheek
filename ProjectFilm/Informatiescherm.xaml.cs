@@ -25,13 +25,14 @@ namespace ProjectFilm
     public partial class Informatiescherm : Window
     {
         Database _FilmService;
-        Automaat HuurAutomaat = new Automaat();
+        Automaat HuurAutomaat;
 
         public Informatiescherm()
         {
             InitializeComponent();
             List<Film> Filmlijst = HuurAutomaat.oproepenFilms();
             _FilmService = new Database();
+            HuurAutomaat = new Automaat();
         }
 
         //-----------------------------//    
@@ -49,8 +50,8 @@ namespace ProjectFilm
             if (lbOverzichtGezochteFilms.SelectedItem != null)
             {
                 //Datum uit string halen.
-                string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem;
-                HuurAutomaat.Filmlijst._Titel = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
+                string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem.ToString();
+                HuurAutomaat._Titel = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
 
                 btnMeerInfo.IsEnabled = true;
             }
@@ -102,7 +103,7 @@ namespace ProjectFilm
             _FilmService.opgezochtefilm._Score = 0;
             //ZOEK op de selectie gemaakt in het "lbOverzichtGezochteFilms"
             Movie movie = new Movie();
-            movie = client.GetMovieAsync(lbOverzichtGezochteFilms.SelectedItem.).Result;
+            movie = client.GetMovieAsync(lbOverzichtGezochteFilms.SelectedItem.ToString()).Result;
             //UPDATE gegevens in database
             foreach (SearchMovie result in results.Results)
             {

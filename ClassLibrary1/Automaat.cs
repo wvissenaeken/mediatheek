@@ -10,6 +10,9 @@ namespace ProjectFilmLibrary
 {
     public class Automaat
     {
+        public string _Titel, _Beschrijving;
+        public int _Barcode, _Stock;
+
         public List<Film> Filmlijst = new List<Film>()
         {
             new Film { _Titel = "", _Barcode="",_Beschrijving="",_Stock=0}
