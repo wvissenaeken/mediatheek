@@ -129,3 +129,4 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\TMDbLib.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.xml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\TMDbLib.pdb
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll

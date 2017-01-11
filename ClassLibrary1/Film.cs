@@ -17,14 +17,6 @@ namespace ProjectFilmLibrary
         public double _Score { get; set; }
         public int _Stock { get; set; }
             
-        public string GebruiksvriendelijkeNaam
-        {
-            get
-            {
-                return ToString();
-            }
-        }
-
         public override string ToString()
         { 
             return $"{_Titel} ({_Release}) - Beschikbaar: {_Stock}";

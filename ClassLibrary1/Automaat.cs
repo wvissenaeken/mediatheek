@@ -10,14 +10,14 @@ namespace ProjectFilmLibrary
 {
     public class Automaat
     {
-        public string _Titel, _Beschrijving;
-        public int _Barcode, _Stock;
+        //public string _Titel, _Beschrijving;
+        //public int _Barcode, _Stock, _Id;
 
         public List<Film> Filmlijst = new List<Film>()
         {
-            new Film { _Titel = "", _Barcode="",_Beschrijving="",_Stock=0}
+            new Film {_Id=0,_Barcode="", _Titel="",_Beschrijving="",_Release=DateTime.Now,_Lengte="",_Score=0,_Stock=0}
         };
-
+        
         public List<Film> oproepenFilms()
         {
             return Filmlijst;
