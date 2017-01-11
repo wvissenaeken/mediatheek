@@ -54,24 +54,19 @@ namespace ProjectFilmLibrary
         public async void zoekOnlineID()
         {
             movie = await client.GetMovieAsync(_gezochteCode, MovieMethods.Credits | MovieMethods.Videos);
-
-            //foreach (Movie movie in gezochteMovie.Results)
-            //{
-                DateTime datum = (DateTime)movie.ReleaseDate;
-                int jaartal = datum.Year;
-                Filmlijst.Add(new Film { _Titel = movie.Title, _Barcode = "", _Lengte = "", _Stock = 0, _Id = movie.Id, _Beschrijving = movie.Overview, _Release = jaartal, _Score = movie.VoteAverage });
-            //}
-
+            DateTime datum = (DateTime)movie.ReleaseDate;
+            int jaartal = datum.Year;
+            Filmlijst.Add(new Film { _Titel = movie.Title, _Barcode = "", _Lengte = "", _Stock = 0, _Id = movie.Id, _Beschrijving = movie.Overview, _Release = jaartal, _Score = movie.VoteAverage });
             //UPDATE database
-                DateTime datumB = (DateTime)movie.ReleaseDate;
-                int jaar = datumB.Year;
-                _Filmservice.opgezochtefilm._Titel = movie.Title;
-                _Filmservice.opgezochtefilm._Beschrijving = movie.Overview;
-                _Filmservice.opgezochtefilm._Release = jaar;
-                _Filmservice.opgezochtefilm._Score = movie.VoteAverage;
-                //Update
-                _Filmservice.updateGegevensFilm();
-            
+            DateTime datumB = (DateTime)movie.ReleaseDate;
+            int jaar = datumB.Year;
+            _Filmservice.opgezochtefilm._Id = movie.Id;
+            _Filmservice.opgezochtefilm._Titel = movie.Title;
+            _Filmservice.opgezochtefilm._Beschrijving = movie.Overview;
+            _Filmservice.opgezochtefilm._Release = jaar;
+            _Filmservice.opgezochtefilm._Score = movie.VoteAverage;
+            //Update
+            _Filmservice.updateGegevensFilm();    
         }
 
         //Reset Filmlijst
@@ -79,11 +74,6 @@ namespace ProjectFilmLibrary
         {
             Filmlijst.Clear();
         }
-
-        //public List<Film> oproepenFilms()
-        //{
-        //    return Filmlijst;
-        //}
 
         //-----------------------------//
         //WISSELGELD BEREKENAAR
