@@ -25,22 +25,22 @@ namespace ProjectFilm
     public partial class Informatiescherm : Window
     {
         Database _FilmService;
-        Automaat HuurAutomaat = new Automaat();
+        Automaat HuurAutomaat; 
 
 
         public Informatiescherm()
         {
             InitializeComponent();
-            List<Film> Filmlijst = HuurAutomaat.oproepenFilms();
+            HuurAutomaat = new Automaat();
             _FilmService = new Database();
             
         }
 
-        //-----------------------------//    
-        //DEFINEER API KEY VAN TMdbClient
-        //-----------------------------//
-        TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-        SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
+        ////-----------------------------//    
+        ////DEFINEER API KEY VAN TMdbClient
+        ////-----------------------------//
+        //TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+        //SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
 
         //-----------------------------//
         //KEUZE UIT OVERZICHT MAKEN
@@ -80,18 +80,13 @@ namespace ProjectFilm
         {
             lbOverzichtGezochteFilms.Items.Clear();
             //ZOEK op basis van tekstbox input
-            SearchMovie result = new SearchMovie();
-            results = client.SearchMovieAsync(txtTitel.Text).Result;
+            HuurAutomaat._gezochteFilm = txtTitel.Text;
+            HuurAutomaat.zoekOnline();
+                       
             //UPDATE overzichtslijst
-            for (int i = 0; i < results.Results.Count; i++)
+            foreach (Film s in HuurAutomaat.Filmlijst)
             {
-                HuurAutomaat.Filmlijst[i]._Titel = result.Title;
-                HuurAutomaat.Filmlijst[i]._Id = result.Id;
-                HuurAutomaat.Filmlijst[i]._Beschrijving = result.Overview;
-                HuurAutomaat.Filmlijst[i]._Release = (DateTime)result.ReleaseDate;
-                HuurAutomaat.Filmlijst[i]._Score = result.VoteAverage;
-
-                DateTime datum = (DateTime)HuurAutomaat.Filmlijst[i]._Release;
+                DateTime datum = (DateTime)HuurAutomaat.Filmlijst.;
                 int jaar = datum.Year;
                 lbOverzichtGezochteFilms.Items.Add(HuurAutomaat.Filmlijst[i]._Titel + " ("+jaar+")");
             }

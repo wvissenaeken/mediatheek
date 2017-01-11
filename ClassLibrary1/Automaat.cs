@@ -1,30 +1,63 @@
-﻿using ProjectFilmLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using TMDbLib.Client;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
 namespace ProjectFilmLibrary
 {
     public class Automaat
     {
+        public List<Film> Filmlijst = new List<Film>();
+        public string _gezochteFilm;
+
+        //-----------------------------//    
+        //ONLINE DATABASE RAADPLEGEN
+        //-----------------------------//
+        ////////definieer api-key van tmdbClient
+        //////TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+        //////SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
+
+        //Zoek online
+        //ZOEK naar alle films op basis keywoord
+        public void zoekOnline()
+        {
+            //definieer api-key van tmdbClient
+            TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+            SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
+            SearchMovie result = new SearchMovie();
+            results = client.SearchMovieAsync(_gezochteFilm).Result;
+            //UPDATE overzichtslijst
+            for (int i = 0; i < results.Results.Count; i++)
+            {
+                Filmlijst[i]._Titel = result.Title;
+                Filmlijst[i]._Id = result.Id;
+                Filmlijst[i]._Beschrijving = result.Overview;
+                Filmlijst[i]._Release = (DateTime)result.ReleaseDate;
+                Filmlijst[i]._Score = result.VoteAverage;
+            }
+        }
+
+        //Reset Filmlijst
+        public void reset()
+        {
+            Filmlijst.Clear();
+        }
+
         //public string _Titel, _Beschrijving;
         //public int _Barcode, _Stock, _Id;
 
-        public List<Film> Filmlijst = new List<Film>()
-        {
-            new Film {_Id=0,_Barcode="", _Titel="",_Beschrijving="",_Release=DateTime.Now,_Lengte="",_Score=0,_Stock=0}
-        };
-        
-        public List<Film> oproepenFilms()
-        {
-            return Filmlijst;
-        }
 
-        //WISSELGELD BEREKENAAR
-        //Berekent het wisselgeld en retourneert resultaat als een string
+
+            //public List<Film> oproepenFilms()
+            //{
+            //    return Filmlijst;
+            //}
+
+            //-----------------------------//
+            //WISSELGELD BEREKENAAR
+            //-----------------------------//
+            //Berekent het wisselgeld en retourneert resultaat als een string
         public string WisselGeldBerekenen(decimal wisselgeld)
         {
             //Maak een nieuwe array geld met de betrokken waarden
