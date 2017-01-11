@@ -92,8 +92,6 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandsc
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.g.resources
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.Properties.Resources.resources
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartData.g.cs
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartData.baml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro-800px.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\2euro-800px.png
@@ -126,7 +124,7 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.x
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\TMDbLib.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.xml
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\TMDbLib.pdb
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.g.cs
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.baml

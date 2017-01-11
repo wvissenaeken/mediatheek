@@ -54,7 +54,7 @@ namespace ProjectFilm
 
         private void btnEidtest_Click(object sender, RoutedEventArgs e)
         {
-            LeesKaartData leeskaartdata = new LeesKaartData();
+            LeesKaartscherm leeskaartdata = new LeesKaartscherm();
             leeskaartdata.ShowDialog();
         }
     }

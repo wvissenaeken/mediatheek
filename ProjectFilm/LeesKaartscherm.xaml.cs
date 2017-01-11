@@ -13,14 +13,16 @@ namespace ProjectFilm
         public LeesKaartscherm()
         {
             InitializeComponent();
+            DefaultFontSize();
             leeskaart = new LeesKaart();
         }
 
         LeesKaart leeskaart;
 
+        //Stel standaard voor lettergrootte in
         private void DefaultFontSize()
         {
-            foreach (UIElement control in LeesKaartscherm.Children)
+            foreach (UIElement control in KaartLayout.Children)
             {
                 if (control.GetType() == typeof(Label))
                 {
@@ -30,6 +32,7 @@ namespace ProjectFilm
             }
         }
 
+        //Laad gegevens van kaart in
         private void btn_LeesKaart_Click(object sender, RoutedEventArgs e)
         {
         
