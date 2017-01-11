@@ -16,7 +16,7 @@ namespace ProjectFilmLibrary
         public int _gezochteCode;
 
         //-----------------------------//    
-        //ONLINE DATABASE RAADPLEGEN
+        //DATABASE RAADPLEGEN
         //-----------------------------//
         //definieer api-key van tmdbClient
         TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
@@ -24,6 +24,8 @@ namespace ProjectFilmLibrary
         SearchMovie result = new SearchMovie();
         public SearchContainer<Movie> gezochteMovie = new SearchContainer<Movie>();
         Movie movie = new Movie();
+
+        //ZOEK EIGEN DATABASE
 
         //ZOEK ONLINE
         //ZOEK naar alle films op basis keywoord

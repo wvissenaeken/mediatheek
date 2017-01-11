@@ -60,15 +60,12 @@ namespace ProjectFilmLibrary
                 conn = new SqlConnection(connectionString);
                 conn.Open();
                 command.Connection = conn;
-                command.CommandText = @"
-SELECT	film_id, Titel, Stock
-FROM Film
-WHERE Stock != 0
-ORDER BY titel
-";
+                command.CommandText = @"SELECT	film_id, Titel, Stock
+                                        FROM Film
+                                        WHERE Stock != 0
+                                        ORDER BY titel";
                 SqlDataReader dataReader = command.ExecuteReader();
-                Debug.WriteLine("Connection geopend!");
-                while (dataReader.Read()) //zolang we nog records te lezen hebben...
+                while (dataReader.Read()) 
                 {
                     Film film = new Film
                     {
@@ -104,14 +101,40 @@ ORDER BY titel
                 conn = new SqlConnection(connectionString);
                 conn.Open();
                 command.Connection = conn;
-                command.CommandText = @" INSERT INTO dbo.Film (Titel, Beschrijving, Release_datum, Score)
-                                         VALUES (@Titel,  @Beschrijving, @Release,  @Score);";
-                command.Parameters.AddWithValue("@Titel", opgezochtefilm._Titel);
-                command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm._Beschrijving);
-                command.Parameters.AddWithValue("@Release", opgezochtefilm._Release);
-                command.Parameters.AddWithValue("@Score", opgezochtefilm._Score);
-
-                command.ExecuteNonQuery();
+                //CONTROLE of film aanwezig is in database
+                command.CommandText = @"SELECT	Titel, Release_datum
+                                        FROM Film";
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read()) //zolang we nog records te lezen hebben...
+                {
+                    Film film = new Film
+                    {
+                        _Titel = SafeReadValue<string>(dataReader, "Titel"),
+                        _Release = SafeReadValue<int>(dataReader, "Release_datum"),
+                    };
+                    if (film._Titel == opgezochtefilm._Titel && film._Release == opgezochtefilm._Release)
+                    {
+                        
+                    }
+                    else
+                    {
+                        //sluit controleverbinding
+                        conn.Close();
+                        conn.Dispose();
+                        //Open nieuwe verbinding
+                        conn = new SqlConnection(connectionString);
+                        conn.Open();
+                        command.Connection = conn;
+                        command.CommandText = @" INSERT INTO dbo.Film (Titel, Beschrijving, Release_datum, Score)
+                                               VALUES (@Titel,  @Beschrijving, @Release,  @Score);";
+                        command.Parameters.AddWithValue("@Titel", opgezochtefilm._Titel);
+                        command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm._Beschrijving);
+                        command.Parameters.AddWithValue("@Release", opgezochtefilm._Release);
+                        command.Parameters.AddWithValue("@Score", opgezochtefilm._Score);
+                        //VOEG TOE aan database
+                        command.ExecuteNonQuery();
+                    }
+                }
             }
             catch (SqlException ex)
             {
