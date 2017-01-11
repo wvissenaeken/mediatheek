@@ -24,23 +24,15 @@ namespace ProjectFilm
     /// </summary>
     public partial class Informatiescherm : Window
     {
-        Database _FilmService;
+        Database FilmService;
         Automaat HuurAutomaat; 
-
 
         public Informatiescherm()
         {
             InitializeComponent();
             HuurAutomaat = new Automaat();
-            _FilmService = new Database();
-            
+            FilmService = new Database();
         }
-
-        ////-----------------------------//    
-        ////DEFINEER API KEY VAN TMdbClient
-        ////-----------------------------//
-        //TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-        //SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
 
         //-----------------------------//
         //KEUZE UIT OVERZICHT MAKEN
@@ -50,12 +42,7 @@ namespace ProjectFilm
             //Is er een film geselecteerd?
             if (lbOverzichtGezochteFilms.SelectedItem != null)
             {
-                //Datum uit string halen.
-                //string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem.ToString();
-                //HuurAutomaat._Id = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
-                //Automaat geselecteerdeFilm = lbOverzichtGezochteFilms.GetValue. as Automaat;
-                //geselecteerdeFilm._Id
-
+                HuurAutomaat._gezochteCode = HuurAutomaat.Filmlijst[lbOverzichtGezochteFilms.SelectedIndex]._Id;
                 btnMeerInfo.IsEnabled = true;
             }
             else
@@ -64,31 +51,27 @@ namespace ProjectFilm
             }
         }
 
-
         //-----------------------------//
         //KNOPPEN
         //-----------------------------//
         //KNOP ZOEK IN DATABASE ProjectFilm
-        private void btnZoek_Click(object sender, RoutedEventArgs e)
+        private void btnZoekEigenDatabase_Click(object sender, RoutedEventArgs e)
         {
-            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
-            verwijzingInformatieGegevens.ShowDialog();
+
         }
 
         //KNOP ZOEK ONLINE VOOR GEGEVENS
         private void btnZoekOnline_Click(object sender, RoutedEventArgs e)
         {
+            HuurAutomaat.reset();
             lbOverzichtGezochteFilms.Items.Clear();
             //ZOEK op basis van tekstbox input
             HuurAutomaat._gezochteFilm = txtTitel.Text;
-            HuurAutomaat.zoekOnline();
-                       
+            HuurAutomaat.zoekOnlineTekst();
             //UPDATE overzichtslijst
-            foreach (Film s in HuurAutomaat.Filmlijst)
+            for (int i = 0; i < HuurAutomaat.Filmlijst.Count; i++)
             {
-                DateTime datum = (DateTime)HuurAutomaat.Filmlijst.;
-                int jaar = datum.Year;
-                lbOverzichtGezochteFilms.Items.Add(HuurAutomaat.Filmlijst[i]._Titel + " ("+jaar+")");
+                lbOverzichtGezochteFilms.Items.Add(HuurAutomaat.Filmlijst[i]._Titel + " ("+HuurAutomaat.Filmlijst[i]._Release+")");
             }
         }
 
@@ -96,25 +79,12 @@ namespace ProjectFilm
         private void btnMeerInfo_Click(object sender, RoutedEventArgs e)
         {
             //RESET
-            _FilmService.opgezochtefilm._Titel = "";
-            _FilmService.opgezochtefilm._Beschrijving = "";
-            _FilmService.opgezochtefilm._Release = DateTime.Now;
-            _FilmService.opgezochtefilm._Score = 0;
-            //ZOEK op de selectie gemaakt in het "lbOverzichtGezochteFilms"
-            Movie movie = new Movie();
-            movie = client.GetMovieAsync(lbOverzichtGezochteFilms.SelectedItem.ToString()).Result;
-            //UPDATE gegevens in database
-            foreach (SearchMovie result in results.Results)
-            {
-                _FilmService.opgezochtefilm._Titel = result.Title;
-                _FilmService.opgezochtefilm._Beschrijving = result.Overview;
-                _FilmService.opgezochtefilm._Release = (DateTime)result.ReleaseDate;
-                _FilmService.opgezochtefilm._Score = result.VoteAverage;
-                //Update
-                _FilmService.updateGegevensFilm();
-            }
-            //InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
-            //verwijzingInformatieGegevens.ShowDialog(); 
+            HuurAutomaat.reset();
+            //UPDATE gegevens in database voor specifieke film
+            HuurAutomaat.zoekOnlineID();
+            //TOON gegevens in een apart scherm.
+            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            verwijzingInformatieGegevens.ShowDialog();
         }
 
         //KNOP TERUGKEREN NAAR VORIG SCHERM (SLUIT)
