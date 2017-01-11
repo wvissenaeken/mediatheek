@@ -200,9 +200,17 @@ namespace ProjectFilmLibrary
         {
             return GetData("date_of_birth");
         }
+        public string GetLocationOfBirth()
+        {
+            return GetData("location_of_birth");
+        }
         public string GetCardNumber()
         {
             return GetData("card_number");
+        }
+        public string GetGender()
+        {
+            return GetData("gender");
         }
 
         //Converteer Bitmap naar Image

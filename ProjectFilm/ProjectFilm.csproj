@@ -80,8 +80,8 @@
     <Compile Include="InformatieGegevensscherm.xaml.cs">
       <DependentUpon>InformatieGegevensscherm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LeesKaartData.xaml.cs">
-      <DependentUpon>LeesKaartData.xaml</DependentUpon>
+    <Compile Include="LeesKaartscherm.xaml.cs">
+      <DependentUpon>LeesKaartscherm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Winkelmandscherm.xaml.cs">
       <DependentUpon>Winkelmandscherm.xaml</DependentUpon>
@@ -114,7 +114,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LeesKaartData.xaml">
+    <Page Include="LeesKaartscherm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
