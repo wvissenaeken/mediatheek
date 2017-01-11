@@ -34,6 +34,7 @@ namespace ProjectFilm
             HuurAutomaat = new Automaat();
             _FilmService = new Database();
             
+            
         }
 
         ////-----------------------------//    
@@ -50,12 +51,12 @@ namespace ProjectFilm
             //Is er een film geselecteerd?
             if (lbOverzichtGezochteFilms.SelectedItem != null)
             {
+                HuurAutomaat._gezochteCode = HuurAutomaat.Filmlijst[lbOverzichtGezochteFilms.SelectedIndex]._Id;
                 //Datum uit string halen.
                 //string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem.ToString();
                 //HuurAutomaat._Id = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
                 //Automaat geselecteerdeFilm = lbOverzichtGezochteFilms.GetValue. as Automaat;
                 //geselecteerdeFilm._Id
-
                 btnMeerInfo.IsEnabled = true;
             }
             else
@@ -63,7 +64,6 @@ namespace ProjectFilm
                 MessageBox.Show("Selecteer een film");
             }
         }
-
 
         //-----------------------------//
         //KNOPPEN
@@ -78,17 +78,17 @@ namespace ProjectFilm
         //KNOP ZOEK ONLINE VOOR GEGEVENS
         private void btnZoekOnline_Click(object sender, RoutedEventArgs e)
         {
+            HuurAutomaat.reset();
             lbOverzichtGezochteFilms.Items.Clear();
             //ZOEK op basis van tekstbox input
             HuurAutomaat._gezochteFilm = txtTitel.Text;
-            HuurAutomaat.zoekOnline();
-                       
+            HuurAutomaat.zoekOnlineTekst();
             //UPDATE overzichtslijst
-            foreach (Film s in HuurAutomaat.Filmlijst)
+            for (int i = 0; i < HuurAutomaat.Filmlijst.Count; i++)
             {
-                DateTime datum = (DateTime)HuurAutomaat.Filmlijst.;
-                int jaar = datum.Year;
-                lbOverzichtGezochteFilms.Items.Add(HuurAutomaat.Filmlijst[i]._Titel + " ("+jaar+")");
+                //DateTime datum = (DateTime)HuurAutomaat.Filmlijst[i]._Release;
+                //int jaar = datum.Year;
+                lbOverzichtGezochteFilms.Items.Add(HuurAutomaat.Filmlijst[i]._Titel + " ("+HuurAutomaat.Filmlijst[i]._Release+")");
             }
         }
 
@@ -96,23 +96,10 @@ namespace ProjectFilm
         private void btnMeerInfo_Click(object sender, RoutedEventArgs e)
         {
             //RESET
-            _FilmService.opgezochtefilm._Titel = "";
-            _FilmService.opgezochtefilm._Beschrijving = "";
-            _FilmService.opgezochtefilm._Release = DateTime.Now;
-            _FilmService.opgezochtefilm._Score = 0;
-            //ZOEK op de selectie gemaakt in het "lbOverzichtGezochteFilms"
-            Movie movie = new Movie();
-            movie = client.GetMovieAsync(lbOverzichtGezochteFilms.SelectedItem.ToString()).Result;
-            //UPDATE gegevens in database
-            foreach (SearchMovie result in results.Results)
-            {
-                _FilmService.opgezochtefilm._Titel = result.Title;
-                _FilmService.opgezochtefilm._Beschrijving = result.Overview;
-                _FilmService.opgezochtefilm._Release = (DateTime)result.ReleaseDate;
-                _FilmService.opgezochtefilm._Score = result.VoteAverage;
-                //Update
-                _FilmService.updateGegevensFilm();
-            }
+            HuurAutomaat.reset();
+            //UPDATE gegevens in database voor specifieke film
+            HuurAutomaat.zoekOnlineID();
+            //TOON gegevens in een apart scherm.
             //InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
             //verwijzingInformatieGegevens.ShowDialog(); 
         }

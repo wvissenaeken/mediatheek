@@ -1,41 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 
 namespace ProjectFilmLibrary
 {
     public class Automaat
     {
+        Database _Filmservice = new Database();
         public List<Film> Filmlijst = new List<Film>();
         public string _gezochteFilm;
+        public int _gezochteCode;
 
         //-----------------------------//    
         //ONLINE DATABASE RAADPLEGEN
         //-----------------------------//
-        ////////definieer api-key van tmdbClient
-        //////TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-        //////SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
+        //definieer api-key van tmdbClient
+        TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
+        public SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
+        SearchMovie result = new SearchMovie();
+        public SearchContainer<Movie> gezochteMovie = new SearchContainer<Movie>();
+        Movie movie = new Movie();
 
-        //Zoek online
+        //ZOEK ONLINE
         //ZOEK naar alle films op basis keywoord
-        public void zoekOnline()
-        {
-            //definieer api-key van tmdbClient
-            TMDbClient client = new TMDbClient("78be0aecfd40021797c60547fb12a5e6");
-            SearchContainer<SearchMovie> results = new SearchContainer<SearchMovie>();
-            SearchMovie result = new SearchMovie();
+        public void zoekOnlineTekst()
+        { 
             results = client.SearchMovieAsync(_gezochteFilm).Result;
             //UPDATE overzichtslijst
-            for (int i = 0; i < results.Results.Count; i++)
-            {
-                Filmlijst[i]._Titel = result.Title;
-                Filmlijst[i]._Id = result.Id;
-                Filmlijst[i]._Beschrijving = result.Overview;
-                Filmlijst[i]._Release = (DateTime)result.ReleaseDate;
-                Filmlijst[i]._Score = result.VoteAverage;
-            }
+           
+                foreach (SearchMovie result in results.Results)
+                {
+                if (result != null)
+                {
+                    DateTime datum = (DateTime)result.ReleaseDate;
+                    int jaar = datum.Year;
+                    Filmlijst.Add(new Film { _Titel = result.Title, _Barcode = "", _Lengte = "", _Stock = 0, _Id = result.Id, _Beschrijving = result.Overview, _Release = jaar, _Score = result.VoteAverage });
+
+                }
+                else
+                {
+                    MessageBox.Show("Gelieve nieuwe zoekterm in te geven.", "Niets gevonden.", MessageBoxButton.OK);
+                }
+            }          
+        }
+
+        //ZOEK naar specifieke film
+        public async void zoekOnlineID()
+        {
+            movie = await client.GetMovieAsync(_gezochteCode, MovieMethods.Credits | MovieMethods.Videos);
+
+            //foreach (Movie movie in gezochteMovie.Results)
+            //{
+                DateTime datum = (DateTime)movie.ReleaseDate;
+                int jaartal = datum.Year;
+                Filmlijst.Add(new Film { _Titel = movie.Title, _Barcode = "", _Lengte = "", _Stock = 0, _Id = movie.Id, _Beschrijving = movie.Overview, _Release = jaartal, _Score = movie.VoteAverage });
+            //}
+
+            //UPDATE database
+                DateTime datumB = (DateTime)movie.ReleaseDate;
+                int jaar = datumB.Year;
+                _Filmservice.opgezochtefilm._Titel = movie.Title;
+                _Filmservice.opgezochtefilm._Beschrijving = movie.Overview;
+                _Filmservice.opgezochtefilm._Release = jaar;
+                _Filmservice.opgezochtefilm._Score = movie.VoteAverage;
+                //Update
+                _Filmservice.updateGegevensFilm();
+            
         }
 
         //Reset Filmlijst
@@ -44,20 +78,15 @@ namespace ProjectFilmLibrary
             Filmlijst.Clear();
         }
 
-        //public string _Titel, _Beschrijving;
-        //public int _Barcode, _Stock, _Id;
+        //public List<Film> oproepenFilms()
+        //{
+        //    return Filmlijst;
+        //}
 
-
-
-            //public List<Film> oproepenFilms()
-            //{
-            //    return Filmlijst;
-            //}
-
-            //-----------------------------//
-            //WISSELGELD BEREKENAAR
-            //-----------------------------//
-            //Berekent het wisselgeld en retourneert resultaat als een string
+        //-----------------------------//
+        //WISSELGELD BEREKENAAR
+        //-----------------------------//
+        //Berekent het wisselgeld en retourneert resultaat als een string
         public string WisselGeldBerekenen(decimal wisselgeld)
         {
             //Maak een nieuwe array geld met de betrokken waarden
@@ -94,6 +123,8 @@ namespace ProjectFilmLibrary
             //Retourneer resultaat (als string)
             return resultaat;
         }
+
     }
 }
+
 

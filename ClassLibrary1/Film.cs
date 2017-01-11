@@ -12,7 +12,7 @@ namespace ProjectFilmLibrary
         public string _Barcode { get; set; }
         public string _Titel { get; set; }
         public string _Beschrijving { get; set; }
-        public DateTime _Release { get; set; }
+        public int _Release { get; set; }
         public string _Lengte { get; set; }
         public double _Score { get; set; }
         public int _Stock { get; set; }

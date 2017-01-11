@@ -74,7 +74,7 @@ ORDER BY titel
                     {
                         _Id = SafeReadValue<int>(dataReader, "film_id"),
                         _Titel = SafeReadValue<string>(dataReader, "Titel"),
-                        _Release = SafeReadValue<DateTime>(dataReader, "Release_datum"),
+                        _Release = SafeReadValue<int>(dataReader, "Release_datum"),
                         _Stock = SafeReadValue<int>(dataReader, "Stock")
                     };
                     films.Add(film);
@@ -104,13 +104,12 @@ ORDER BY titel
                 conn = new SqlConnection(connectionString);
                 conn.Open();
                 command.Connection = conn;
-                command.CommandText = @" UPDATE dbo.Film
-                                         SET Titel= @Titel, Beschrijving= @Beschrijving, Release_datum= @Release, Score= @Score
-                                         WHERE Film_ID = 2";
-                    command.Parameters.AddWithValue("@Titel", opgezochtefilm._Titel);
-                    command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm._Beschrijving);
-                    command.Parameters.AddWithValue("@Release", opgezochtefilm._Release);
-                    command.Parameters.AddWithValue("@Score", opgezochtefilm._Score); 
+                command.CommandText = @" INSERT INTO dbo.Film (Titel, Beschrijving, Release_datum, Score)
+                                         VALUES (@Titel,  @Beschrijving, @Release,  @Score);";
+                command.Parameters.AddWithValue("@Titel", opgezochtefilm._Titel);
+                command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm._Beschrijving);
+                command.Parameters.AddWithValue("@Release", opgezochtefilm._Release);
+                command.Parameters.AddWithValue("@Score", opgezochtefilm._Score);
 
                 command.ExecuteNonQuery();
             }
