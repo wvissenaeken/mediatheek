@@ -25,14 +25,15 @@ namespace ProjectFilm
     public partial class Informatiescherm : Window
     {
         Database _FilmService;
-        Automaat HuurAutomaat;
+        Automaat HuurAutomaat = new Automaat();
+
 
         public Informatiescherm()
         {
             InitializeComponent();
             List<Film> Filmlijst = HuurAutomaat.oproepenFilms();
             _FilmService = new Database();
-            HuurAutomaat = new Automaat();
+            
         }
 
         //-----------------------------//    
@@ -50,8 +51,10 @@ namespace ProjectFilm
             if (lbOverzichtGezochteFilms.SelectedItem != null)
             {
                 //Datum uit string halen.
-                string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem.ToString();
-                HuurAutomaat._Titel = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
+                //string geselecteerdeFilm = lbOverzichtGezochteFilms.SelectedItem.ToString();
+                //HuurAutomaat._Id = geselecteerdeFilm.Substring(0, geselecteerdeFilm.Length - 6);
+                //Automaat geselecteerdeFilm = lbOverzichtGezochteFilms.GetValue. as Automaat;
+                //geselecteerdeFilm._Id
 
                 btnMeerInfo.IsEnabled = true;
             }
@@ -60,6 +63,7 @@ namespace ProjectFilm
                 MessageBox.Show("Selecteer een film");
             }
         }
+
 
         //-----------------------------//
         //KNOPPEN
