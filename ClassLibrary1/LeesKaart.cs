@@ -218,7 +218,6 @@ namespace ProjectFilmLibrary
         {
             var photoFile = GetFile("PHOTO_FILE");
             var photo = new BitmapImage();
-
             using (var stream = new MemoryStream(photoFile))
             {
                 photo.BeginInit();
@@ -226,7 +225,6 @@ namespace ProjectFilmLibrary
                 photo.StreamSource = stream;
                 photo.EndInit();
             }
-
             return photo;
         }
     }
