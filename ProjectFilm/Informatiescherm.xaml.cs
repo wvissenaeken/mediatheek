@@ -104,12 +104,23 @@ namespace ProjectFilm
             Close();
         }
 
-        //Leeg Textbox bij aanklikken
-        public void tb_GotFocus(object sender, RoutedEventArgs e)
+        //Leeg Textbox bij aanklikken en herstel standaardwaarde bij verlaten 
+        private void tb_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
             tb.Text = string.Empty;
             tb.GotFocus -= tb_GotFocus;
+        }
+
+        private void tb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (tb.Text.Trim().Equals(string.Empty))
+            {
+                txtTitel.Text = "Geef de titel of een zoekterm op ..."; //standaardwaarde txtTitel
+                txtScanCode.Text = "Scan de barcode ..."; //standaardwaarde txtScanCode
+                tb.GotFocus += tb_GotFocus;
+            }
         }
     }
 }
