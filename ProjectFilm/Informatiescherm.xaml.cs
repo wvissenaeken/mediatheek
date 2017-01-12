@@ -103,5 +103,13 @@ namespace ProjectFilm
         {
             Close();
         }
+
+        //Leeg Textbox bij aanklikken
+        public void tb_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tb_GotFocus;
+        }
     }
 }
