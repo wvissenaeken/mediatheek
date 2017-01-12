@@ -39,10 +39,17 @@ namespace ProjectFilmLibrary
                 {
                 if (result != null)
                 {
-                    DateTime datum = (DateTime)result.ReleaseDate;
-                    int jaar = datum.Year;
+                    int jaar;
+                    if (result.ReleaseDate != null)
+                    {
+                        DateTime datum = (DateTime)result.ReleaseDate;
+                        jaar = datum.Year;
+                    }
+                    else
+                    {
+                        jaar = DateTime.MinValue.Year;
+                    }
                     Filmlijst.Add(new Film { _Titel = result.Title, _Barcode = "", _Lengte = "", _Stock = 0, _Id = result.Id, _Beschrijving = result.Overview, _Release = jaar, _Score = result.VoteAverage });
-
                 }
                 else
                 {
