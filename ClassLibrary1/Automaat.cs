@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
@@ -15,6 +16,7 @@ namespace ProjectFilmLibrary
         public string _gezochteFilm;
         public int _gezochteCode;
         public string _gezochteBarcode;
+        public string _Trailerkey;
 
         //-----------------------------//    
         //DATABASE RAADPLEGEN
@@ -89,8 +91,17 @@ namespace ProjectFilmLibrary
             _Filmservice.opgezochtefilm._Beschrijving = movie.Overview;
             _Filmservice.opgezochtefilm._Release = jaar;
             _Filmservice.opgezochtefilm._Score = movie.VoteAverage;
+
             //Update
-            _Filmservice.updateGegevensFilm();    
+            _Filmservice.updateGegevensFilm();
+            //Krijg trailerkey
+            foreach (var video in movie.Videos.Results)
+            {
+                //    _Filmservice.opgezochtefilm._Trailer = video.Key;
+                var videoresultaat = video.Key.First(); //HIER FOUT - WORDT NIET NAAR STRING GELEZEN
+            _Trailerkey = videoresultaat.ToString();
+        }
+            _Trailerkey = "https:" + "//www.youtube.com/watch?v=" +_Filmservice.opgezochtefilm._Trailer;
         }
 
         //Reset Filmlijst

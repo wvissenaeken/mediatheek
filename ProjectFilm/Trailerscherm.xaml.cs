@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectFilmLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,25 @@ namespace ProjectFilm
     /// </summary>
     public partial class Trailerscherm : Window
     {
+        Automaat HuurAutomaat;
+
         public Trailerscherm()
         {
             InitializeComponent();
+            HuurAutomaat = new Automaat();
         }
+
+
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Trailer_Loaded(object sender, RoutedEventArgs e)
+        {
+            //String naar Uri omzetten
+            trTrailer.Source = new System.Uri(HuurAutomaat._Trailerkey);
         }
     }
 }
