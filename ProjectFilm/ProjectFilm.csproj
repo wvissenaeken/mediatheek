@@ -83,6 +83,9 @@
     <Compile Include="LeesKaartscherm.xaml.cs">
       <DependentUpon>LeesKaartscherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trailerscherm.xaml.cs">
+      <DependentUpon>Trailerscherm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Winkelmandscherm.xaml.cs">
       <DependentUpon>Winkelmandscherm.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Trailerscherm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Winkelmandscherm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

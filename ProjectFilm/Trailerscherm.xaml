@@ -1,0 +1,22 @@
+﻿<Window x:Class="ProjectFilm.Trailerscherm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectFilm"
+        mc:Ignorable="d"
+        Title="Trailerscherm" Height="200" Width="200" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <MediaElement Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"  Name="Trailer" />
+        <StackPanel Grid.Row="1">
+            <Label Name="lblStatus" Content="" HorizontalContentAlignment="Center" Margin="5" />
+            <WrapPanel HorizontalAlignment="Center">
+                <Button x:Name="btnTerug" Background="Orange" Foreground="White" Content="TERUG"   Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
