@@ -23,7 +23,7 @@ namespace ProjectFilmLibrary
         {
         }
 
-        //NIET GEBRUIKT
+        //ZOEK barcode
         public int zoekOfBarcodeAanwezigIsInDB()
         {
             //maak een db connectie
@@ -31,7 +31,6 @@ namespace ProjectFilmLibrary
             SqlCommand command = new SqlCommand();
             try
             {
-                conn = new SqlConnection(connectionString);
                 //open de verbinding
                 conn.Open();
                 command.Connection = conn;
@@ -60,16 +59,16 @@ namespace ProjectFilmLibrary
         public List<Film> GetFilm()
         {
             List<Film> films = new List<Film>();
+            conn = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand();
             try
             {
-                conn = new SqlConnection(connectionString);
                 conn.Open();
                 command.Connection = conn;
-                command.CommandText = @"SELECT	film_id, Titel, Stock
+                command.CommandText = @"SELECT Film_ID, Titel, Stock, Release_datum
                                         FROM Film
-                                        WHERE Stock != 0
-                                        ORDER BY titel";
+                                        WHERE Stock > 0
+                                        ORDER BY Titel";
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read()) 
                 {
