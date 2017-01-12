@@ -16,3 +16,12 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\bin\Debug\Newtonsoft.Json
 C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLib.csprojResolveAssemblyReference.cache
 C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLibrary.dll
 C:\Users\Mathieu\Source\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLibrary.pdb
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\bin\Debug\ProjectFilmLibrary.dll
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\bin\Debug\ProjectFilmLibrary.pdb
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\bin\Debug\Net.Pkcs11.dll
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\bin\Debug\Newtonsoft.Json.dll
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\bin\Debug\TMDbLib.dll
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\bin\Debug\Newtonsoft.Json.xml
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLib.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLibrary.dll
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ClassLibrary1\obj\Debug\ProjectFilmLibrary.pdb

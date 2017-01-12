@@ -180,3 +180,5 @@ D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFil
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.pdb
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Trailerscherm.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Trailerscherm.baml
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\Trailerscherm.g.cs
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\Trailerscherm.baml
