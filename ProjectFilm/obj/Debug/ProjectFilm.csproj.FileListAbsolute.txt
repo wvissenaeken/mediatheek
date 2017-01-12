@@ -116,8 +116,6 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\50cent-
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\50EuroSchein-800px.png
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\100EuroSchein-800px.png
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\5-euro-cent-800px.png
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartData.g.cs
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartData.baml
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\TMDbLib.dll
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.xml
@@ -128,3 +126,5 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.d
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.g.cs
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.baml

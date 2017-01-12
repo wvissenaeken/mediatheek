@@ -19,28 +19,23 @@ namespace ProjectFilmLibrary
         {
         }
 
-
         public int GetAantalFilms()
         {
             //maak een db connectie
             conn = new SqlConnection(connectionString);
-
             try
             {
                 //open de verbinding
                 conn.Open();
-
                 string query = "SELECT COUNT(*) AS Aantal FROM Film";
-
                 SqlCommand command = new SqlCommand(query, conn);
                 object resultaat = command.ExecuteScalar();
                 int aantalFilms = (int)resultaat;
-
                 return aantalFilms;
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                throw;
             }
             finally
             {
@@ -53,7 +48,6 @@ namespace ProjectFilmLibrary
         public List<Film> GetFilm()
         {
             List<Film> films = new List<Film>();
-
             SqlCommand command = new SqlCommand();
             try
             {
@@ -102,20 +96,19 @@ namespace ProjectFilmLibrary
                 conn.Open();
                 command.Connection = conn;
                 //CONTROLE of film aanwezig is in database
-                command.CommandText = @"SELECT	Titel, Release_datum
+                command.CommandText = @"SELECT	Titel, Release_datum, Onlinezoeken_ID
                                         FROM Film";
                 SqlDataReader dataReader = command.ExecuteReader();
-                while (dataReader.Read()) //zolang we nog records te lezen hebben...
+                if (dataReader.Read()) 
                 {
                     Film film = new Film
                     {
+                        _Id = SafeReadValue<int>(dataReader, "Onlinezoeken_ID"),
                         _Titel = SafeReadValue<string>(dataReader, "Titel"),
                         _Release = SafeReadValue<int>(dataReader, "Release_datum"),
                     };
-                    if (film._Titel == opgezochtefilm._Titel && film._Release == opgezochtefilm._Release)
-                    {
-                        
-                    }
+                    if (film._Titel == opgezochtefilm._Titel && film._Release == opgezochtefilm._Release && film._Id == opgezochtefilm._Id)
+                    {}
                     else
                     {
                         //sluit controleverbinding
@@ -125,8 +118,9 @@ namespace ProjectFilmLibrary
                         conn = new SqlConnection(connectionString);
                         conn.Open();
                         command.Connection = conn;
-                        command.CommandText = @" INSERT INTO dbo.Film (Titel, Beschrijving, Release_datum, Score)
-                                               VALUES (@Titel,  @Beschrijving, @Release,  @Score);";
+                        command.CommandText = @" INSERT INTO dbo.Film (Onlinezoeken_ID,Titel, Beschrijving, Release_datum, Score)
+                                               VALUES (@OnlineID ,@Titel,  @Beschrijving, @Release,  @Score);";
+                        command.Parameters.AddWithValue("@OnlineID", opgezochtefilm._Id);
                         command.Parameters.AddWithValue("@Titel", opgezochtefilm._Titel);
                         command.Parameters.AddWithValue("@Beschrijving", opgezochtefilm._Beschrijving);
                         command.Parameters.AddWithValue("@Release", opgezochtefilm._Release);
@@ -136,9 +130,9 @@ namespace ProjectFilmLibrary
                     }
                 }
             }
-            catch (SqlException ex)
+            catch
             {
-                throw ex;
+                throw;
             }
             finally
             {
