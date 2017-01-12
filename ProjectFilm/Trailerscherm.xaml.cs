@@ -39,7 +39,7 @@ namespace ProjectFilm
         private void Trailer_Loaded(object sender, RoutedEventArgs e)
         {
             //String naar Uri omzetten
-            trTrailer.Source = new System.Uri(HuurAutomaat._Trailerkey);
+            trTrailer.Source = new Uri(HuurAutomaat._Trailerkey);
         }
     }
 }

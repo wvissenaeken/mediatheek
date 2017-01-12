@@ -11,7 +11,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <MediaElement Source="https://www.youtube.com/watch?v=/4ynQYtSEuU5hyipcGkfD6ncwtwz"  x:Name="trTrailer" Loaded="Trailer_Loaded" />
+        <MediaElement x:Name="trTrailer" Loaded="Trailer_Loaded" />
         <StackPanel Grid.Row="1">
             <Label Name="lblStatus" Content="" HorizontalContentAlignment="Center" Margin="5" />
             <WrapPanel HorizontalAlignment="Center">

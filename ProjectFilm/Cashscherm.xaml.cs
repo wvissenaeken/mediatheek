@@ -42,7 +42,7 @@ namespace ProjectFilm
             lblHuidigeInworp.Content = String.Format("€ {0}", TotaalInworp);
         }
 
-        //Enkel click event voor alle knoppen mbt Geld
+        //Enkel click event voor alle knoppen mbt Geld+
         private void btnGeldPlus_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -91,6 +91,7 @@ namespace ProjectFilm
             }
         }
 
+        //Enkel click event voor alle knoppen mbt Geld-
         private void btnGeldMin_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
