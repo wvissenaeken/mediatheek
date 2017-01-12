@@ -9,10 +9,10 @@
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <DockPanel x:Name="KaartLayout">
-        <StackPanel DockPanel.Dock="Top" Margin="20,50,20,50">
+        <StackPanel DockPanel.Dock="Top" Margin="200,50,200,50">
             <Button Content="Lees mijn gegevens!" Click="btn_LeesKaart_Click" ></Button>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" VerticalAlignment="Center" Margin="50,10,10,10">
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" VerticalAlignment="Center" Margin="150,10,10,10" >
             <Border BorderThickness="2" BorderBrush="Black">
                 <Image x:Name="imgphoto" Height="200" Width="140" Margin="20" />
             </Border>
@@ -21,7 +21,7 @@
                 <Label x:Name="lblGeslacht" Margin="20" />
             </StackPanel>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="30,10,30,10">
+        <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="30,10,150,10">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Voornaam en naam:" Margin="20" />
                 <Label x:Name="lblVoornaam" Margin="20" />
