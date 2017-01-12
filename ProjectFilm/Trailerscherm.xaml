@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectFilm"
         mc:Ignorable="d"
-        Title="Trailerscherm" Height="200" Width="200" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+        Title="Trailerscherm" Height="400.00" Width="400.00" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" WindowState="Maximized">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
