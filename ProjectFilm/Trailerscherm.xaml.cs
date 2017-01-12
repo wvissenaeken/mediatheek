@@ -1,5 +1,4 @@
-﻿using ProjectFilmLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,28 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ProjectFilm
 {
     /// <summary>
-    /// Interaction logic for InformatieGegevensscherm.xaml
+    /// Interaction logic for Trailerscherm.xaml
     /// </summary>
-    public partial class InformatieGegevensscherm : Window
+    public partial class Trailerscherm : Window
     {
-        Database FilmService;
-        Automaat HuurAutomaat;
-
-        public InformatieGegevensscherm()
+        public Trailerscherm()
         {
             InitializeComponent();
-            HuurAutomaat = new Automaat();
-            FilmService = new Database();
-        }
-
-        private void btnTrailer_Click(object sender, RoutedEventArgs e)
-        {
-            Trailerscherm verwijzingTrailer = new Trailerscherm();
-            verwijzingTrailer.ShowDialog();
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)

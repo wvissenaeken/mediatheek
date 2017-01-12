@@ -178,3 +178,5 @@ D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFil
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.exe
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.pdb
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Trailerscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Trailerscherm.baml
