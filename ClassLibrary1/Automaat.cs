@@ -54,13 +54,29 @@ namespace ProjectFilmLibrary
         //ZOEK naar specifieke film
         public async void zoekOnlineID()
         {
+            int jaartal;
+            int jaar;
             movie = await client.GetMovieAsync(_gezochteCode, MovieMethods.Credits | MovieMethods.Videos);
-            DateTime datum = (DateTime)movie.ReleaseDate;
-            int jaartal = datum.Year;
+            if (movie.ReleaseDate != null)
+            {
+                DateTime datum = (DateTime)movie.ReleaseDate;
+                jaartal = datum.Year;
+            }
+            else
+            {
+                jaartal = DateTime.MinValue.Year;
+            }
             Filmlijst.Add(new Film { _Titel = movie.Title, _Barcode = "", _Lengte = "", _Stock = 0, _Id = movie.Id, _Beschrijving = movie.Overview, _Release = jaartal, _Score = movie.VoteAverage });
             //UPDATE database
-            DateTime datumB = (DateTime)movie.ReleaseDate;
-            int jaar = datumB.Year;
+            if (movie.ReleaseDate != null)
+            {
+                DateTime datumB = (DateTime)movie.ReleaseDate;
+                jaar = datumB.Year;
+            }
+            else
+            {
+                jaar = DateTime.MinValue.Year;
+            }
             _Filmservice.opgezochtefilm._Id = movie.Id;
             _Filmservice.opgezochtefilm._Titel = movie.Title;
             _Filmservice.opgezochtefilm._Beschrijving = movie.Overview;
