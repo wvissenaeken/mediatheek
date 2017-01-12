@@ -25,11 +25,12 @@ namespace ProjectFilm
         //Declareer nodige variabelen
         public decimal TotaalInworp;
         public decimal Wisselgeld;
+        public int Teller100, Teller50;
 
         public IEnumerable<Control> Controls { get; private set; }
 
         //Methode voor click events mbt Geld
-        public void GeldClick(decimal Inworp)
+        public void GeldPlusClick(decimal Inworp)
         {
             TotaalInworp += Inworp;
             lblHuidigeInworp.Content = String.Format("€ {0}", TotaalInworp);
@@ -37,45 +38,75 @@ namespace ProjectFilm
             //VerifieerTotaalInworp();
         }
 
+        public void GeldMinClick(decimal Inworp)
+        {
+            TotaalInworp -= Inworp;
+            lblHuidigeInworp.Content = String.Format("€ {0}", TotaalInworp);
+            //Zie methode lager
+            //VerifieerTotaalInworp();
+        }
+
         //Enkel click event voor alle knoppen mbt Geld
-        private void btnGeld_Click(object sender, EventArgs e)
+        private void btnGeldPlus_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            switch (btn.Content.ToString())
+            switch (btn.Name.ToString())
             {
-                case "100":
-                    GeldClick(100.00M);
+                case "btn100_plus":
+                    GeldPlusClick(100.00M);
+                    lbl100_teller.Content = (Teller100 += 1).ToString();
                     break;
-                case "50":
-                    GeldClick(50.00M);
+                case "btn50_plus":
+                    GeldPlusClick(50.00M);
+                    lbl50_teller.Content = (Teller50 += 1).ToString();
                     break;
                 case "20":
-                    GeldClick(20.00M);
+                    GeldPlusClick(20.00M);
                     break;
                 case "10":
-                    GeldClick(10.00M);
+                    GeldPlusClick(10.00M);
                     break;
                 case "5":
-                    GeldClick(5.00M);
+                    GeldPlusClick(5.00M);
                     break;
                 case "2":
-                    GeldClick(2.00M);
+                    GeldPlusClick(2.00M);
                     break;
                 case "1":
-                    GeldClick(1.00M);
+                    GeldPlusClick(1.00M);
                     break;
                 case "0,50":
-                    GeldClick(0.50M);
+                    GeldPlusClick(0.50M);
                     break;
                 case "0,20":
-                    GeldClick(0.20M);
+                    GeldPlusClick(0.20M);
                     break;
                 case "0,10":
-                    GeldClick(0.10M);
+                    GeldPlusClick(0.10M);
                     break;
                 case "0,05":
-                    GeldClick(0.05M);
+                    GeldPlusClick(0.05M);
                     break;
+            }
+        }
+
+        private void btnGeldMin_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            //Teller kan en mag niet kleiner zijn dan nul!
+            if (Teller100 > 0 || Teller50 > 0)
+            {
+                switch (btn.Name.ToString())
+                {
+                    case "btn100_min":
+                        GeldPlusClick(-100.00M);
+                        lbl100_teller.Content = (Teller100 -= 1).ToString();
+                        break;
+                    case "btn50_min":
+                        GeldPlusClick(-50.00M);
+                        lbl50_teller.Content = (Teller50 -= 1).ToString();
+                        break;
+                }
             }
         }
 
