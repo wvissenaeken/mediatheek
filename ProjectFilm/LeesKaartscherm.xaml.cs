@@ -13,7 +13,6 @@ namespace ProjectFilm
         public LeesKaartscherm()
         {
             InitializeComponent();
-            DefaultFontSize();
             leeskaart = new LeesKaart();
         }
 
@@ -37,6 +36,7 @@ namespace ProjectFilm
         {
         
             imgphoto.Source = leeskaart.GetPhotoFile();
+            lblGeslacht.Content = leeskaart.GetGender();
             lblNaam.Content = leeskaart.GetSurname();
             lblVoornaam.Content = leeskaart.GetFirstNames();
             lblStraat.Content = leeskaart.GetStreetAndNumber();
@@ -46,6 +46,7 @@ namespace ProjectFilm
             lblGeboortePlaats.Content = leeskaart.GetLocationOfBirth();
             lblRR.Content = leeskaart.GetNationalNumber();
             lblKaartNummer.Content = leeskaart.GetCardNumber();
+            DefaultFontSize();
         }
     }
 }
