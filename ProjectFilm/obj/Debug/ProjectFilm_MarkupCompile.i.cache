@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\obj\Debug\
 ProjectFilm
 none
 false
 DEBUG;TRACE
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\App.xaml
+D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\App.xaml
 101338783182
 
-18-619695936
-18-562053134
+18-1669942900
+181447379253
 Bancontactscherm.xaml;BetalingenOKscherm.xaml;Betalingenscherm.xaml;Cashscherm.xaml;Huurscherm.xaml;InformatieGegevensscherm.xaml;Informatiescherm.xaml;LeesKaartscherm.xaml;MainWindow.xaml;Winkelmandscherm.xaml;
 
-False
+True
 

@@ -19,6 +19,6 @@
         <Button x:Name="btnZoekEigenDatabase" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="INFO" Margin="790,296,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="100" BorderThickness="0" FontWeight="Bold" Click="btnZoekEigenDatabase_Click"/>
         <Button x:Name="btnZoekOnline" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="ZOEK" Margin="793,436,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="100" BorderThickness="0" FontWeight="Bold" Click="btnZoekOnline_Click"/>
         <ListBox x:Name="lbOverzichtGezochteFilms" Height="458" Margin="1034,249,86,0" VerticalAlignment="Top" MouseDoubleClick="lbOverzichtGezochteFilms_MouseDoubleClick"/>
-        <Button x:Name="btnMeerInfo" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="MEER INFO" Margin="0,545,807,0" VerticalAlignment="Top" Height="127" FontSize="24" Width="272" BorderThickness="0" FontWeight="Bold" IsEnabled="False" Click="btnMeerInfo_Click"/>
+        <Button x:Name="btnMeerInfo" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="MEER INFO" Margin="0,580,978,0" VerticalAlignment="Top" Height="127" FontSize="24" Width="272" BorderThickness="0" FontWeight="Bold" IsEnabled="False" Click="btnMeerInfo_Click"/>
     </Grid>
 </Window>
