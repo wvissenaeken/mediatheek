@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectFilmLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,14 @@ namespace ProjectFilm
     /// </summary>
     public partial class InformatieGegevensscherm : Window
     {
+        Database FilmService;
+        Automaat HuurAutomaat;
+
         public InformatieGegevensscherm()
         {
             InitializeComponent();
+            HuurAutomaat = new Automaat();
+            FilmService = new Database();
         }
 
         private void btnTrailer_Click(object sender, RoutedEventArgs e)

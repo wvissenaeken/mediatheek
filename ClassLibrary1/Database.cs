@@ -18,8 +18,6 @@ namespace ProjectFilmLibrary
         public int gevondenCode;
 
         public Film opgezochtefilm = new Film();
-        //Automaat automaatservice = new Automaat(); // Zorgt voor een stackoverflow!!!
-        
 
         public Database()
         {
@@ -126,9 +124,6 @@ namespace ProjectFilmLibrary
                         if (filminDB._Barcode == opgezochtefilm._Barcode)
                         {
                              gevondenCode = filminDB._Id;
-                            //automaatservice.zoekOnlineID(); // Reden waarom stackoverflow ontstaan is, moet zien deze functie uit
-                            // de class Automaat hier te implementeren. Gaan moeten code hernieuw
-                            // schrijven zodat we uit stackoverflowloop geraken.
                         }
                     }
                 }
