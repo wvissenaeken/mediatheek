@@ -8,11 +8,11 @@
         Title="MainWindow" MinHeight="864" MinWidth="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <DockPanel x:Name="DockPanelInworp" IsEnabled="True" Margin="10">
-        <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
-                <StackPanel Orientation="Horizontal" Margin="5">
+    <DockPanel x:Name="DockPanelInworp" IsEnabled="True" Margin="10" LastChildFill="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="25">
+            <StackPanel Orientation="Horizontal" Margin="5">
                     <StackPanel VerticalAlignment="Center">
-                        <Label x:Name="lbl100" Content="" Height="80" Width="135">
+                        <Label x:Name="lbl100" Content="" Height="100" Width="160">
                         <Label.Background>
                             <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/100EuroSchein-800px.png" Stretch="Uniform"/>
                         </Label.Background>
@@ -26,7 +26,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <StackPanel VerticalAlignment="Center">
-                        <Label x:Name="lbl50" Content="" Height="80" Width="135">
+                    <Label x:Name="lbl50" Content="" Height="100" Width="160">
                         <Label.Background>
                             <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/50EuroSchein-800px.png"/>
                         </Label.Background>
@@ -38,10 +38,126 @@
                         <Button x:Name="btn50_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
                     </StackPanel>
                 </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl20" Content="" Height="100" Width="160">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/20EuroSchein-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn20_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl20_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn20_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
-                <Label Content="Huidige inworp:" MinWidth="160"></Label>
-                <Label x:Name="lblHuidigeInworp" Content="" MinWidth="300" HorizontalContentAlignment="Right"></Label>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl10" Content="" Height="100" Width="160">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/10EuroSchein-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn10_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl10_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn10_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl5" Content="" Height="100" Width="160">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/5euroSchein-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn5_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl5_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn5_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="25">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl2" Content="" Height="100" Width="75">
+                        <Label.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/2euro-800px.png" Stretch="Uniform"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn2_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl2_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn2_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl1" Content="" Height="100" Width="75">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/1euro-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn1_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl1_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn1_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl50C" Content="" Height="100" Width="75">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/50cent-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn50C_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl50C_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn50C_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl20C" Content="" Height="100" Width="75">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/20cent-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn20C_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl20C_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn20C_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel VerticalAlignment="Center">
+                    <Label x:Name="lbl10C" Content="" Height="100" Width="75">
+                        <Label.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="pack://siteoforigin:,,,/Resources/10cent-800px.png"/>
+                        </Label.Background>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0">
+                    <Button x:Name="btn10C_plus" Content="+" Height="30" Width="30" Click="btnGeldPlus_Click"/>
+                    <Label x:Name="lbl10C_teller" Content="0" Height="30" Width="30"/>
+                    <Button x:Name="btn10C_min" Content="-" Height="30" Width="30" Click="btnGeldMin_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" VerticalAlignment="Bottom" Margin="25" >
+            <Label Content="Huidige inworp:" HorizontalContentAlignment="Right" />
+            <Label x:Name="lblHuidigeInworp" Content="" HorizontalContentAlignment="Right" />
+            <Label Content="Te betalen" HorizontalContentAlignment="Right" />
+            <Label x:Name="lblTeBetalen" Content="" HorizontalContentAlignment="Right" />
+        </StackPanel>
         </DockPanel>
 </Window>
