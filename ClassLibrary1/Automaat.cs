@@ -91,15 +91,17 @@ namespace ProjectFilmLibrary
             _Filmservice.opgezochtefilm._Beschrijving = movie.Overview;
             _Filmservice.opgezochtefilm._Release = jaar;
             _Filmservice.opgezochtefilm._Score = movie.VoteAverage;
+
             //Update
             _Filmservice.updateGegevensFilm();
             //Krijg trailerkey
             foreach (var video in movie.Videos.Results)
             {
+                //    _Filmservice.opgezochtefilm._Trailer = video.Key;
                 var videoresultaat = video.Key.First(); //HIER FOUT - WORDT NIET NAAR STRING GELEZEN
-                _Trailerkey = videoresultaat.ToString();
-            }
-            _Filmservice.opgezochtefilm._Trailer = "https:"+"//www.youtube.com/watch?v="+_Trailerkey;
+            _Trailerkey = videoresultaat.ToString();
+        }
+            _Trailerkey = "https:" + "//www.youtube.com/watch?v=" +_Filmservice.opgezochtefilm._Trailer;
         }
 
         //Reset Filmlijst
