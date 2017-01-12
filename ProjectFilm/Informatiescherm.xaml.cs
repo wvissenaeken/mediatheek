@@ -57,7 +57,13 @@ namespace ProjectFilm
         //KNOP ZOEK IN DATABASE ProjectFilm
         private void btnZoekEigenDatabase_Click(object sender, RoutedEventArgs e)
         {
+            //Als het effectief inscannen werkt, dan is deze knop overbodig. 
+            //Deze knop is een simulatie voor het inscannen, waarbij er direct een scherm met gegevens wordt geopend.
+            HuurAutomaat._gezochteBarcode = txtScanCode.Text;
+            FilmService.zoekFilmInDatabase();
 
+            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            verwijzingInformatieGegevens.ShowDialog();
         }
 
         //KNOP ZOEK ONLINE VOOR GEGEVENS

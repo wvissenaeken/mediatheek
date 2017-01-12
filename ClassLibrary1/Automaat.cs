@@ -14,6 +14,7 @@ namespace ProjectFilmLibrary
         public List<Film> Filmlijst = new List<Film>();
         public string _gezochteFilm;
         public int _gezochteCode;
+        public string _gezochteBarcode;
 
         //-----------------------------//    
         //DATABASE RAADPLEGEN

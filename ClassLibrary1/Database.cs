@@ -14,6 +14,8 @@ namespace ProjectFilmLibrary
         public SqlConnection conn;
 
         public Film opgezochtefilm = new Film();
+        //Automaat automaatservice = new Automaat(); // Zorgt voor een stackoverflow!!!
+        
 
         public Database()
         {
@@ -83,6 +85,46 @@ namespace ProjectFilmLibrary
                 command.Dispose();
             }
         }
+        //SCAN CODE - controleer of film in database zit op basis van barcode
+        public void zoekFilmInDatabase()
+        {
+            //maak een db connectie
+            conn = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                conn.Open();
+                command.Connection = conn;
+                //CONTROLE of film aanwezig is in database
+                command.CommandText = @"SELECT Barcode, Onlinezoeken_ID
+                                        FROM Film";
+                SqlDataReader dataReader = command.ExecuteReader();
+                if (dataReader.Read())
+                {
+                    Film filminDB = new Film
+                    {
+                        _Id = SafeReadValue<int>(dataReader, "Onlinezoeken_ID"),
+                        _Barcode = SafeReadValue<string>(dataReader, "Barcode"),
+                    };
+                    if (filminDB._Id == opgezochtefilm._Id)
+                    {
+                        opgezochtefilm._Id = filminDB._Id;
+                        automaatservice.zoekOnlineID();
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                //sluit de verbinding
+                conn.Close();
+                conn.Dispose();
+            }
+        }
 
         //update gegevens van gezochte film
         public void updateGegevensFilm()
@@ -101,13 +143,13 @@ namespace ProjectFilmLibrary
                 SqlDataReader dataReader = command.ExecuteReader();
                 if (dataReader.Read()) 
                 {
-                    Film film = new Film
+                    Film filminDB = new Film
                     {
                         _Id = SafeReadValue<int>(dataReader, "Onlinezoeken_ID"),
                         _Titel = SafeReadValue<string>(dataReader, "Titel"),
-                        _Release = SafeReadValue<int>(dataReader, "Release_datum"),
+                        _Release = SafeReadValue<int>(dataReader, "Release_datum")
                     };
-                    if (film._Titel == opgezochtefilm._Titel && film._Release == opgezochtefilm._Release && film._Id == opgezochtefilm._Id)
+                    if (filminDB._Titel == opgezochtefilm._Titel && filminDB._Release == opgezochtefilm._Release && filminDB._Id == opgezochtefilm._Id)
                     {}
                     else
                     {
