@@ -21,25 +21,29 @@ namespace ProjectFilm
     /// </summary>
     public partial class Trailerscherm : Window
     {
-        Automaat HuurAutomaat;
+        Automaat TrailerService;
 
         public Trailerscherm()
         {
             InitializeComponent();
-            HuurAutomaat = new Automaat();
+            TrailerService = new Automaat();
+        }
+     
+
+        private void Trailer_Loaded(object sender, RoutedEventArgs e)
+        {
+            //String naar Uri omzetten
+            System.Uri uri = new System.Uri(Automaat._Trailerkey);
+            trTrailer.Source = uri; //FOUT HIER, URI IS DE KEY, bij uitvoeren is NULL, check via BREAK
         }
 
-
+        
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void Trailer_Loaded(object sender, RoutedEventArgs e)
-        {
-            //String naar Uri omzetten
-            trTrailer.Source = new Uri(HuurAutomaat._Trailerkey);
-        }
+       
     }
 }

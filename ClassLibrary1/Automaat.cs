@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows;
 using TMDbLib.Client;
 using TMDbLib.Objects.General;
@@ -11,12 +12,16 @@ namespace ProjectFilmLibrary
 {
     public class Automaat
     {
+        
         Database _Filmservice = new Database();
         public List<Film> Filmlijst = new List<Film>();
         public string _gezochteFilm;
         public int _gezochteCode;
         public string _gezochteBarcode;
-        public string _Trailerkey;
+
+        public static string _Trailerkey;
+        
+  
 
         //-----------------------------//    
         //DATABASE RAADPLEGEN
@@ -33,12 +38,12 @@ namespace ProjectFilmLibrary
         //ZOEK ONLINE
         //ZOEK naar alle films op basis keywoord
         public void zoekOnlineTekst()
-        { 
+        {
             results = client.SearchMovieAsync(_gezochteFilm).Result;
             //UPDATE overzichtslijst
-           
-                foreach (SearchMovie result in results.Results)
-                {
+
+            foreach (SearchMovie result in results.Results)
+            {
                 if (result != null)
                 {
                     int jaar;
@@ -57,7 +62,7 @@ namespace ProjectFilmLibrary
                 {
                     MessageBox.Show("Gelieve nieuwe zoekterm in te geven.", "Niets gevonden.", MessageBoxButton.OK);
                 }
-            }          
+            }
         }
 
         //ZOEK naar specifieke film
@@ -95,13 +100,12 @@ namespace ProjectFilmLibrary
             //Update
             _Filmservice.updateGegevensFilm();
             //Krijg trailerkey
+            List<string> filmKeys = new List<string>();
             foreach (var video in movie.Videos.Results)
             {
-                //    _Filmservice.opgezochtefilm._Trailer = video.Key;
-                var videoresultaat = video.Key.First(); //HIER FOUT - WORDT NIET NAAR STRING GELEZEN
-            _Trailerkey = videoresultaat.ToString();
-        }
-            _Trailerkey = "https:" + "//www.youtube.com/watch?v=" +_Filmservice.opgezochtefilm._Trailer;
+                filmKeys.Add(video.Key);
+            }
+            _Trailerkey = "https:" + "//www.youtube.com/watch?v=" + filmKeys[0];
         }
 
         //Reset Filmlijst
