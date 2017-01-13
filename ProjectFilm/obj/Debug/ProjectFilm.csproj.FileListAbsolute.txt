@@ -186,3 +186,5 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.baml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.g.cs
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.baml
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantscherm.g.cs
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantscherm.baml

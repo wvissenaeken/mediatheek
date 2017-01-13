@@ -80,6 +80,9 @@
     <Compile Include="InformatieGegevensscherm.xaml.cs">
       <DependentUpon>InformatieGegevensscherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Klantscherm.xaml.cs">
+      <DependentUpon>Klantscherm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LeesKaartscherm.xaml.cs">
       <DependentUpon>LeesKaartscherm.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Informatiescherm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Klantscherm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

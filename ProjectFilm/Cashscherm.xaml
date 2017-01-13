@@ -167,6 +167,7 @@
             <Label x:Name="lblHuidigeInworp" Content="" HorizontalContentAlignment="Right" />
             <Label Content="Te betalen" HorizontalContentAlignment="Right" />
             <Label x:Name="lblTeBetalen" Content="" HorizontalContentAlignment="Right" />
+            <Button x:Name="btnBetalen" Content="BEVESTIG BETALING" Width="200" Height="90"/>
         </StackPanel>
         </DockPanel>
 </Window>
