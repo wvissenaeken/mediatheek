@@ -25,7 +25,9 @@ namespace ProjectFilm
     public partial class Informatiescherm : Window
     {
         Database FilmService;
-        Automaat HuurAutomaat; 
+        Automaat HuurAutomaat;
+
+        
 
         public Informatiescherm()
         {
@@ -33,6 +35,8 @@ namespace ProjectFilm
             HuurAutomaat = new Automaat();
             FilmService = new Database();
         }
+
+        
 
         //-----------------------------//
         //KEUZE UIT OVERZICHT MAKEN
@@ -66,7 +70,8 @@ namespace ProjectFilm
             {
                 HuurAutomaat._gezochteCode = FilmService.gevondenCode;
                 HuurAutomaat.zoekOnlineID();
-                InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+
+                InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm( );
                 verwijzingInformatieGegevens.ShowDialog();
             }
         }
@@ -94,7 +99,8 @@ namespace ProjectFilm
             //UPDATE gegevens in database voor specifieke film
             HuurAutomaat.zoekOnlineID();
             //TOON gegevens in een apart scherm.
-            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm();
+            
+            InformatieGegevensscherm verwijzingInformatieGegevens = new InformatieGegevensscherm( );
             verwijzingInformatieGegevens.ShowDialog();
         }
 
