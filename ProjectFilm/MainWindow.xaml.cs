@@ -58,6 +58,10 @@ namespace ProjectFilm
             leeskaartdata.ShowDialog();
         }
 
-        
+        private void btnTestTrailer_Click(object sender, RoutedEventArgs e)
+        {
+            Trailerscherm verwijzingTrailer = new Trailerscherm();
+            verwijzingTrailer.ShowDialog();
+        }
     }
 }

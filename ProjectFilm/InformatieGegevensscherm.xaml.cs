@@ -51,10 +51,5 @@ namespace ProjectFilm
                 lblFilmTitel.Content = film._Titel;
             }
         }
-
-        private void lblFilmTitel_Loaded(object sender, RoutedEventArgs e)
-        {
-            lblFilmTitel.Content = FilmService.opgezochtefilm._Titel;
-        }
     }
 }
