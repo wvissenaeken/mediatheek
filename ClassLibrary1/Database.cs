@@ -15,6 +15,7 @@ namespace ProjectFilmLibrary
         public SqlConnection conn;
 
         public int aanwezigInDatabase;
+        public int aanwezigOnlineIDinDatabase;
         public int gevondenCode;
 
         public Film opgezochtefilm = new Film();
@@ -42,6 +43,38 @@ namespace ProjectFilmLibrary
                 object resultaat = command.ExecuteScalar();
                 aanwezigInDatabase = (int)resultaat;
                 return aanwezigInDatabase;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                //sluit de verbinding
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
+        //Zoek of online ID aanwezig is in eigen database
+        public int zoekOfIDAanwezigIsInDB()
+        {
+            //maak een db connectie
+            conn = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                //open de verbinding
+                conn.Open();
+                command.Connection = conn;
+                //CONTROLE of film aanwezig is in database
+                command.CommandText = @"SELECT COUNT(*) 
+                                        FROM Film
+                                        WHERE Onlinezoeken_ID =@OzID;";
+                command.Parameters.AddWithValue("@OzID", opgezochtefilm._Id);
+                object resultaat = command.ExecuteScalar();
+                aanwezigOnlineIDinDatabase = (int)resultaat;
+                return aanwezigOnlineIDinDatabase;
             }
             catch
             {
@@ -146,7 +179,8 @@ namespace ProjectFilmLibrary
         //update gegevens van gezochte film
         public void updateGegevensFilm()
         {
-            if (aanwezigInDatabase == 1)
+            zoekOfIDAanwezigIsInDB();
+            if (aanwezigInDatabase == 1| aanwezigOnlineIDinDatabase ==1)
             { }
             else
             {

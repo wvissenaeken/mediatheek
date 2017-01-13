@@ -40,14 +40,14 @@ namespace ProjectFilm
             lblHuidigeInworp.Content = String.Format("€ {0}", TotaalInworp);
         }
 
-        IEnumerable<Button> buttons = DockPanel.Controls.OfType<Button>();
-        foreach (Button btn in buttons)
-        {
-            if (btn.Name.Contains("_min"))
-            {
-                btn.IsEnabled = false;
-            }
-}
+//        IEnumerable<Button> buttons = DockPanel.Controls.OfType<Button>();
+//        foreach (Button btn in buttons)
+//        {
+//            if (btn.Name.Contains("_min"))
+//            {
+//                btn.IsEnabled = false;
+//            }
+//}
 
 //Enkel click event voor alle knoppen mbt Geld+
 private void btnGeldPlus_Click(object sender, EventArgs e)
