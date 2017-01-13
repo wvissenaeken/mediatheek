@@ -19,11 +19,15 @@ namespace ProjectFilmLibrary
         public int gevondenCode;
 
         public Film opgezochtefilm = new Film();
+        public Klant VerifieerKlant = new Klant();
 
         public Database()
         {
         }
 
+        //--------------------------//
+        //DBconnecties mbt KLANT//
+        //--------------------------//
         //ZOEK barcode
         public int zoekOfBarcodeAanwezigIsInDB()
         {
@@ -250,6 +254,122 @@ namespace ProjectFilmLibrary
             catch
             {
                 return default(T);
+            }
+        }
+
+        //--------------------------//
+        //DBconnecties mbt KLANT//
+        //--------------------------//
+        //Verifieer of klant bestaat op basis van unieke EID-kaartnummer
+        public int DB_VerifieerKlant()
+        {
+            //DBCONNECT
+            conn = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                //DBCONN OPEN
+                conn.Open();
+                command.Connection = conn;
+                command.CommandText = @"SELECT COUNT(*) FROM Klanten WHERE Kaartnummer =@Kaartnummer;";
+                command.Parameters.AddWithValue("@Kaartnummer", VerifieerKlant.Kaartnummer);
+                object resultaat = command.ExecuteScalar();
+                aanwezigInDatabase = (int)resultaat;
+                return aanwezigInDatabase;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                //DBCONN CLOSE
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
+        //Oproepen/bijwerken van de klantgegevens
+        public void DB_UpdateKlant()
+        {
+            DB_VerifieerKlant();
+            if (aanwezigInDatabase == 1)
+            {
+                //Eventueel bijwerken van de bestaande gegevens, wanneer bijvoorbeeld adres wijzigde???????
+            }
+            else
+            {
+                //DBCONNECT
+                conn = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand();
+                try
+                {
+                    conn = new SqlConnection(connectionString);
+                    //DBCONN OPEN
+                    conn.Open();
+                    command.Connection = conn;
+                    //CONTROLE of klant bestaat
+                    command.CommandText = @"SELECT Voornaam, Achternaam, Adres, Postcode, Gemeente, Geslacht, Geboortedatum, Lidmaatschap, Geboorteplaats, Kaartnummer, Rijksregister, Email FROM Klanten";
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.Read())
+                    {
+                        Klant DBKlant = new Klant
+                        {
+                            Voornaam = SafeReadValue<string>(dataReader, "Voornaam"),
+                            Achternaam = SafeReadValue<string>(dataReader, "Achternaam"),
+                            Adres = SafeReadValue<string>(dataReader, "Adres"),
+                            Postcode = SafeReadValue<int>(dataReader, "Postcode"),
+                            Gemeente = SafeReadValue<string>(dataReader, "Gemeente"),
+                            Geslacht = SafeReadValue<string>(dataReader, "Geslacht"),
+                            Geboortedatum = SafeReadValue<DateTime>(dataReader, "Geboortedatum"),
+                            Geboorteplaats = SafeReadValue<string>(dataReader, "Geboorteplaats"),
+                            Lidmaatschap = SafeReadValue<DateTime>(dataReader, "Lidmaatschap"),
+                            Kaartnummer = SafeReadValue<string>(dataReader, "Kaartnummer"),
+                            Rijksregister = SafeReadValue<string>(dataReader, "Rijksregister"),
+                            Email = SafeReadValue<string>(dataReader, "Email")
+                        };
+                        if (DBKlant.Kaartnummer == VerifieerKlant.Kaartnummer)
+                        {
+                            //Zie hoger. Quid inzake bijwerken?
+                        }
+                        else
+                        {
+                            //DBCONN CLOSE
+                            conn.Close();
+                            conn.Dispose();
+                            //DBCONN OPEN NEW
+                            conn = new SqlConnection(connectionString);
+                            conn.Open();
+                            command.Connection = conn;
+                            command.CommandText = @" INSERT INTO dbo.Klanten (Voornaam, Achternaam, Adres, Postcode, Gemeente, Geslacht, Geboortedatum, Lidmaatschap, Geboorteplaats, Kaartnummer, Rijksregister, Email)
+                                               VALUES (@Voornaam, @Achternaam, @Adres, @Postcode, @Gemeente, @Geslacht, @Geboortedatum, @Lidmaatschap, @Geboorteplaats, @Kaartnummer, @Rijksregister, @Email);";
+                            command.Parameters.AddWithValue("@Voornaam", VerifieerKlant.Voornaam);
+                            command.Parameters.AddWithValue("@Achternaam", VerifieerKlant.Achternaam);
+                            command.Parameters.AddWithValue("@Adres", VerifieerKlant.Adres);
+                            command.Parameters.AddWithValue("@Postcode", VerifieerKlant.Postcode);
+                            command.Parameters.AddWithValue("@Gemeente", VerifieerKlant.Gemeente);
+                            command.Parameters.AddWithValue("@Geslacht", VerifieerKlant.Geslacht);
+                            command.Parameters.AddWithValue("@Geboortedatum", VerifieerKlant.Geboortedatum);
+                            command.Parameters.AddWithValue("@Lidmaatschap", VerifieerKlant.Lidmaatschap);
+                            command.Parameters.AddWithValue("@Geboorteplaats", VerifieerKlant.Geboorteplaats);
+                            command.Parameters.AddWithValue("@Kaartnummer", VerifieerKlant.Kaartnummer);
+                            command.Parameters.AddWithValue("@Rijksregister", VerifieerKlant.Rijksregister);
+                            command.Parameters.AddWithValue("@Email", VerifieerKlant.Email);
+                            //VOEG TOE aan database
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    //DBCONN CLOSE
+                    conn.Close();
+                    conn.Dispose();
+                }
             }
         }
 
