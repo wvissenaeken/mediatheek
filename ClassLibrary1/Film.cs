@@ -19,9 +19,9 @@ namespace ProjectFilmLibrary
 
         public string _Trailer { get; set; }
             
-        public override string ToString()
-        { 
-            return $"{_Titel} ({_Release}) - Beschikbaar: {_Stock}";
-        }
+        //public override string ToString()
+        //{ 
+        //    return $"{_Titel} ({_Release}) - Beschikbaar: {_Stock}";
+        //}
     }
 }

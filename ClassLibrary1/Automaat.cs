@@ -97,11 +97,11 @@ namespace ProjectFilmLibrary
             //Krijg trailerkey
             foreach (var video in movie.Videos.Results)
             {
-                //    _Filmservice.opgezochtefilm._Trailer = video.Key;
-                var videoresultaat = video.Key.First(); //HIER FOUT - WORDT NIET NAAR STRING GELEZEN
-            _Trailerkey = videoresultaat.ToString();
-        }
-            _Trailerkey = "https:" + "//www.youtube.com/watch?v=" +_Filmservice.opgezochtefilm._Trailer;
+                var videoresultaat = video.Key;
+                _Trailerkey = videoresultaat;
+            }
+            _Filmservice.opgezochtefilm._Trailer = _Trailerkey.ToString();
+
         }
 
         //Reset Filmlijst

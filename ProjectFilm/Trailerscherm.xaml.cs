@@ -22,11 +22,15 @@ namespace ProjectFilm
     public partial class Trailerscherm : Window
     {
         Automaat HuurAutomaat;
+        Film _Filmservice;
+        WebBrowser browser;
 
         public Trailerscherm()
         {
             InitializeComponent();
             HuurAutomaat = new Automaat();
+            _Filmservice = new Film();
+            browser = new WebBrowser();
         }
 
 
@@ -38,8 +42,8 @@ namespace ProjectFilm
 
         private void Trailer_Loaded(object sender, RoutedEventArgs e)
         {
-            //String naar Uri omzetten
-            trTrailer.Source = new Uri(HuurAutomaat._Trailerkey);
+            string Trailerkey = _Filmservice._Trailer;
+            browser.Navigate($"https://www.youtube.com/watch?v={Trailerkey}");
         }
     }
 }
