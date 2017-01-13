@@ -47,7 +47,7 @@ namespace ProjectFilm
             {
                 btn.IsEnabled = false;
             }
-        }
+}
 
 //Enkel click event voor alle knoppen mbt Geld+
 private void btnGeldPlus_Click(object sender, EventArgs e)
