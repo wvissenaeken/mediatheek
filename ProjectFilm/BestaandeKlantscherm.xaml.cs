@@ -17,22 +17,22 @@ namespace ProjectFilm
     /// <summary>
     /// Interaction logic for Klantscherm.xaml
     /// </summary>
-    public partial class Klantscherm : Window
+    public partial class BestaandeKlantscherm : Window
     {
-        UCKlant uck;
+        UCKlant uckb;
 
-        public Klantscherm()
+        public BestaandeKlantscherm()
         {
             InitializeComponent();
             //Instantieer data uit User Control Klant
-            uck = new UCKlant();
+            uckb = new UCKlant();
             GenereerUCK();
         }
 
         private void GenereerUCK()
         {
             //Voeg User Control Klant toe aan de daarvoor voorziene container
-            ContentContainer.Children.Add(uck);
+            ContentContainer.Children.Add(uckb);
         }
 
         private void btnAnnuleer_Click(object sender, RoutedEventArgs e)
