@@ -30,7 +30,6 @@ namespace ProjectFilm
             InitializeComponent();
             HuurAutomaat = new Automaat();
             FilmService = new Database();
-            
         }
 
 

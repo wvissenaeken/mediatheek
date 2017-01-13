@@ -102,7 +102,7 @@ namespace ProjectFilmLibrary
             {
                 filmkey.Add(video.Key);
             }
-            _Trailerkey = "http://www.youtube.com/embed/" + filmkey[0];
+            _Trailerkey = $"http://www.youtube.com/embed/{filmkey[0]}";
         }
             
         //Reset Filmlijst
@@ -130,7 +130,6 @@ namespace ProjectFilmLibrary
                 new { waarde = 0.50m },
                 new { waarde = 0.20m },
                 new { waarde = 0.10m },
-                new { waarde = 0.05m }
             };
 
             //Initialiseer het resultaat met lege string 

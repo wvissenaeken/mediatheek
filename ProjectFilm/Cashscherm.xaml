@@ -162,7 +162,7 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" VerticalAlignment="Bottom" Margin="25" >
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" VerticalAlignment="Bottom" Margin="25,25,25,35" >
             <Label Content="Huidige inworp:" HorizontalContentAlignment="Right" />
             <Label x:Name="lblHuidigeInworp" Content="" HorizontalContentAlignment="Right" />
             <Label Content="Te betalen" HorizontalContentAlignment="Right" />

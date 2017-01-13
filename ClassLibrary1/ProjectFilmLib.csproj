@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Automaat.cs" />
+    <Compile Include="Cash.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="LeesKaart.cs" />
     <Compile Include="Film.cs" />
