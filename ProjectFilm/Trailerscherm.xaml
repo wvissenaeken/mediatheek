@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectFilm"
         mc:Ignorable="d"
-        Title="Trailerscherm" Height="400.00" Width="400.00" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" WindowState="Maximized">
+        Title="Trailerscherm" Height="400.00" Width="400.00"  WindowStartupLocation="CenterOwner" WindowState="Maximized">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <WebBrowser Loaded="Trailer_Loaded" />
+        <WebBrowser x:Name="wbTrailer" Loaded="Trailer_Loaded" />
         <StackPanel Grid.Row="1">
             <Label Name="lblStatus" Content="" HorizontalContentAlignment="Center" Margin="5" />
             <WrapPanel HorizontalAlignment="Center">

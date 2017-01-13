@@ -16,7 +16,7 @@ namespace ProjectFilmLibrary
         public string _Lengte { get; set; }
         public double _Score { get; set; }
         public int _Stock { get; set; }
-        public string _Trailer { get; set; }
+
 
         public override string ToString()
         {

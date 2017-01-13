@@ -16,7 +16,7 @@ namespace ProjectFilmLibrary
         public string _gezochteFilm;
         public int _gezochteCode;
         public string _gezochteBarcode;
-        public string _Trailerkey;
+        public static string _Trailerkey;
 
         //-----------------------------//    
         //DATABASE RAADPLEGEN
@@ -94,16 +94,17 @@ namespace ProjectFilmLibrary
 
             //Update
             _Filmservice.updateGegevensFilm();
+
             //Krijg trailerkey 
+            List<string> filmkey = new List<string>();
+
             foreach (var video in movie.Videos.Results)
             {
-                var videoresultaat = video.Key;
-                _Trailerkey = videoresultaat;
+                filmkey.Add(video.Key);
             }
-            _Filmservice.opgezochtefilm._Trailer = _Trailerkey.ToString();
-
+            _Trailerkey = "http://www.youtube.com/embed/" + filmkey[0];
         }
-
+            
         //Reset Filmlijst
         public void reset()
         {
