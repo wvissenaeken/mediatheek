@@ -124,8 +124,6 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\TMDbLib.dll
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Newtonsoft.Json.xml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Net.Pkcs11.dll
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.g.cs
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\LeesKaartscherm.baml
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro.png
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro-800px.png
 D:\Visual Studio 2015\Projects\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\2euro-800px.png
@@ -192,3 +190,11 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BestaandeKla
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BestaandeKlantscherm.baml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\NieuweKlantscherm.baml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\KlantKeuzescherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BestaandeKlantscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\NieuweKlantscherm.g.cs
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\KlantKeuzescherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BestaandeKlantscherm.baml
+C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\NieuweKlantscherm.baml
