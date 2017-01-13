@@ -86,6 +86,9 @@
     <Compile Include="Trailerscherm.xaml.cs">
       <DependentUpon>Trailerscherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UCKlant.xaml.cs">
+      <DependentUpon>UCKlant.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Winkelmandscherm.xaml.cs">
       <DependentUpon>Winkelmandscherm.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Trailerscherm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCKlant.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,6 +8,16 @@
         Title="MainWindow" MinHeight="864" MinWidth="1024" 
         WindowStyle="None" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Orange"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
     <DockPanel x:Name="DockPanelInworp" IsEnabled="True" Margin="10" LastChildFill="False" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="25">
             <StackPanel Orientation="Horizontal" Margin="5">
@@ -161,3 +171,4 @@
         </StackPanel>
         </DockPanel>
 </Window>
+    

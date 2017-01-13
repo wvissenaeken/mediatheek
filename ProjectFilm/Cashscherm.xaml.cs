@@ -27,8 +27,6 @@ namespace ProjectFilm
         public decimal Wisselgeld;
         public int Teller100, Teller50, Teller20, Teller10, Teller5, Teller2, Teller1, Teller50C, Teller20C, Teller10C, Teller5C;
 
-        public IEnumerable<Control> Controls { get; private set; }
-
         //Methode voor click events mbt Geld
         public void GeldPlusClick(decimal Inworp)
         {
