@@ -52,12 +52,6 @@ namespace ProjectFilm
             cash.ShowDialog();
         }
 
-        private void btnEidtest_Click(object sender, RoutedEventArgs e)
-        {
-            LeesKaartscherm leeskaartdata = new LeesKaartscherm();
-            leeskaartdata.ShowDialog();
-        }
-
         private void btnTestTrailer_Click(object sender, RoutedEventArgs e)
         {
             Trailerscherm verwijzingTrailer = new Trailerscherm();

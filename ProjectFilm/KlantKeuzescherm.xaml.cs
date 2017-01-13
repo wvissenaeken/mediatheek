@@ -1,7 +1,5 @@
 ﻿using ProjectFilmLibrary;
-using System;
 using System.Windows;
-using System.Threading;
 
 
 namespace ProjectFilm
@@ -18,28 +16,34 @@ namespace ProjectFilm
             InitializeComponent();
             leeskaart = new LeesKaart();
         }
+        public bool btnnieuweklant = false;
+        public bool btnbestaandeklant = false;
 
         private void btnNieuweKlant_Click(object sender, RoutedEventArgs e)
         {
             KlantKeuze.IsEnabled = false;
             VoerKaartIn.Visibility = Visibility.Visible;
+            btnnieuweklant = true;
 
-            NieuweKlantscherm nieuweklant = new NieuweKlantscherm();
-            nieuweklant.ShowDialog();
         }
 
         private void btnBestaandeKlant_Click(object sender, RoutedEventArgs e)
         {
             KlantKeuze.IsEnabled = false;
             VoerKaartIn.Visibility = Visibility.Visible;
+            btnbestaandeklant = true;
 
-            BestaandeKlantscherm bestaandeklant = new BestaandeKlantscherm();
-            bestaandeklant.ShowDialog();
         }
 
-        private void LeesKaartData()
+        private void btnLeesKaart_Click(object sender, RoutedEventArgs e)
         {
-
+            if (btnnieuweklant)
+            {
+                NieuweKlantscherm nieuweklant = new NieuweKlantscherm();
+                nieuweklant.ShowDialog();
+            }
+            BestaandeKlantscherm bestaandeklant = new BestaandeKlantscherm();
+            bestaandeklant.ShowDialog();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Windows.Media;
 using Net.Sf.Pkcs11;
 using Net.Sf.Pkcs11.Objects;
 using Net.Sf.Pkcs11.Wrapper;
+using System.Windows;
 
 namespace ProjectFilmLibrary
 {
@@ -111,7 +112,7 @@ namespace ProjectFilmLibrary
                 }
                 else
                 {
-                    Console.WriteLine("Geen kaart gevonden!\n");
+                    MessageBox.Show("Voer uw EID-kaart in!", "Geen EID-kaart gevonden", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             finally
@@ -159,7 +160,7 @@ namespace ProjectFilmLibrary
                 }
                 else
                 {
-                    Console.WriteLine("No card found\n");
+                    MessageBox.Show("Voer uw EID-kaart in!", "Geen EID-kaart gevonden", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             finally

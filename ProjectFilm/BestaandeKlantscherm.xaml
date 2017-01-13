@@ -7,7 +7,7 @@
         xmlns:wpfx="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         mc:Ignorable="d"
         Title="BestaandeKlantscherm" Height="768" Width="1024" WindowStyle="None"
-        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="200"></Setter>
@@ -20,6 +20,7 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
         </Style>
     </Window.Resources>
+    <wpfx:BusyIndicator Name="BusyIndicator">
     <StackPanel x:Name="MainContainer" Orientation="Vertical" Margin="25">
         <StackPanel x:Name="ContentContainer" Margin="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <StackPanel x:Name="Navigation" Margin="25" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -27,4 +28,5 @@
             <Button x:Name="btnBetalen" Margin="10" Content="GA VERDER" Click="btnBetalen_Click" />
         </StackPanel>
     </StackPanel>
+    </wpfx:BusyIndicator>
 </Window>

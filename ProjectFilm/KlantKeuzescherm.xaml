@@ -24,9 +24,10 @@
             <Button x:Name="btnNieuweKlant" Content="NIEUWE KLANT" Margin="10,0,10,0" Click="btnNieuweKlant_Click"/>
             <Button x:Name="btnBestaandeKlant" Content="BESTAANDE KLANT" Margin="10,0,10,0" Click="btnBestaandeKlant_Click"/>
         </StackPanel>
-        <StackPanel x:Name="VoerKaartIn" Visibility="Hidden">
-            <StackPanel Margin="25" HorizontalAlignment="Center">
-                <Label x:Name="lblInsertEID" Content="VOER UW EID-KAART IN!" FontSize="56" Foreground="Orange" />
+        <StackPanel x:Name="VoerKaartIn" Visibility="Visible">
+            <StackPanel Margin="25" Orientation="Vertical" HorizontalAlignment="Center">
+                <Label x:Name="lblInsertEID" Content="VOER UW EID-KAART IN EN DRUK OP DE KNOP LEZEN" HorizontalContentAlignment="Center" FontSize="24" Foreground="Orange" />
+                <Button x:Name="btnLeesKaart" Content="LEZEN" Margin="10,25,10,0" Width="620" Click="btnLeesKaart_Click"/>
             </StackPanel>
         </StackPanel>
     </StackPanel>

@@ -21,7 +21,6 @@
             <StackPanel>
                 <Button x:Name="btnMeerInfo" Background="Orange" Foreground="White" Content="Informatie over uw film?" VerticalAlignment="Top" FontSize="24" Margin="0,20,0,0" BorderThickness="0" Click="btnMeerInfo_Click"/>
                 <Button x:Name="btnCashtest" Background="Orange" Foreground="White" Content="Test Geldwisselaar" VerticalAlignment="Top" FontSize="24" Margin="0,20,0,0" BorderThickness="0" Click="btnCashtest_Click"/>
-                <Button x:Name="btnEidtest" Background="Orange" Foreground="White" Content="Test Eid Kaartlezer" VerticalAlignment="Top" FontSize="24" Margin="0,20,0,0" BorderThickness="0" Click="btnEidtest_Click"/>
                 <Button x:Name="btnTestTrailer" Content="Trailer" Height="54" VerticalAlignment="Top" Width="76" Margin="0,0,0,-54" Click="btnTestTrailer_Click"/>
 
             </StackPanel>
