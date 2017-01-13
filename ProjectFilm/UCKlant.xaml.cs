@@ -39,7 +39,7 @@ namespace ProjectFilm
             tbGeslacht.Text = leeskaart.GetGender();
             tbRijksregister.Text = leeskaart.GetNationalNumber();
             tbKaartnummer.Text = leeskaart.GetCardNumber();
-            tbEmail.Text = Console.ReadLine();
+            //tbEmail.Text = Console.ReadLine();
          }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -63,6 +63,14 @@ namespace ProjectFilm
                 BusyIndicator.IsBusy = false;
             };
             worker.RunWorkerAsync();
+        }
+
+        //Leeg Textbox bij aanklikken en herstel standaardwaarde bij verlaten 
+        private void tb_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tb_GotFocus;
         }
     }
 }
