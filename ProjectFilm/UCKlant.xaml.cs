@@ -26,10 +26,10 @@ namespace ProjectFilm
             tbGeboortedatum.Text = leeskaart.GetDateOfBirth();
             tbGeboorteplaats.Text = leeskaart.GetLocationOfBirth();
             tbGeslacht.Text = leeskaart.GetGender();
-            tbRijksregister.Text = leeskaart.GetNationalNumber();
             tbKaartnummer.Text = leeskaart.GetCardNumber();
+            //tbTelefoon.Text = Console.ReadLine();
             //tbEmail.Text = Console.ReadLine();
-         }
+        }
 
         //Leeg Textbox bij aanklikken en herstel standaardwaarde bij verlaten 
         private void tb_GotFocus(object sender, RoutedEventArgs e)
