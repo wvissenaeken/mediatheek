@@ -56,8 +56,8 @@ namespace ProjectFilm
 
         private void btnVolgende_Click(object sender, RoutedEventArgs e)
         {
-            Klantscherm registratie = new Klantscherm();
-            registratie.ShowDialog();
+            KlantKeuzescherm klantkeuze = new KlantKeuzescherm();
+            klantkeuze.ShowDialog();
         }
     }
 }
