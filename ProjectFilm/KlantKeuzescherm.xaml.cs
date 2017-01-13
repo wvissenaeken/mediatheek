@@ -23,10 +23,7 @@ namespace ProjectFilm
         {
             KlantKeuze.IsEnabled = false;
             VoerKaartIn.Visibility = Visibility.Visible;
-            EID_ReadProgress.IsIndeterminate = true;
-            //System.Threading.Thread thread =
-            //  new System.Threading.Thread(new System.Threading.ThreadStart(loadTable));
-            //thread.Start();
+
             NieuweKlantscherm nieuweklant = new NieuweKlantscherm();
             nieuweklant.ShowDialog();
         }
@@ -35,9 +32,14 @@ namespace ProjectFilm
         {
             KlantKeuze.IsEnabled = false;
             VoerKaartIn.Visibility = Visibility.Visible;
-            EID_ReadProgress.IsIndeterminate = true;
+
             BestaandeKlantscherm bestaandeklant = new BestaandeKlantscherm();
             bestaandeklant.ShowDialog();
+        }
+
+        private void LeesKaartData()
+        {
+
         }
     }
 }

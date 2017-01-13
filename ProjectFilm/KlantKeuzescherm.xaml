@@ -28,9 +28,6 @@
             <StackPanel Margin="25" HorizontalAlignment="Center">
                 <Label x:Name="lblInsertEID" Content="VOER UW EID-KAART IN!" FontSize="56" Foreground="Orange" />
             </StackPanel>
-            <StackPanel Margin="25" HorizontalAlignment="Center">
-                <ProgressBar x:Name="EID_ReadProgress" Height="90" Width="610"/>
-            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjectFilm"
+             xmlns:wpfx="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style TargetType="Label">
             <Setter Property="Background" Value="Orange"></Setter>
@@ -15,52 +16,60 @@
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+        </Style>
     </UserControl.Resources>
-    <DockPanel>
-        <StackPanel x:Name="MainContainer" Orientation="vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Orange">
-            <StackPanel x:Name="SubContainer" Margin="5">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblVoornaam" Width="200" Content="Voornaam:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbVoornaam" Width="350" />
+    <wpfx:BusyIndicator Name="BusyIndicator">
+        <DockPanel>
+            <StackPanel x:Name="MainContainer" Orientation="vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Orange">
+                <StackPanel x:Name="SubContainer" Margin="5">
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblVoornaam" Width="200" Content="Voornaam:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbVoornaam" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblNaam" Width="200" Content="Naam:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbNaam" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblAdres" Width="200" Content="Adres:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbAdres" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblPostcodeGemeente" Width="200" Content="Postcode en Gemeente:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbPostcodeGemeente" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblGeslacht" Width="200" Content="Geslacht:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbGeslacht" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblGeboortedatum" Width="200" Content="Geboortedatum:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbGeboortedatum" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblGeboorteplaats" Width="200" Content="Geboorteplaats:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbGeboorteplaats" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblKaartnummer" Width="200" Content="Kaartnummer:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbKaartnummer" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblRijksregister" Width="200" Content="Rijksregister:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbRijksregister" Width="350" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label x:Name="lblEmail" Width="200" Content="E-mailadres:" HorizontalContentAlignment="Right" />
+                        <TextBox x:Name="tbEmail" Width="350" />
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblNaam" Width="200" Content="Naam:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbNaam" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblAdres" Width="200" Content="Adres:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbAdres" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblPostcodeGemeente" Width="200" Content="Postcode en Gemeente:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbPostcodeGemeente" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblGeslacht" Width="200" Content="Geslacht:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbGeslacht" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblGeboortedatum" Width="200" Content="Geboortedatum:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbGeboortedatum" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblGeboorteplaats" Width="200" Content="Geboorteplaats:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbGeboorteplaats" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblEmail" Width="200" Content="E-mailadres:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbEmail" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblKaartnummer" Width="200" Content="Kaartnummer:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbKaartnummer" Width="350" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label x:Name="lblRijksregister" Width="200" Content="Rijksregister:" HorizontalContentAlignment="Right" />
-                <TextBox x:Name="tbRijksregister" Width="350" />
-            </StackPanel>
-            </StackPanel>
-        </StackPanel>
-
-    </DockPanel>
+        </DockPanel>
+    </wpfx:BusyIndicator>
 </UserControl>

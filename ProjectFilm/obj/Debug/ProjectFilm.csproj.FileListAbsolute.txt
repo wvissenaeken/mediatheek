@@ -186,7 +186,11 @@ C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.g.cs
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.baml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.g.cs
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\UCKlant.baml
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantscherm.g.cs
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Klantscherm.baml
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\KlantKeuzescherm.g.cs
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\KlantKeuzescherm.baml
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\NieuweKlantscherm.g.cs
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BestaandeKlantscherm.g.cs
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\BestaandeKlantscherm.baml
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\NieuweKlantscherm.baml
+C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Xceed.Wpf.DataGrid.dll
