@@ -44,6 +44,12 @@ namespace ProjectFilm
             Close();
         }
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (var film in HuurAutomaat.Filmlijst)
+            {
+                lblFilmTitel.Content = film._Titel;
+            }
+        }
     }
 }

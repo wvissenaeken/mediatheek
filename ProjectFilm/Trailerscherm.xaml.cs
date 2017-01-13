@@ -29,16 +29,20 @@ namespace ProjectFilm
             InitializeComponent();
         }
 
-
-
         private void btnTerug_Click(object sender, RoutedEventArgs e)
         {
+           
+            wbTrailer.Dispose();
             Close();
+           
         }
 
         private void Trailer_Loaded(object sender, RoutedEventArgs e)
         {
            wbTrailer.Source = Source;
         }
+
+
+       
     }
 }
