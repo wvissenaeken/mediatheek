@@ -41,6 +41,14 @@ namespace ProjectFilm {
     public partial class Trailerscherm : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
+        #line 14 "..\..\Trailerscherm.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.WebBrowser wbTrailer;
+        
+        #line default
+        #line hidden
+        
+        
         #line 16 "..\..\Trailerscherm.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblStatus;
@@ -87,9 +95,10 @@ namespace ProjectFilm {
             switch (connectionId)
             {
             case 1:
+            this.wbTrailer = ((System.Windows.Controls.WebBrowser)(target));
             
             #line 14 "..\..\Trailerscherm.xaml"
-            ((System.Windows.Controls.WebBrowser)(target)).Loaded += new System.Windows.RoutedEventHandler(this.Trailer_Loaded);
+            this.wbTrailer.Loaded += new System.Windows.RoutedEventHandler(this.Trailer_Loaded);
             
             #line default
             #line hidden

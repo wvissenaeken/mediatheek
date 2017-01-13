@@ -21,16 +21,12 @@ namespace ProjectFilm
     /// </summary>
     public partial class Trailerscherm : Window
     {
-        Automaat HuurAutomaat;
-        Film _Filmservice;
-        WebBrowser browser;
+
+        public static Uri Source = new Uri(Automaat._Trailerkey);
 
         public Trailerscherm()
         {
             InitializeComponent();
-            HuurAutomaat = new Automaat();
-            _Filmservice = new Film();
-            browser = new WebBrowser();
         }
 
 
@@ -42,8 +38,7 @@ namespace ProjectFilm
 
         private void Trailer_Loaded(object sender, RoutedEventArgs e)
         {
-            string Trailerkey = _Filmservice._Trailer;
-            browser.Navigate($"https://www.youtube.com/watch?v={Trailerkey}");
+           wbTrailer.Source = Source;
         }
     }
 }
