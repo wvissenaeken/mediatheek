@@ -1,7 +1,9 @@
 ﻿using System.Windows;
+using System.ComponentModel;
+using System.Threading;
+using System;
 using ProjectFilmLibrary;
 using System.Collections.Generic;
-using System;
 
 namespace ProjectFilm
 {
@@ -26,6 +28,7 @@ namespace ProjectFilm
 
         string voornaam, achternaam, adres, postcode_gemeente, kaartnummer, geboorteplaats, geslacht, telefoon, email;
         DateTime geboortedatum;
+        int lidmaatschap;
 
         private void GenereerUCK()
         {
@@ -40,7 +43,8 @@ namespace ProjectFilm
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
-            DateTime vandaag = DateTime.Today;
+            DateTime vandaagdedag = DateTime.Now;
+            int vandaag = vandaagdedag.Year;
 
             voornaam = uck.tbVoornaam.Text;
             achternaam = uck.tbNaam.Text;
@@ -50,7 +54,7 @@ namespace ProjectFilm
             geboorteplaats = uck.tbGeboorteplaats.Text;
             geslacht = uck.tbGeslacht.Text;
             kaartnummer = uck.tbKaartnummer.Text;
-            //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
+            lidmaatschap = vandaag;// NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
             telefoon = uck.tbTelefoon.Text;
             email = uck.tbEmail.Text;
 
@@ -61,9 +65,10 @@ namespace ProjectFilm
             klantservice.VerifieerKlant.Geboortedatum=geboortedatum;
             klantservice.VerifieerKlant.Geboorteplaats=geboorteplaats;
             klantservice.VerifieerKlant.Geslacht=geslacht;
+            klantservice.VerifieerKlant.Lidmaatschap = lidmaatschap;
             klantservice.VerifieerKlant.Kaartnummer=kaartnummer;
             klantservice.VerifieerKlant.Telefoon = telefoon;
-            klantservice.VerifieerKlant.Email = email;
+            klantservice.VerifieerKlant.Email = email.ToString();
 
             klantservice.DB_UpdateKlant();
 

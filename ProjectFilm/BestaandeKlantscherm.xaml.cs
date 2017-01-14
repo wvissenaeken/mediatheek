@@ -65,8 +65,6 @@ namespace ProjectFilm
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
-            DateTime vandaag = DateTime.Today;
-
             voornaam = uckb.tbVoornaam.Text;
             achternaam = uckb.tbNaam.Text;
             adres = uckb.tbAdres.Text;
@@ -79,22 +77,16 @@ namespace ProjectFilm
             telefoon = uckb.tbTelefoon.Text;
             email = uckb.tbEmail.Text;
 
-            var klantgegevens = new Klant
-            {
-                Voornaam = voornaam,
-                Achternaam = achternaam,
-                Adres = adres,
-                Postcode_Gemeente = postcode_gemeente,
-                Geboortedatum = geboortedatum,
-                Geboorteplaats = geboorteplaats,
-                Geslacht = geslacht,
-                Kaartnummer = kaartnummer,
-                //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
-                Telefoon = telefoon,
-                Email = email
-            };
-
-            klant.Add(klantgegevens);
+            klantservice.VerifieerKlant.Voornaam = voornaam;
+            klantservice.VerifieerKlant.Achternaam = achternaam;
+            klantservice.VerifieerKlant.Adres = adres;
+            klantservice.VerifieerKlant.Postcode_Gemeente = postcode_gemeente;
+            klantservice.VerifieerKlant.Geboortedatum = geboortedatum;
+            klantservice.VerifieerKlant.Geboorteplaats = geboorteplaats;
+            klantservice.VerifieerKlant.Geslacht = geslacht;
+            klantservice.VerifieerKlant.Kaartnummer = kaartnummer;
+            klantservice.VerifieerKlant.Telefoon = telefoon;
+            klantservice.VerifieerKlant.Email = email.ToString();
 
             //Hier moet DB CONN starten
             //klantservice.DB_UpdateKlant();
