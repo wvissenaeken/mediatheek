@@ -32,13 +32,13 @@ namespace ProjectFilm
         {
             RefreshFilms();
         }
-     
+
 
         private void RefreshFilms()
         {
             try
             {
-                
+
                 lbOverzichtFilm.Items.Clear();
                 foreach (Film f in films)
                 {
@@ -67,12 +67,24 @@ namespace ProjectFilm
             //Is er een film geselecteerd?
             if (lbOverzichtFilm.SelectedItem != null)
             {
-                lbOverzichtGekozenFilm.Items.Add(films[lbOverzichtFilm.SelectedIndex]._Titel +" ("+ films[lbOverzichtFilm.SelectedIndex]._Release+")");
-         
+                lbOverzichtGekozenFilm.Items.Add(films[lbOverzichtFilm.SelectedIndex]._Titel + " (" + films[lbOverzichtFilm.SelectedIndex]._Release + ")");
+
             }
             else
             {
                 MessageBox.Show("Selecteer een film");
+            }
+        }
+
+        private void btnZoekEigenDatabase_Click(object sender, RoutedEventArgs e)
+        {
+            filmService.opgezochtefilm._Barcode = txtScanCode.Text;
+            filmService.zoekFilmInDatabase();
+
+            if (filmService.aanwezigInDatabase == 1)
+            {
+                HuurAutomaat._gezochteCode = filmService.gevondenCode;
+                HuurAutomaat.zoekOnlineID();
             }
         }
     }

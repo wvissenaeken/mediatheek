@@ -145,7 +145,7 @@ namespace ProjectFilmLibrary
                     conn = new SqlConnection(connectionString);
                     conn.Open();
                     command.Connection = conn;
-                    command.CommandText = @"SELECT Barcode, Onlinezoeken_ID
+                    command.CommandText = @"SELECT Barcode, Onlinezoeken_ID, Stock, Titel
                                         FROM Film
                                         WHERE Barcode = @Barcode;";
                     command.Parameters.AddWithValue("@Barcode", opgezochtefilm._Barcode);
@@ -156,6 +156,8 @@ namespace ProjectFilmLibrary
                         {
                             _Id = SafeReadValue<int>(dataReader, "Onlinezoeken_ID"),
                             _Barcode = SafeReadValue<string>(dataReader, "Barcode"),
+                            _Titel = SafeReadValue<string>(dataReader,"Titel"),
+                            _Stock = SafeReadValue<int>(dataReader,"Stock")
                         };
                         if (filminDB._Barcode == opgezochtefilm._Barcode)
                         {
