@@ -39,7 +39,7 @@
                     <TextBox x:Name="tbAdres" Width="350" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <Label x:Name="lblPostcodeGemeente" Width="200" Content="Postcode en Gemeente:" HorizontalContentAlignment="Right" />
+                    <Label x:Name="lblPostcodeGemeente" Width="200" Content="PC Gemeente:" HorizontalContentAlignment="Right" />
                     <TextBox x:Name="tbPostcodeGemeente" Width="350" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
@@ -59,8 +59,8 @@
                     <TextBox x:Name="tbKaartnummer" Width="350" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <Label x:Name="lblRijksregister" Width="200" Content="Rijksregister:" HorizontalContentAlignment="Right" />
-                    <TextBox x:Name="tbRijksregister" Width="350" />
+                    <Label x:Name="lblTelefoon" Width="200" Content="Telefoon/GSM:" HorizontalContentAlignment="Right" />
+                    <TextBox x:Name="tbTelefoon" Width="350" GotFocus="tb_GotFocus" Text="Voer uw telefoon/GSM in!" Foreground="Red"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <Label x:Name="lblEmail" Width="200" Content="E-mailadres:" HorizontalContentAlignment="Right" />
