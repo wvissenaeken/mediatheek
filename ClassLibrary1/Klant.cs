@@ -14,7 +14,7 @@ namespace ProjectFilmLibrary
         public string Adres { get; set; }
         public string Postcode_Gemeente { get; set; }
         public string Geslacht { get; set; }
-        public DateTime Geboortedatum { get; set; }
+        public string Geboortedatum { get; set; }
         public DateTime Lidmaatschap { get; set; }
         public string Geboorteplaats { get; set; }
         public string Kaartnummer { get; set; }

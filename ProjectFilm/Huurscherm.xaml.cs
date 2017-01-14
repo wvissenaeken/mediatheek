@@ -21,10 +21,12 @@ namespace ProjectFilm
     public partial class Huurscherm : Window
     {
         private Database filmService = new Database();
+        public List<Film> films;
 
         public Huurscherm()
         {
             InitializeComponent();
+            films = filmService.GetFilm();
         }
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
@@ -36,7 +38,7 @@ namespace ProjectFilm
         {
             try
             {
-                List<Film> films = filmService.GetFilm();
+                
                 lbOverzichtFilm.Items.Clear();
                 foreach (Film f in films)
                 {
@@ -58,6 +60,20 @@ namespace ProjectFilm
         {
             KlantKeuzescherm klantkeuze = new KlantKeuzescherm();
             klantkeuze.ShowDialog();
+        }
+
+        private void lbOverzichtFilm_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //Is er een film geselecteerd?
+            if (lbOverzichtFilm.SelectedItem != null)
+            {
+                lbOverzichtGekozenFilm.Items.Add(films[lbOverzichtFilm.SelectedIndex]._Titel +" ("+ films[lbOverzichtFilm.SelectedIndex]._Release+")");
+         
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een film");
+            }
         }
     }
 }
