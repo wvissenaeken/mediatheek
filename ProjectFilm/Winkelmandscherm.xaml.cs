@@ -19,7 +19,14 @@ namespace ProjectFilm
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
-            Betalingenscherm betaal = new Betalingenscherm();
+            int totaal = lbBestelling.Items.Count;
+            decimal totaalprijs = 0;
+            for (int i=0; i <= totaal; i++)
+            {
+                totaalprijs += 4.00M;
+            }
+
+            Betalingenscherm betaal = new Betalingenscherm(totaalprijs);
             betaal.ShowDialog();
         }
     }

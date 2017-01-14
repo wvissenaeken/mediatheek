@@ -167,6 +167,8 @@
             <Label x:Name="lblHuidigeInworp" Content="" HorizontalContentAlignment="Right" />
             <Label Content="Te betalen" HorizontalContentAlignment="Right" />
             <Label x:Name="lblTeBetalen" Content="" HorizontalContentAlignment="Right" />
+            <Label Content="Wisselgeld" HorizontalContentAlignment="Right" />
+            <TextBlock x:Name="tbWisselgeld" TextAlignment="Right" />
             <Button x:Name="btnBetalen" Content="BEVESTIG BETALING" Width="200" Height="90" Click="btnBetalen_Click"/>
             <Button x:Name="btnAnnuleren" Content="ANNULEREN" Width="200" Height="50" Margin="0,10,0,0" Click="btnAnnuleren_Click"/>
         </StackPanel>

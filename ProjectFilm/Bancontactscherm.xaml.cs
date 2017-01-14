@@ -19,9 +19,17 @@ namespace ProjectFilm
     /// </summary>
     public partial class Bancontactscherm : Window
     {
+        private decimal totaalprijs;
+
         public Bancontactscherm()
         {
             InitializeComponent();
+        }
+
+        public Bancontactscherm(decimal totaalprijs)
+        {
+            this.totaalprijs = totaalprijs;
+            lblBedrag.Content = totaalprijs;
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)

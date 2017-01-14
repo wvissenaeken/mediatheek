@@ -25,11 +25,16 @@ namespace ProjectFilm
             film = new Film();
         }
 
+        public Cashscherm(decimal totaalprijs)
+        {
+            this.totaalprijs = totaalprijs;
+        }
+
         //Declareer nodige variabelen
         public decimal TotaalInworp;
-        public decimal StukPrijs, TotaalPrijs;
         public decimal Wisselgeld;
         public int Teller100, Teller50, Teller20, Teller10, Teller5, Teller2, Teller1, Teller50C, Teller20C, Teller10C, Teller5C;
+        private decimal totaalprijs;
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
@@ -127,6 +132,13 @@ namespace ProjectFilm
                     btn10C_min.IsEnabled = true;
                     break;
             }
+            Wisselgeld = TotaalInworp - totaalprijs;
+            if (TotaalInworp > totaalprijs)
+            {
+                DeactiveerButtons();
+                btnBetalen.IsEnabled = true;
+                tbWisselgeld.Text = String.Format("Wisselgeld: € {0}\n", Wisselgeld) + automaat.WisselGeldBerekenen(Wisselgeld);
+            }
         }
 
         //Enkel click event voor alle knoppen mbt Geld-
@@ -196,7 +208,7 @@ namespace ProjectFilm
 
         public void VerifieerTotaalInworp()
         {
-            if (TotaalInworp >= TotaalPrijs)
+            if (TotaalInworp >= totaalprijs)
             {
                 btnBetalen.IsEnabled = true;
             }
