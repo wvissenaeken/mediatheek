@@ -24,6 +24,9 @@ namespace ProjectFilm
             GenereerUCK();
         }
 
+        string voornaam, achternaam, adres, postcode_gemeente, kaartnummer, geboorteplaats, geslacht, telefoon, email;
+        DateTime geboortedatum;
+
         private void GenereerUCK()
         {
             //Voeg User Control Klant toe aan de daarvoor voorziene container
@@ -38,22 +41,38 @@ namespace ProjectFilm
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
             DateTime vandaag = DateTime.Today;
+
+            voornaam = uck.tbVoornaam.Text;
+            achternaam = uck.tbNaam.Text;
+            adres = uck.tbAdres.Text;
+            postcode_gemeente = uck.tbPostcodeGemeente.Text;
+            geboortedatum = DateTime.Parse(uck.tbGeboortedatum.Text);
+            geboorteplaats = uck.tbGeboorteplaats.Text;
+            geslacht = uck.tbGeslacht.Text;
+            kaartnummer = uck.tbKaartnummer.Text;
+            //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
+            telefoon = uck.tbTelefoon.Text;
+            email = uck.tbEmail.Text;
+
             var klantgegevens = new Klant
             {
-                Voornaam = uck.tbVoornaam.Text,
-                Achternaam = uck.tbNaam.Text,
-                Adres = uck.tbAdres.Text,
-                Postcode_Gemeente = uck.tbPostcodeGemeente.Text,
-                Geboortedatum = DateTime.Parse(uck.tbGeboortedatum.Text),
-                Geboorteplaats = uck.tbGeboorteplaats.Text,
-                Geslacht = uck.tbGeslacht.Text,
-                Kaartnummer = uck.tbKaartnummer.Text,
-                Lidmaatschap = vandaag,
-                Telefoon = uck.tbTelefoon.Text,
-                Email = uck.tbEmail.Text
+                Voornaam = voornaam,
+                Achternaam = achternaam,
+                Adres = adres,
+                Postcode_Gemeente = postcode_gemeente,
+                Geboortedatum = geboortedatum,
+                Geboorteplaats = geboorteplaats,
+                Geslacht = geslacht,
+                Kaartnummer = kaartnummer,
+                //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
+                Telefoon = telefoon,
+                Email = email
             };
+
             klant.Add(klantgegevens);
             klantservice.DB_UpdateKlant();
+
+            klantservice.DB_VerifieerKlant();
 
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();

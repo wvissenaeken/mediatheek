@@ -26,6 +26,9 @@ namespace ProjectFilm
             GenereerUCK();
         }
 
+        string voornaam, achternaam, adres, postcode_gemeente, kaartnummer, geboorteplaats, geslacht, telefoon, email;
+        DateTime geboortedatum;
+
         private void GenereerUCK()
         {
             //Voeg User Control Klant toe aan de daarvoor voorziene container
@@ -63,26 +66,38 @@ namespace ProjectFilm
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
             DateTime vandaag = DateTime.Today;
+
+            voornaam = uckb.tbVoornaam.Text;
+            achternaam = uckb.tbNaam.Text;
+            adres = uckb.tbAdres.Text;
+            postcode_gemeente = uckb.tbPostcodeGemeente.Text;
+            geboortedatum = DateTime.Parse(uckb.tbGeboortedatum.Text);
+            geboorteplaats = uckb.tbGeboorteplaats.Text;
+            geslacht = uckb.tbGeslacht.Text;
+            kaartnummer = uckb.tbKaartnummer.Text;
+                //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
+            telefoon = uckb.tbTelefoon.Text;
+            email = uckb.tbEmail.Text;
+
             var klantgegevens = new Klant
             {
-                Voornaam = uckb.tbVoornaam.Text,
-                Achternaam = uckb.tbNaam.Text,
-                Adres = uckb.tbAdres.Text,
-                Postcode_Gemeente = uckb.tbPostcodeGemeente.Text,
-                Geboortedatum = DateTime.Parse(uckb.tbGeboortedatum.Text),
-                Geboorteplaats = uckb.tbGeboorteplaats.Text,
-                Geslacht = uckb.tbGeslacht.Text,
-                Kaartnummer = uckb.tbKaartnummer.Text,
+                Voornaam = voornaam,
+                Achternaam = achternaam,
+                Adres = adres,
+                Postcode_Gemeente = postcode_gemeente,
+                Geboortedatum = geboortedatum,
+                Geboorteplaats = geboorteplaats,
+                Geslacht = geslacht,
+                Kaartnummer = kaartnummer,
                 //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
-                Telefoon = uckb.tbTelefoon.Text,
-                Email = uckb.tbEmail.Text
+                Telefoon = telefoon,
+                Email = email
             };
 
             klant.Add(klantgegevens);
 
+            //Hier moet DB CONN starten
             klantservice.DB_UpdateKlant();
-            //Hier moet DB CONN starten denk ik?
-           
 
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();

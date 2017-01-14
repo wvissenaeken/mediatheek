@@ -25,7 +25,7 @@
             <Button x:Name="Annuleren" Content="ANNULEREN" Margin="25" Click="Annuleren_Click"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top">
-            <ListBox x:Name="lbBestelling" Margin="50" MinHeight="500"></ListBox>
+            <ListBox x:Name="lbBestelling" Margin="50" MinHeight="400"></ListBox>
         </StackPanel>
     </DockPanel>
 </Window>
