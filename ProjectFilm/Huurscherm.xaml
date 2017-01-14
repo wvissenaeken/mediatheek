@@ -10,12 +10,13 @@
         WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded_1" Height="890.5" Width="1273.5">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
         <Label x:Name="lbl00" Content="Selecteer een film." HorizontalContentAlignment="Center" Margin="123,65,132,0" VerticalAlignment="Top"  Height="87" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
-        <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,707,934,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
+        <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,707,132,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
         <ListBox x:Name="lbOverzichtFilm" Height="207" Margin="132,157,132,0" VerticalAlignment="Top" MouseDoubleClick="lbOverzichtFilm_MouseDoubleClick"/>
         <Label x:Name="lbl00_Copy" Content="Scan de barcode:" HorizontalContentAlignment="Center" Margin="132,412,0,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" HorizontalAlignment="Left" Width="408"/>
         <TextBox x:Name="txtBarcode" FontSize="22" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="91" Margin="132,517,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408"/>
         <Label x:Name="lbl00_Copy1" Content="Uw keuze:" HorizontalContentAlignment="Center" Margin="735,412,132,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold"/>
         <ListBox x:Name="lbOverzichtGekozenFilm" Height="96" Margin="735,517,132,0" VerticalAlignment="Top" RenderTransformOrigin="0.697,1.998"/>
-        <Button  x:Name="btnVolgende" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="VOLGENDE" Margin="0,707,132,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnVolgende_Click"/>
+        <Button  x:Name="btnVolgende" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="VOLGENDE" Margin="0,707,526,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnVolgende_Click"/>
+        <Button x:Name="btnZoekEigenDatabase" HorizontalAlignment="Left" Background="Orange" Foreground="White" Content="VOEG TOE" Margin="401,613,0,0" VerticalAlignment="Top" Height="40" FontSize="24" Width="139" BorderThickness="0" FontWeight="Bold" Click="btnZoekEigenDatabase_Click"/>
     </Grid>
 </Window>
