@@ -26,7 +26,7 @@ namespace ProjectFilm
                 totaalprijs += 4.00M;
             }
 
-            Betalingenscherm betaal = new Betalingenscherm(totaalprijs);
+            Betalingenscherm betaal = new Betalingenscherm(/*totaalprijs*/);
             betaal.ShowDialog();
         }
     }
