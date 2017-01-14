@@ -65,17 +65,17 @@ namespace ProjectFilm
             DateTime vandaag = DateTime.Today;
             var klantgegevens = new Klant
             {
-                Voornaam = uckb.lblVoornaam.ToString(),
-                Achternaam = uckb.lblNaam.ToString(),
-                Adres = uckb.lblAdres.ToString(),
-                Postcode_Gemeente = uckb.lblPostcodeGemeente.ToString(),
-                Geboortedatum = DateTime.Parse(uckb.lblGeboortedatum.ToString()),
-                Geboorteplaats = uckb.lblGeboorteplaats.ToString(),
-                Geslacht = uckb.lblGeslacht.ToString(),
-                Kaartnummer = uckb.lblKaartnummer.ToString(),
-                Lidmaatschap = vandaag,
-                Telefoon = uckb.lblTelefoon.ToString(),
-                Email = uckb.lblEmail.ToString()
+                Voornaam = uckb.tbVoornaam.Text,
+                Achternaam = uckb.tbNaam.Text,
+                Adres = uckb.tbAdres.Text,
+                Postcode_Gemeente = uckb.tbPostcodeGemeente.Text,
+                Geboortedatum = DateTime.Parse(uckb.tbGeboortedatum.Text),
+                Geboorteplaats = uckb.tbGeboorteplaats.Text,
+                Geslacht = uckb.tbGeslacht.Text,
+                Kaartnummer = uckb.tbKaartnummer.Text,
+                //Lidmaatschap = vandaag, NIET VAN TOEPASSING BIJ REEDS BESTAANDE KLANT!
+                Telefoon = uckb.tbTelefoon.Text,
+                Email = uckb.tbEmail.Text
             };
 
             klant.Add(klantgegevens);
