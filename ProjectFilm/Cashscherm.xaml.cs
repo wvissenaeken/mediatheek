@@ -13,6 +13,7 @@ namespace ProjectFilm
         Cash checkchildren;
         Automaat automaat;
         Film film;
+        public decimal totaalprijs;
 
         public Cashscherm()
         {
@@ -25,16 +26,10 @@ namespace ProjectFilm
             film = new Film();
         }
 
-        public Cashscherm(decimal totaalprijs)
-        {
-            this.totaalprijs = totaalprijs;
-        }
-
         //Declareer nodige variabelen
         public decimal TotaalInworp;
         public decimal Wisselgeld;
         public int Teller100, Teller50, Teller20, Teller10, Teller5, Teller2, Teller1, Teller50C, Teller20C, Teller10C, Teller5C;
-        private decimal totaalprijs;
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
@@ -132,10 +127,11 @@ namespace ProjectFilm
                     btn10C_min.IsEnabled = true;
                     break;
             }
+
             Wisselgeld = TotaalInworp - totaalprijs;
             if (TotaalInworp > totaalprijs)
             {
-                DeactiveerButtons();
+                //DeactiveerButtons();
                 btnBetalen.IsEnabled = true;
                 tbWisselgeld.Text = String.Format("Wisselgeld: € {0}\n", Wisselgeld) + automaat.WisselGeldBerekenen(Wisselgeld);
             }

@@ -97,7 +97,7 @@ namespace ProjectFilm
             klant.Add(klantgegevens);
 
             //Hier moet DB CONN starten
-            klantservice.DB_UpdateKlant();
+            //klantservice.DB_UpdateKlant();
 
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();

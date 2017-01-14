@@ -19,16 +19,10 @@ namespace ProjectFilm
     /// </summary>
     public partial class Betalingenscherm : Window
     {
-        private decimal totaalprijs;
 
         public Betalingenscherm()
         {
             InitializeComponent();
-        }
-
-        public Betalingenscherm(decimal totaalprijs)
-        {
-            this.totaalprijs = totaalprijs;
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)
@@ -38,13 +32,13 @@ namespace ProjectFilm
 
         private void btnCash_Click(object sender, RoutedEventArgs e)
         {
-            Cashscherm cashverwijzing = new Cashscherm(totaalprijs);
+            Cashscherm cashverwijzing = new Cashscherm();
             cashverwijzing.ShowDialog();
         }
 
         private void btnBancontact_Click(object sender, RoutedEventArgs e)
         {
-            Bancontactscherm bancontactverwijzing = new Bancontactscherm(totaalprijs);
+            Bancontactscherm bancontactverwijzing = new Bancontactscherm();
             bancontactverwijzing.ShowDialog();
         }
     }
