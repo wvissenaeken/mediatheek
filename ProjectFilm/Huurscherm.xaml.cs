@@ -78,13 +78,12 @@ namespace ProjectFilm
 
         private void btnZoekEigenDatabase_Click(object sender, RoutedEventArgs e)
         {
-            filmService.opgezochtefilm._Barcode = txtScanCode.Text;
+            filmService.opgezochtefilm._Barcode = txtBarcode.Text;
             filmService.zoekFilmInDatabase();
 
             if (filmService.aanwezigInDatabase == 1)
             {
-                HuurAutomaat._gezochteCode = filmService.gevondenCode;
-                HuurAutomaat.zoekOnlineID();
+                lbOverzichtGekozenFilm.Items.Add(filmService.opgezochtefilm._Titel + " (" + filmService.opgezochtefilm._Release + ")");
             }
         }
     }

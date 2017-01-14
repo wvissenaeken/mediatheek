@@ -157,11 +157,15 @@ namespace ProjectFilmLibrary
                             _Id = SafeReadValue<int>(dataReader, "Onlinezoeken_ID"),
                             _Barcode = SafeReadValue<string>(dataReader, "Barcode"),
                             _Titel = SafeReadValue<string>(dataReader,"Titel"),
-                            _Stock = SafeReadValue<int>(dataReader,"Stock")
+                            _Stock = SafeReadValue<int>(dataReader,"Stock"),
+                            _Release = SafeReadValue<int>(dataReader,"Release")
                         };
                         if (filminDB._Barcode == opgezochtefilm._Barcode)
                         {
-                             gevondenCode = filminDB._Id;
+                            gevondenCode = filminDB._Id;
+                            opgezochtefilm._Titel = filminDB._Titel;
+                            opgezochtefilm._Release = filminDB._Release;
+                            opgezochtefilm._Stock = filminDB._Stock;
                         }
                     }
                 }
