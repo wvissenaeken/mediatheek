@@ -271,8 +271,8 @@ namespace ProjectFilmLibrary
                 //DBCONN OPEN
                 conn.Open();
                 command.Connection = conn;
-                command.CommandText = @"SELECT COUNT(*) FROM Klanten WHERE Kaartnummer =@Kaartnummer;";
-                command.Parameters.AddWithValue("@Kaartnummer", VerifieerKlant.Kaartnummer);
+                command.CommandText = @"SELECT COUNT(*) FROM Klanten WHERE Klant_ID =@Klant_ID;";
+                command.Parameters.AddWithValue("@Klant_ID", VerifieerKlant.Kaartnummer);
                 object resultaat = command.ExecuteScalar();
                 aanwezigInDatabase = (int)resultaat;
                 return aanwezigInDatabase;
@@ -309,7 +309,7 @@ namespace ProjectFilmLibrary
                     conn.Open();
                     command.Connection = conn;
                     //CONTROLE of klant bestaat
-                    command.CommandText = @"SELECT Voornaam, Achternaam, Adres, Postcode, Gemeente, Geslacht, Geboortedatum, Lidmaatschap, Geboorteplaats, Kaartnummer, Rijksregister, Email FROM Klanten";
+                    command.CommandText = @"SELECT Voornaam, Achternaam, Adres, Postcode_Gemeente, Geslacht, Geboortedatum, Lid_sinds, Geboorteplaats, Klant_ID, Telefoon, Email FROM Klanten";
                     SqlDataReader dataReader = command.ExecuteReader();
                     if (dataReader.Read())
                     {
@@ -318,14 +318,13 @@ namespace ProjectFilmLibrary
                             Voornaam = SafeReadValue<string>(dataReader, "Voornaam"),
                             Achternaam = SafeReadValue<string>(dataReader, "Achternaam"),
                             Adres = SafeReadValue<string>(dataReader, "Adres"),
-                            Postcode = SafeReadValue<int>(dataReader, "Postcode"),
-                            Gemeente = SafeReadValue<string>(dataReader, "Gemeente"),
+                            Postcode_Gemeente = SafeReadValue<string>(dataReader, "Postcode_Gemeente"),
                             Geslacht = SafeReadValue<string>(dataReader, "Geslacht"),
                             Geboortedatum = SafeReadValue<DateTime>(dataReader, "Geboortedatum"),
                             Geboorteplaats = SafeReadValue<string>(dataReader, "Geboorteplaats"),
-                            Lidmaatschap = SafeReadValue<DateTime>(dataReader, "Lidmaatschap"),
-                            Kaartnummer = SafeReadValue<string>(dataReader, "Kaartnummer"),
-                            Rijksregister = SafeReadValue<string>(dataReader, "Rijksregister"),
+                            Lidmaatschap = SafeReadValue<DateTime>(dataReader, "Lid_sinds"),
+                            Kaartnummer = SafeReadValue<string>(dataReader, "Klant_ID"),
+                            Telefoon = SafeReadValue<string>(dataReader, "Telefoon"),
                             Email = SafeReadValue<string>(dataReader, "Email")
                         };
                         if (DBKlant.Kaartnummer == VerifieerKlant.Kaartnummer)
@@ -341,19 +340,18 @@ namespace ProjectFilmLibrary
                             conn = new SqlConnection(connectionString);
                             conn.Open();
                             command.Connection = conn;
-                            command.CommandText = @" INSERT INTO dbo.Klanten (Voornaam, Achternaam, Adres, Postcode, Gemeente, Geslacht, Geboortedatum, Lidmaatschap, Geboorteplaats, Kaartnummer, Rijksregister, Email)
-                                               VALUES (@Voornaam, @Achternaam, @Adres, @Postcode, @Gemeente, @Geslacht, @Geboortedatum, @Lidmaatschap, @Geboorteplaats, @Kaartnummer, @Rijksregister, @Email);";
+                            command.CommandText = @" INSERT INTO dbo.Klanten (Voornaam, Achternaam, Adres, Postcode_Gemeente, Geslacht, Geboortedatum, Lid_sinds, Geboorteplaats, Klant_ID, Telefoon, Email)
+                                               VALUES (@Voornaam, @Achternaam, @Adres, @Postcode_Gemeente, @Geslacht, @Geboortedatum, @Lid_sinds, @Geboorteplaats, @Kaart_ID, @Telefoon, @Email);";
                             command.Parameters.AddWithValue("@Voornaam", VerifieerKlant.Voornaam);
                             command.Parameters.AddWithValue("@Achternaam", VerifieerKlant.Achternaam);
                             command.Parameters.AddWithValue("@Adres", VerifieerKlant.Adres);
-                            command.Parameters.AddWithValue("@Postcode", VerifieerKlant.Postcode);
-                            command.Parameters.AddWithValue("@Gemeente", VerifieerKlant.Gemeente);
+                            command.Parameters.AddWithValue("@Postcode_Gemeente", VerifieerKlant.Postcode_Gemeente);
                             command.Parameters.AddWithValue("@Geslacht", VerifieerKlant.Geslacht);
                             command.Parameters.AddWithValue("@Geboortedatum", VerifieerKlant.Geboortedatum);
                             command.Parameters.AddWithValue("@Lidmaatschap", VerifieerKlant.Lidmaatschap);
                             command.Parameters.AddWithValue("@Geboorteplaats", VerifieerKlant.Geboorteplaats);
                             command.Parameters.AddWithValue("@Kaartnummer", VerifieerKlant.Kaartnummer);
-                            command.Parameters.AddWithValue("@Rijksregister", VerifieerKlant.Rijksregister);
+                            command.Parameters.AddWithValue("@Telefoon", VerifieerKlant.Telefoon);
                             command.Parameters.AddWithValue("@Email", VerifieerKlant.Email);
                             //VOEG TOE aan database
                             command.ExecuteNonQuery();

@@ -55,8 +55,8 @@ namespace ProjectFilm
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
-            Betalingenscherm betaalwijze = new Betalingenscherm();
-            betaalwijze.ShowDialog();
+            Winkelmandscherm winkelmandje = new Winkelmandscherm();
+            winkelmandje.ShowDialog();
         }
     }
 }

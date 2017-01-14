@@ -92,7 +92,6 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\Winkelmandsc
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.g.resources
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.Properties.Resources.resources
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\obj\Debug\ProjectFilm.csproj.GenerateResource.Cache
-C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro-800px.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\2euro-800px.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\5euroSchein-800px.png

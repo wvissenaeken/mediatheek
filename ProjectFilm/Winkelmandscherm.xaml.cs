@@ -24,9 +24,15 @@ namespace ProjectFilm
             InitializeComponent();
         }
 
-        private void btnTerug_Click(object sender, RoutedEventArgs e)
+        private void Annuleren_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void btnBetalen_Click(object sender, RoutedEventArgs e)
+        {
+            Betalingenscherm betaal = new Betalingenscherm();
+            betaal.ShowDialog();
         }
     }
 }

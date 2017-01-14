@@ -28,6 +28,17 @@ namespace ProjectFilm
         public decimal Wisselgeld;
         public int Teller100, Teller50, Teller20, Teller10, Teller5, Teller2, Teller1, Teller50C, Teller20C, Teller10C, Teller5C;
 
+        private void btnBetalen_Click(object sender, RoutedEventArgs e)
+        {
+            BetalingenOKscherm betaald = new BetalingenOKscherm();
+            betaald.ShowDialog();
+        }
+
+        private void btnAnnuleren_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
         //Methode voor click events mbt Geld
         public void GeldPlusClick(decimal Inworp)
         {

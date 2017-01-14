@@ -28,5 +28,11 @@ namespace ProjectFilm
         {
             Close();
         }
+
+        private void btnBetalen_Click(object sender, RoutedEventArgs e)
+        {
+            BetalingenOKscherm betaald = new BetalingenOKscherm();
+            betaald.ShowDialog();
+        }
     }
 }

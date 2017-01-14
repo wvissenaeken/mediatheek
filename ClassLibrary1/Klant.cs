@@ -9,18 +9,17 @@ namespace ProjectFilmLibrary
 {
     public class Klant
     {
-        public string Voornaam;
-        public string Achternaam;
-        public string Adres;
-        public int Postcode;
-        public string Gemeente;
-        public string Geslacht;
-        public DateTime Geboortedatum;
-        public DateTime Lidmaatschap;
-        public string Geboorteplaats;
-        public string Kaartnummer;
-        public string Rijksregister;
-        public string Email;
-        public ImageSource Foto; //Nog na te gaan of het opportuun is afbeelding op te slaan?
+        public string Voornaam { get; set; }
+        public string Achternaam { get; set; }
+        public string Adres { get; set; }
+        public string Postcode_Gemeente { get; set; }
+        public string Geslacht { get; set; }
+        public DateTime Geboortedatum { get; set; }
+        public DateTime Lidmaatschap { get; set; }
+        public string Geboorteplaats { get; set; }
+        public string Kaartnummer { get; set; }
+        public string Telefoon { get; set; }
+        public string Email { get; set; }
+        public ImageSource Foto { get; set; } //Nog na te gaan of het opportuun is afbeelding op te slaan?
     }
 }

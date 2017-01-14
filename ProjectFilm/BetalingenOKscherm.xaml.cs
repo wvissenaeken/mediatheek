@@ -28,5 +28,11 @@ namespace ProjectFilm
         {
             Close();
         }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.ShowDialog();
+        }
     }
 }
