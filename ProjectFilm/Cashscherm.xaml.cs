@@ -11,6 +11,8 @@ namespace ProjectFilm
     public partial class Cashscherm : Window
     {
         Cash checkchildren;
+        Automaat automaat;
+        Film film;
 
         public Cashscherm()
         {
@@ -18,13 +20,14 @@ namespace ProjectFilm
             InitializeComponent();
             //Deactiveer knoppen met _min totdat knoppen met _plus worden geactiveerd
             DeactiveerButtons();
+            btnBetalen.IsEnabled = false;
             automaat = new Automaat();
+            film = new Film();
         }
-
-        Automaat automaat;
 
         //Declareer nodige variabelen
         public decimal TotaalInworp;
+        public decimal StukPrijs, TotaalPrijs;
         public decimal Wisselgeld;
         public int Teller100, Teller50, Teller20, Teller10, Teller5, Teller2, Teller1, Teller50C, Teller20C, Teller10C, Teller5C;
 
@@ -189,6 +192,14 @@ namespace ProjectFilm
             if (Teller50C == 0) { btn50C_min.IsEnabled = false; }
             if (Teller20C == 0) { btn20C_min.IsEnabled = false; }
             if (Teller10C == 0) { btn10C_min.IsEnabled = false; }
+        }
+
+        public void VerifieerTotaalInworp()
+        {
+            if (TotaalInworp >= TotaalPrijs)
+            {
+                btnBetalen.IsEnabled = true;
+            }
         }
 
         private void btnTerug_Click(object sender, RoutedEventArgs e)

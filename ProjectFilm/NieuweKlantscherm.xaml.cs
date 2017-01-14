@@ -71,6 +71,8 @@ namespace ProjectFilm
 
             klant.Add(klantgegevens);
 
+            klantservice.DB_VerifieerKlant();
+
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();
         }
