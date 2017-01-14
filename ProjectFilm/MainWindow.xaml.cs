@@ -46,16 +46,7 @@ namespace ProjectFilm
             informatieverwijzing.ShowDialog();
         }
 
-        private void btnCashtest_Click(object sender, RoutedEventArgs e)
-        {
-            Cashscherm cash = new Cashscherm();
-            cash.ShowDialog();
-        }
+       
 
-        private void btnTestTrailer_Click(object sender, RoutedEventArgs e)
-        {
-            Trailerscherm verwijzingTrailer = new Trailerscherm();
-            verwijzingTrailer.ShowDialog();
-        }
     }
 }

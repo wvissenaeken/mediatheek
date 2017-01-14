@@ -31,8 +31,16 @@ namespace ProjectFilm
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
+            CloseAllWindows();
             MainWindow mainwindow = new MainWindow();
             mainwindow.ShowDialog();
+            
+        }
+
+        public void CloseAllWindows()
+        {
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+                App.Current.Windows[intCounter].Hide();
         }
     }
 }

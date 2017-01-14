@@ -16,7 +16,12 @@ namespace ProjectFilmLibrary
         public string _gezochteFilm;
         public int _gezochteCode;
         public string _gezochteBarcode;
+
         public static string _Trailerkey;
+        public static string _Titel;
+        public static string _Beschrijving;
+        public static int _Release;
+        public static double _Score;
 
         //-----------------------------//    
         //DATABASE RAADPLEGEN
@@ -66,7 +71,9 @@ namespace ProjectFilmLibrary
            
             int jaartal;
             int jaar;
-            movie = await client.GetMovieAsync(_gezochteCode, MovieMethods.Credits | MovieMethods.Videos);
+            movie = await client.GetMovieAsync(_gezochteCode, MovieMethods.Videos);
+            
+            
             if (movie.ReleaseDate != null)
             {
                 DateTime datum = (DateTime)movie.ReleaseDate;
@@ -93,12 +100,25 @@ namespace ProjectFilmLibrary
             _Filmservice.opgezochtefilm._Release = jaar;
             _Filmservice.opgezochtefilm._Score = movie.VoteAverage;
 
+            //Gegevens voor het InformatieGegevensscherm
+           List<Film> filmgegevens = new List<Film>();
+           filmgegevens.Add(new Film()
+            {
+                _Titel = movie.Title,
+                _Beschrijving = movie.Overview,
+                _Release = jaar,
+                _Score = movie.VoteAverage
+            });
+            _Titel = $"{filmgegevens[0]._Titel}";
+            _Beschrijving= $"{filmgegevens[0]._Beschrijving}";
+            _Release= filmgegevens[0]._Release;
+            _Score= filmgegevens[0]._Score;
+
             //Update
             _Filmservice.updateGegevensFilm();
 
             //Krijg trailerkey 
             List<string> filmkey = new List<string>();
-
             foreach (var video in movie.Videos.Results)
             {
                 filmkey.Add(video.Key);

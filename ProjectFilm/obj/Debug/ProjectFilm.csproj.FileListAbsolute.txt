@@ -103,7 +103,6 @@ C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\50
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\50EuroSchein-800px.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\100EuroSchein-800px.png
 C:\Users\wvissenaeken\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\5-euro-cent-800px.png
-C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro.png
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\1euro-800px.png
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\2euro-800px.png
 C:\Users\Mathieu\Source\Repos\mediatheek\ProjectFilm\bin\Debug\Resources\5euroSchein-800px.png

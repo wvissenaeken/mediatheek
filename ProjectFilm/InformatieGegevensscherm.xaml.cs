@@ -32,6 +32,7 @@ namespace ProjectFilm
             FilmService = new Database();
         }
 
+       
 
         private void btnTrailer_Click(object sender, RoutedEventArgs e)
         {
@@ -44,12 +45,12 @@ namespace ProjectFilm
             Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_MouseMove(object sender, MouseEventArgs e)
         {
-            foreach (var film in HuurAutomaat.Filmlijst)
-            {
-                lblFilmTitel.Content = film._Titel;
-            }
+            lblFilmTitel.Content = Automaat._Titel;
+            txtbBeschrijving.Text = Automaat._Beschrijving;
+            lblRelease.Content = Automaat._Release.ToString();
+            lblScore.Content = Automaat._Score.ToString();
         }
     }
 }
