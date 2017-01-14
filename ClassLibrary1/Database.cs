@@ -346,7 +346,7 @@ namespace ProjectFilmLibrary
                             conn = new SqlConnection(connectionString);
                             conn.Open();
                             command.Connection = conn;
-                            command.CommandText = @" INSERT INTO dbo.Klanten (Voornaam, Achternaam, Adres, Postcode_Gemeente, Geslacht, Geboortedatum, Lid_sinds, Geboorteplaats, Klant_ID, Telefoon, Email)
+                            command.CommandText = @" INSERT INTO dbo.Klanten (Voornaam, Achternaam, Adres, Postcode_Gemeente, Geslacht, Geboortedatum, Lid_sinds, Geboorteplaats, Klant_ID, Telefoon, [E-mail])
                                                VALUES (@Voornaam, @Achternaam, @Adres, @Postcode_Gemeente, @Geslacht, @Geboortedatum, @Lid_sinds, @Geboorteplaats, @Kaart_ID, @Telefoon, @Email);";
                             command.Parameters.AddWithValue("@Voornaam", VerifieerKlant.Voornaam);
                             command.Parameters.AddWithValue("@Achternaam", VerifieerKlant.Achternaam);
