@@ -2,6 +2,9 @@
 using System.ComponentModel;
 using System.Threading;
 using System;
+using ProjectFilmLibrary;
+using System.Collections.Generic;
+
 namespace ProjectFilm
 {
     /// <summary>
@@ -10,12 +13,16 @@ namespace ProjectFilm
     public partial class BestaandeKlantscherm : Window
     {
         UCKlant uckb;
-
+        Database klantservice;
+        List<Klant> klant;
+        
         public BestaandeKlantscherm()
         {
             InitializeComponent();
             //Instantieer data uit User Control Klant
             uckb = new UCKlant();
+            klantservice = new Database();
+            klant = new List<Klant>();
             GenereerUCK();
         }
 
@@ -55,6 +62,27 @@ namespace ProjectFilm
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
+            DateTime vandaag = DateTime.Today;
+            var klantgegevens = new Klant
+            {
+                Voornaam = uckb.lblVoornaam.ToString(),
+                Achternaam = uckb.lblNaam.ToString(),
+                Adres = uckb.lblAdres.ToString(),
+                Postcode_Gemeente = uckb.lblPostcodeGemeente.ToString(),
+                Geboortedatum = DateTime.Parse(uckb.lblGeboortedatum.ToString()),
+                Geboorteplaats = uckb.lblGeboorteplaats.ToString(),
+                Geslacht = uckb.lblGeslacht.ToString(),
+                Kaartnummer = uckb.lblKaartnummer.ToString(),
+                Lidmaatschap = vandaag,
+                Telefoon = uckb.lblTelefoon.ToString(),
+                Email = uckb.lblEmail.ToString()
+            };
+
+            klant.Add(klantgegevens);
+
+            //Hier moet DB CONN starten denk ik?
+           
+
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();
         }

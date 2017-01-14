@@ -31,8 +31,16 @@ namespace ProjectFilm
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
+            SluitAlleOpenVensters();
             MainWindow mainwindow = new MainWindow();
             mainwindow.ShowDialog();
+        }
+
+        //Sluit alle open vensters behalve Mainwindow (zit op App.Current.Windows[0])
+        private void SluitAlleOpenVensters()
+        {
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 1; intCounter--)
+                App.Current.Windows[intCounter].Hide();
         }
     }
 }
