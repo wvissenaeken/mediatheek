@@ -7,12 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow"  
         WindowStyle="None" ResizeMode="NoResize"  
-        WindowStartupLocation="CenterScreen" WindowState="Maximized" Height="890.5" Width="1164" Loaded="Window_Loaded">
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" Height="890.5" Width="1164" MouseMove="Window_MouseMove">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled">
         <Label x:Name="lblFilmTitel" Content="Hier zou moeten de filmtitel komen" HorizontalContentAlignment="Center" Margin="2.5,112,2.5,0" VerticalAlignment="Top"  Height="100" Foreground="Orange" FontSize="48" FontWeight="Bold" Width="1011"/>
         <Button x:Name="btnTerug" HorizontalAlignment="Right" Background="Orange" Foreground="White" Content="TERUG" Margin="0,755,49,0" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTerug_Click"/>
         <StackPanel Orientation="Horizontal" Height="81" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="430,212,391,0" Width="203">
             <Button x:Name="btnTrailer" Background="Orange" Foreground="White" Content="TRAILER" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="75" FontSize="24" Width="200" BorderThickness="0" FontWeight="Bold" Click="btnTrailer_Click"/>
         </StackPanel>
+        <Label x:Name="a" Content="Beschrijving:" HorizontalAlignment="Left" Height="42" Margin="119,300,0,0" VerticalAlignment="Top" Width="167" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <TextBlock x:Name="txtbBeschrijving" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow" Margin="328,300,0,0" FontSize="22" VerticalAlignment="Top" Height="356" Width="713"/>
+        <Label x:Name="a_Copy" Content="Release " HorizontalAlignment="Left" Height="42" Margin="119,683,0,0" VerticalAlignment="Top" Width="167" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <Label x:Name="a_Copy1" Content="Score" HorizontalAlignment="Left" Height="42" Margin="119,755,0,0" VerticalAlignment="Top" Width="167" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <Label x:Name="lblRelease" Content="" HorizontalAlignment="Left" Height="42" Margin="328,683,0,0" VerticalAlignment="Top" Width="167" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
+        <Label x:Name="lblScore" Content="" HorizontalAlignment="Left" Height="42" Margin="328,755,0,0" VerticalAlignment="Top" Width="167" FontSize="22" RenderTransformOrigin="0.456,1.724" FontWeight="Bold"/>
     </Grid>
 </Window>
