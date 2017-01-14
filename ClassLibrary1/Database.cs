@@ -145,7 +145,7 @@ namespace ProjectFilmLibrary
                     conn = new SqlConnection(connectionString);
                     conn.Open();
                     command.Connection = conn;
-                    command.CommandText = @"SELECT Barcode, Onlinezoeken_ID, Stock, Titel
+                    command.CommandText = @"SELECT Barcode, Onlinezoeken_ID, Stock, Titel, Release_datum
                                         FROM Film
                                         WHERE Barcode = @Barcode;";
                     command.Parameters.AddWithValue("@Barcode", opgezochtefilm._Barcode);
@@ -158,7 +158,7 @@ namespace ProjectFilmLibrary
                             _Barcode = SafeReadValue<string>(dataReader, "Barcode"),
                             _Titel = SafeReadValue<string>(dataReader,"Titel"),
                             _Stock = SafeReadValue<int>(dataReader,"Stock"),
-                            _Release = SafeReadValue<int>(dataReader,"Release")
+                            _Release = SafeReadValue<int>(dataReader,"Release_datum")
                         };
                         if (filminDB._Barcode == opgezochtefilm._Barcode)
                         {
@@ -277,7 +277,7 @@ namespace ProjectFilmLibrary
                 //DBCONN OPEN
                 conn.Open();
                 command.Connection = conn;
-                command.CommandText = @"SELECT COUNT(*) FROM Klanten WHERE Klant_ID =@Klant_ID;";
+                command.CommandText = @"SELECT COUNT(*) FROM Klanten WHERE Klant_ID = @Klant_ID;";
                 command.Parameters.AddWithValue("@Klant_ID", VerifieerKlant.Kaartnummer);
                 object resultaat = command.ExecuteScalar();
                 aanwezigInDatabase = (int)resultaat;

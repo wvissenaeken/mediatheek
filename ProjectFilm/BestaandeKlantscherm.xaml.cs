@@ -80,6 +80,7 @@ namespace ProjectFilm
 
             klant.Add(klantgegevens);
 
+            klantservice.DB_UpdateKlant();
             //Hier moet DB CONN starten denk ik?
            
 

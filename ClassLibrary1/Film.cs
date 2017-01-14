@@ -22,5 +22,5 @@ namespace ProjectFilmLibrary
         {
             return $"{_Titel} ({_Release}) - Beschikbaar: {_Stock}";
         }
-    }
+            }
 }

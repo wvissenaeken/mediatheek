@@ -53,6 +53,7 @@ namespace ProjectFilm
                 Email = uck.tbEmail.Text
             };
             klant.Add(klantgegevens);
+            klantservice.DB_UpdateKlant();
 
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();
