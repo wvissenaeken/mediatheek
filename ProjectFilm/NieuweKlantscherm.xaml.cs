@@ -36,22 +36,22 @@ namespace ProjectFilm
 
         private void btnBetalen_Click(object sender, RoutedEventArgs e)
         {
-            DateTime vandaag = DateTime.Today;
-            var klantgegevens = new Klant
-            {
-                Voornaam = uckb.lblVoornaam.ToString(),
-                Achternaam = uckb.lblNaam.ToString(),
-                Adres = uckb.lblAdres.ToString(),
-                Postcode_Gemeente = uckb.lblPostcodeGemeente.ToString(),
-                Geboortedatum = DateTime.Parse(uckb.lblGeboortedatum.ToString()),
-                Geboorteplaats = uckb.lblGeboorteplaats.ToString(),
-                Geslacht = uckb.lblGeslacht.ToString(),
-                Kaartnummer = uckb.lblKaartnummer.ToString(),
-                Lidmaatschap = vandaag,
-                Telefoon = uckb.lblTelefoon.ToString(),
-                Email = uckb.lblEmail.ToString()
-            };
-            klant.Add(klantgegevens);
+            //    DateTime vandaag = DateTime.Today;
+            //    var klantgegevens = new Klant
+            //    {
+            //        Voornaam = uckb.lblVoornaam.ToString(),
+            //        Achternaam = uckb.lblNaam.ToString(),
+            //        Adres = uckb.lblAdres.ToString(),
+            //        Postcode_Gemeente = uckb.lblPostcodeGemeente.ToString(),
+            //        Geboortedatum = DateTime.Parse(uckb.lblGeboortedatum.ToString()),
+            //        Geboorteplaats = uckb.lblGeboorteplaats.ToString(),
+            //        Geslacht = uckb.lblGeslacht.ToString(),
+            //        Kaartnummer = uckb.lblKaartnummer.ToString(),
+            //        Lidmaatschap = vandaag,
+            //        Telefoon = uckb.lblTelefoon.ToString(),
+            //        Email = uckb.lblEmail.ToString()
+            //    };
+            //    klant.Add(klantgegevens);
 
             Winkelmandscherm winkelmandje = new Winkelmandscherm();
             winkelmandje.ShowDialog();
