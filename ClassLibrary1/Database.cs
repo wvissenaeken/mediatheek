@@ -322,7 +322,7 @@ namespace ProjectFilmLibrary
                             Adres = SafeReadValue<string>(dataReader, "Adres"),
                             Postcode_Gemeente = SafeReadValue<string>(dataReader, "Postcode_Gemeente"),
                             Geslacht = SafeReadValue<string>(dataReader, "Geslacht"),
-                            Geboortedatum = SafeReadValue<string>(dataReader, "Geboortedatum"),
+                            Geboortedatum = SafeReadValue<DateTime>(dataReader, "Geboortedatum"),
                             Geboorteplaats = SafeReadValue<string>(dataReader, "Geboorteplaats"),
                             Lidmaatschap = SafeReadValue<DateTime>(dataReader, "Lid_sinds"),
                             Kaartnummer = SafeReadValue<string>(dataReader, "Klant_ID"),
